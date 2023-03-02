@@ -1,8 +1,8 @@
 #ifndef ANIMACJA_H
 #define ANIMACJA_H
 
-
-class Animacja
+#include <Szachy/Dane_poczatkowe/Zdarzenia.h>
+class Animacja : public sf::Texture
 {
 public:
     Animacja();
