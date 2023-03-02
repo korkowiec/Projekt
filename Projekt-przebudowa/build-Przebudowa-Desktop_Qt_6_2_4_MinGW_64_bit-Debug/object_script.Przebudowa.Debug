@@ -1,0 +1,15 @@
+debug/Funkcje.o
+debug/daneliczbowe.o
+debug/Zdarzenia.o
+debug/Zmienne.o
+debug/Struktury_danych.o
+debug/okno_startowe.o
+debug/Plansza.o
+debug/figura.o
+debug/interfejs.o
+debug/suwak.o
+debug/tekst.o
+debug/przycisk.o
+debug/animacja.o
+debug/szachy.o
+debug/main.o

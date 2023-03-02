@@ -1,0 +1,15 @@
+release/Funkcje.o
+release/daneliczbowe.o
+release/Zdarzenia.o
+release/Zmienne.o
+release/Struktury_danych.o
+release/okno_startowe.o
+release/Plansza.o
+release/figura.o
+release/interfejs.o
+release/suwak.o
+release/tekst.o
+release/przycisk.o
+release/animacja.o
+release/szachy.o
+release/main.o
