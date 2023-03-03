@@ -1,5 +1,5 @@
-#include <szachy.h>
-
+#include  <szachy.h>
+#include <Szachy/Klasy_pomocnice/animacja.h>
 int main()
 {
 //Szachy Szachy;
@@ -8,7 +8,9 @@ int main()
     sf::Texture T1;
     sf::Texture T2;
     sf::Image I1;
-    sf::Image I2;
+    sf::Image I2,I3;
+    std::string  S="zegar";
+    if(!I3.loadFromFile("Grafika/Animacje/"+S+"/Grafika.png")) return 0;
     if(!T1.loadFromFile("Grafika/Animacje/zegar/wadsworth.gif")||!T2.loadFromFile("Grafika/Animacje/zegar/_wadsworth.gif")) return 0;
     I1.loadFromFile("Grafika/Animacje/zegar/wadsworth.gif"),I2.loadFromFile("Grafika/Animacje/zegar/_wadsworth.gif");
     I2.createMaskFromColor(sf::Color::Black);
@@ -24,6 +26,7 @@ int main()
     u_int x=0,y=0;
     S2.setTextureRect(sf::IntRect(x,y,80,80));
     sf::Clock clock;
+    Animacja A("Zegar");
     while(window.isOpen())
     {
         window.clear(sf::Color::Red);
@@ -56,8 +59,10 @@ int main()
              clock.restart();
              S2.setTextureRect(sf::IntRect(x,y,80,80));
          }
-         window.draw(S2);
+         //window.draw(S2);
+         window.draw(A);
          window.display();
+
          std::cout<<clock.getElapsedTime().asSeconds()<<std::endl;
 
 
