@@ -25,7 +25,7 @@ SOURCES += \
     Szachy/Dane_poczatkowe/daneliczbowe.cpp \
     Szachy/Dane_poczatkowe/Zdarzenia.cpp \
     Szachy/Dane_poczatkowe/Zmienne.cpp \
-    Szachy/Dane_poczatkowe/Struktury_danych.cpp \
+    Szachy/Dane_poczatkowe/Struktury_danych.cpp \   
     \
     Szachy/Okna/Okno_startowe/okno_startowe.cpp \
     \
@@ -37,6 +37,7 @@ SOURCES += \
     Szachy/Klasy_pomocnice/tekst.cpp \
     Szachy/Klasy_pomocnice/przycisk.cpp \
     Szachy/Klasy_pomocnice/animacja.cpp \
+    Szachy/Klasy_pomocnice/animacja_plynna.cpp \
     \
     szachy.cpp \
     main.cpp
@@ -47,7 +48,7 @@ HEADERS += \
     Szachy/Dane_poczatkowe/Struktury_danych.h \
     Szachy/Dane_poczatkowe/Zdarzenia.h \
     Szachy/Dane_poczatkowe/Zmienne.h \
-    Szachy/Dane_poczatkowe/funkcje.h \
+    Szachy/Dane_poczatkowe/funkcje.h \    
     \
     Szachy/Okna/Okno_startowe/okno_startowe.h \
     \
@@ -59,5 +60,6 @@ HEADERS += \
     Szachy/Klasy_pomocnice/suwak.h \
     Szachy/Klasy_pomocnice/tekst.h \
     Szachy/Klasy_pomocnice/animacja.h \
+    Szachy/Klasy_pomocnice/animacja_plynna.h \
     \
     szachy.h

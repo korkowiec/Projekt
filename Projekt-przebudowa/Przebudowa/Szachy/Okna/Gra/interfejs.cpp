@@ -113,6 +113,33 @@ void Interfejs::Ustal_Pole()
                     }
                     przycisk->tekst_przycisku.Kalibrowanie();
                 }
+
+            }
+            else
+            {
+                Animacja *A=dynamic_cast<Animacja *>(Rysunki[c].get());
+                if(A!=nullptr)
+                {
+                    if(Rodzaj==1)
+                    {
+                        pos.x=0.1;
+                        pos.y=0.25;
+                        roz.x=0.3;
+                        roz.y=0.4;
+                        A->Kalibrowanie(sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y),
+                                         sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y));
+                    }
+                    else if(Rodzaj==2)
+                    {
+                        pos.x=0.1;
+                        pos.y=0.35;
+                        roz.x=0.3;
+                        roz.y=0.50;
+                        A->Kalibrowanie(sf::Vector2f(pos.x,((pos.y*(window->getSize().y-window->getSize().x)+window->getSize().x)/window->getSize().y)),
+                                     sf::Vector2f(roz.x,((roz.y*(window->getSize().y-window->getSize().x)+window->getSize().x)/window->getSize().y)));
+                    }
+
+                }
             }
         }
     }
@@ -147,6 +174,15 @@ void Interfejs::Przyciski()
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Wyjście")));
+
+    Rysunki.emplace_back(std::make_unique<Animacja>("Zegar",*window));
+    Animacja *A1=dynamic_cast<Animacja*>(Rysunki.rbegin()->get());
+    if(A1!=nullptr) std::cout<<"DUPA"<<std::endl;
+    Animacja_plynna A("Wzkazowka");
+    Rysunki.push_back(std::make_unique<Animacja_plynna>(A));
+    //Rysunki.emplace_back(std::make_unique<Animacja_plynna>("Wzkazowka"));
+    Animacja_plynna *A_P=dynamic_cast<Animacja_plynna *>(Rysunki.rbegin()->get());
+    if(A_P!=nullptr) std::cout<<"Jestem"<<std::endl;
 }
 void Interfejs::Akcje_i_rysowanie()
 {
@@ -157,7 +193,16 @@ void Interfejs::Akcje_i_rysowanie()
         if(przycisk != nullptr) {przycisk->Akcje();window->Rysowanie(*przycisk);}
         else
         {
-            window->Rysowanie(*Rysunki[c].get());
+            Animacja *przycisk=dynamic_cast<Animacja *>(Rysunki[c].get());
+            if(przycisk != nullptr) window->Rysowanie(*przycisk);
+            else
+            {
+                Animacja_plynna *przycisk=dynamic_cast<Animacja_plynna *>(Rysunki[c].get());
+                if(przycisk != nullptr) ;
+                else    window->Rysowanie(*Rysunki[c].get());
+
+            }
+
         }
     }
 }

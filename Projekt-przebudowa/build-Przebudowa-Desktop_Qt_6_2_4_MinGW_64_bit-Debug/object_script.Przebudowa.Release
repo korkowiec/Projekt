@@ -11,5 +11,6 @@ release/suwak.o
 release/tekst.o
 release/przycisk.o
 release/animacja.o
+release/animacja_plynna.o
 release/szachy.o
 release/main.o

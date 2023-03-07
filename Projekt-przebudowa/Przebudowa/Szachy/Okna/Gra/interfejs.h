@@ -3,6 +3,9 @@
 
 #include <Szachy/Dane_poczatkowe/Zdarzenia.h>
 #include <Szachy/Klasy_pomocnice/przycisk.h>
+#include <Szachy/Klasy_pomocnice/animacja_plynna.h>
+#include <Szachy/Klasy_pomocnice/animacja.h>
+
 class Interfejs
 {
 public:

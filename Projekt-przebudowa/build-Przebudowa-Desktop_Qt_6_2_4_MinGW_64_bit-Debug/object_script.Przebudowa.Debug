@@ -11,5 +11,6 @@ debug/suwak.o
 debug/tekst.o
 debug/przycisk.o
 debug/animacja.o
+debug/animacja_plynna.o
 debug/szachy.o
 debug/main.o

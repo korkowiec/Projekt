@@ -1,70 +1,53 @@
 #include  <szachy.h>
 #include <Szachy/Klasy_pomocnice/animacja.h>
+#include <Szachy/Klasy_pomocnice/animacja_plynna.h>
 int main()
 {
-//Szachy Szachy;
-    RenderWindow window(sf::VideoMode(1000,1000), "Szachy");
+    //Szachy Szachy;
+    //return 0;
+    RenderWindow window(sf::VideoMode(1000,400), "Szachy");
+    //SetDisplay(window,sf::Vector2i(50,50),sf::Vector2u(sf::VideoMode::getDesktopMode().width-100,sf::VideoMode::getDesktopMode().height-100));
 
-    sf::Texture T1;
-    sf::Texture T2;
-    sf::Image I1;
-    sf::Image I2,I3;
-    std::string  S="zegar";
-    if(!I3.loadFromFile("Grafika/Animacje/"+S+"/Grafika.png")) return 0;
-    if(!T1.loadFromFile("Grafika/Animacje/zegar/wadsworth.gif")||!T2.loadFromFile("Grafika/Animacje/zegar/_wadsworth.gif")) return 0;
-    I1.loadFromFile("Grafika/Animacje/zegar/wadsworth.gif"),I2.loadFromFile("Grafika/Animacje/zegar/_wadsworth.gif");
-    I2.createMaskFromColor(sf::Color::Black);
-    for(u_int c=1;c<I2.getSize().x;c++) for(u_int d=1;d<I2.getSize().y;d++)
-    {
-        if(I2.getPixel(c,d).a!=0)I2.setPixel(c,d,I1.getPixel(c,d));
-    }
-    //I1.copy(I2,80,80,sf::IntRect(80,00,480,40),1);
-    T2.loadFromImage(I2);
-    T1.loadFromImage(I1);
-    sf::Sprite S1,S2;
-    S1.setTexture(T1),S2.setTexture(T2);
-    u_int x=0,y=0;
-    S2.setTextureRect(sf::IntRect(x,y,80,80));
+
+
+    Animacja_plynna A_P("Wzkazowka",window);
+    A_P.Set_pos(sf::Vector2f(40,20));
+
+    sf::Vector2f(roz)=sf::Vector2f(0.4,0.4);
+    float b=5;
     sf::Clock clock;
-    Animacja A("Zegar");
+    float moc=2;
+
+    Animacja A("Zegar",window);
+
     while(window.isOpen())
     {
-        window.clear(sf::Color::Red);
-         sf::Event event;
-         while(window.pollEvent(event))
-         {
-             mouse_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-             if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
-             if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) okienko=2;
-         }
-         if(clock.getElapsedTime().asSeconds()>=0.1)
-         {
-             if(x<720)
-             {
-                 x+=80;
-             }
-            else
-             {
-                 if(y<160)
-                 {
-                     y+=80;
-                     x=0;
-                 }
-                 else
-                 {
-                     y=0,x=0;
 
-                 }
-             }
-             clock.restart();
-             S2.setTextureRect(sf::IntRect(x,y,80,80));
-         }
-         //window.draw(S2);
-         window.draw(A);
-         window.display();
-
-         std::cout<<clock.getElapsedTime().asSeconds()<<std::endl;
+    A_P.Kalibrowanie();
+    A.Kalibrowanie(sf::Vector2f(0.5,0.5),sf::Vector2f(0.6,0.6));
 
 
+
+
+
+       /// A_P.move(0,moc*clock.getElapsedTime().asMilliseconds());
+
+        sf::Event event;
+        while(window.pollEvent(event))
+        {
+            mouse_position = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+            if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
+            if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) A_P.move(-moc*clock.getElapsedTime().asSeconds(),0);
+            if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) A_P.move(moc*clock.getElapsedTime().asSeconds(),0);
+            if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) A_P.move(0,-moc*clock.getElapsedTime().asSeconds());
+            if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) A_P.move(0,moc*clock.getElapsedTime().asSeconds());
+        }
+        //std::cout<<A_P.getPosition().x<<" "<<A_P.getPosition().y<<std::endl;
+
+        window.clear();
+    //    window.Rysowanie(A);
+        window.Rysowanie(A_P);
+
+        window.display();
     }
 }
