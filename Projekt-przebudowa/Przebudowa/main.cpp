@@ -1,10 +1,8 @@
 #include  <szachy.h>
-#include <Szachy/Klasy_pomocnice/animacja.h>
-#include <Szachy/Klasy_pomocnice/animacja_plynna.h>
 int main()
 {
-    //Szachy Szachy;
-    //return 0;
+    Szachy Szachy;
+    return 0;
     RenderWindow window(sf::VideoMode(1000,400), "Szachy");
     //SetDisplay(window,sf::Vector2i(50,50),sf::Vector2u(sf::VideoMode::getDesktopMode().width-100,sf::VideoMode::getDesktopMode().height-100));
 
@@ -30,7 +28,7 @@ int main()
 
 
 
-       /// A_P.move(0,moc*clock.getElapsedTime().asMilliseconds());
+       // A_P.move(0,moc*clock.getElapsedTime().asMilliseconds());
 
         sf::Event event;
         while(window.pollEvent(event))

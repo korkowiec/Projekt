@@ -30,6 +30,14 @@ Okno_startowe::Okno_startowe(RenderWindow &W,sf::Event &E)
                                                       sf::Vector2f(0.4,0.55),
                                                       sf::Vector2f(0.6,0.7),
                                                       std::string("Wyjście")));
+    Stan[3]=&liczba_3;
+    Stan[4]=&liczba_3;
+    Stan[5]=&liczba_3;
+    Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
+                                                      okienko,Stan,
+                                                      sf::Vector2f(0.1,0.40),
+                                                      sf::Vector2f(0.2,0.60),
+                                                      std::string("Piasek")));
 
 }
 

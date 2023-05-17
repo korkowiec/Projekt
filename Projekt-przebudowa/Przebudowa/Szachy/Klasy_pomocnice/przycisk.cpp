@@ -174,41 +174,42 @@ void Przycisk::Zmiana(sf::Vector2f (pos),sf::Vector2f (pos1))
     setPosition(window->getView().getSize().x*pos.x,window->getView().getSize().y*pos.y);
     setSize(sf::Vector2f(window->getView().getSize().x*pos1.x,window->getView().getSize().y*pos1.y));
 }
-void Przycisk::ZmienStan(u_short to)
+void Przycisk::ZmienStan(const u_short &to)
 {
+    if(Stan==to)return;
     if (ZmieniaboolTablica[to]!=nullptr)Setbool(*ZmieniaboolTablica[to]);
     else if (Zmieniau_shortTablica[to]!=nullptr)Setu_short(*Zmieniau_shortTablica[to]);
     else if (ZmieniaintTablica[to]!=nullptr)Setint(*ZmieniaintTablica[to]);
     else if(Zmieniabool!=nullptr)Zmienbool(UstawboolTablica[to]);
     else if (Zmieniaint!=nullptr)Zmienint(UstawintTablica[to]);
     else if (Zmieniau_short!=nullptr)Zmienu_short(Ustawu_shortTablica[to]);
-
+    Stan=to;
 }
-void Przycisk::Zmienbool(bool B)
+void Przycisk::Zmienbool(const bool &B)
 {
     *Zmieniabool+=B;
 }
-void Przycisk::Zmienu_short(u_short S)
+void Przycisk::Zmienu_short(const u_short &S)
 {
     *Zmieniau_short+=S;
 }
-void Przycisk::Zmienint(int I)
+void Przycisk::Zmienint(const int &I)
 {
     *Zmieniaint+=I;
 }
-void Przycisk::Setbool(bool &B)
+void Przycisk::Setbool(const bool &B)
 {
     *Zmieniabool-=*Zmieniabool;
     *Zmieniabool+=B;
     Tutajbool=*Zmieniabool;
 }
-void Przycisk::Setu_short(u_short &S)
+void Przycisk::Setu_short(const u_short &S)
 {
     *Zmieniau_short-=*Zmieniau_short;
     *Zmieniau_short+=S;
     Tutaju_short=*Zmieniau_short;
 }
-void Przycisk::Setint(int &I)
+void Przycisk::Setint(const int &I)
 {
     *Zmieniaint-=*Zmieniaint;
     *Zmieniaint+=I;

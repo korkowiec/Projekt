@@ -7,6 +7,7 @@ debug/okno_startowe.o
 debug/Plansza.o
 debug/figura.o
 debug/interfejs.o
+debug/piaskownica.o
 debug/suwak.o
 debug/tekst.o
 debug/przycisk.o

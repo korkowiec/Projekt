@@ -7,6 +7,7 @@ release/okno_startowe.o
 release/Plansza.o
 release/figura.o
 release/interfejs.o
+release/piaskownica.o
 release/suwak.o
 release/tekst.o
 release/przycisk.o

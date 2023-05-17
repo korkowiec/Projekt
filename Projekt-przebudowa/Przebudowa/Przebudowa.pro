@@ -25,13 +25,15 @@ SOURCES += \
     Szachy/Dane_poczatkowe/daneliczbowe.cpp \
     Szachy/Dane_poczatkowe/Zdarzenia.cpp \
     Szachy/Dane_poczatkowe/Zmienne.cpp \
-    Szachy/Dane_poczatkowe/Struktury_danych.cpp \   
+    Szachy/Dane_poczatkowe/Struktury_danych.cpp \
     \
     Szachy/Okna/Okno_startowe/okno_startowe.cpp \
     \
     Szachy/Okna/Gra/Plansza.cpp \
     Szachy/Okna/Gra/figura.cpp \
     Szachy/Okna/Gra/interfejs.cpp \
+    \
+    Szachy/Okna/Piaskownica/piaskownica.cpp \
     \
     Szachy/Klasy_pomocnice/suwak.cpp \
     Szachy/Klasy_pomocnice/tekst.cpp \
@@ -48,13 +50,15 @@ HEADERS += \
     Szachy/Dane_poczatkowe/Struktury_danych.h \
     Szachy/Dane_poczatkowe/Zdarzenia.h \
     Szachy/Dane_poczatkowe/Zmienne.h \
-    Szachy/Dane_poczatkowe/funkcje.h \    
+    Szachy/Dane_poczatkowe/funkcje.h \
     \
     Szachy/Okna/Okno_startowe/okno_startowe.h \
     \
     Szachy/Okna/Gra/interfejs.h \
     Szachy/Okna/Gra/figura.h \
     Szachy/Okna/Gra/Plansza.h \
+    \
+    Szachy/Okna/Piaskownica/piaskownica.h \
     \
     Szachy/Klasy_pomocnice/przycisk.h \
     Szachy/Klasy_pomocnice/suwak.h \
