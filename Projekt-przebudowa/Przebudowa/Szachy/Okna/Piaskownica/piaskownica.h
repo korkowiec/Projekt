@@ -10,12 +10,10 @@
 
 class Piaskownica
 {
-private:
-    RenderWindow *window;
-    sf::Event *Event;
-
+protected:
     struct Dane_ruchu
     {
+        ~Dane_ruchu(){}
         sf::RectangleShape rec;
         bool IsSelect=0;
         short x; //ruch w X
@@ -33,15 +31,121 @@ private:
     };
 
     struct Plansza_gry
-    {   std::vector<std::vector<Dane_ruchu>> Pole;
+    {
+        Dane_ruchu **POLE;
+        Dane_ruchu **POLE2;
+        int Rozmiar=0;
         sf::Color Pole1=sf::Color(181,127,99);
         sf::Color Pole2=sf::Color(240,217,181);
-        Plansza_gry(const int &a=3){
-            std::vector<Dane_ruchu> A;
-            A.resize(a);
-            Pole.resize(a,A);
+        std::vector<std::vector<Dane_ruchu>> ruch;
+        void Zmiana_ruch(int a)
+        {
+            int NowyRozmiar=a*2+1;
+            std::vector<std::vector<Dane_ruchu>> To;
+            //NOWY
+            for(int c=0;c<NowyRozmiar;c++)
+            {
+                std::vector<Dane_ruchu> A;
+                for(int c=0;c<NowyRozmiar;c++)
+                {
+                    A.emplace_back(Dane_ruchu());
+                }
+                To.emplace_back(A);
+            }
+            //KOPIUJ
+            for(int c=0;c<NowyRozmiar&&c<Rozmiar;c++)
+            {
+                for(int d=0;d<NowyRozmiar&&c<Rozmiar;d++)
+                {
+                   To[c][d]=ruch[c][d];
+                }
+            }
+
+            //Nowy rozmiar
+            if(Rozmiar!=0)
+            ruch.clear();
+
+            for(int c=0;c<NowyRozmiar;c++)
+            {
+                std::vector<Dane_ruchu> A;
+                for(int c=0;c<NowyRozmiar;c++)
+                {
+                    A.emplace_back(Dane_ruchu());
+                }
+                ruch.emplace_back(A);
+            }
+            //Kopiuj
+            for(int c=0;c<NowyRozmiar&&c<Rozmiar;c++)
+            {
+                for(int d=0;d<NowyRozmiar&&c<Rozmiar;d++)
+                {
+                   ruch[c][d]=To[c][d];
+                }
+            }
+
+            Rozmiar=NowyRozmiar;
         }
+        void Zmiana_Pola(int a)
+        {
+            int newRozmiar=a*2+1;
+
+            //Rozmiar nowej tablicy
+            POLE2= new Dane_ruchu*[newRozmiar];
+            for(int c=0;c<newRozmiar;c++)
+            {
+             POLE2[c]=new Dane_ruchu[newRozmiar];
+            }
+
+            //Kopiowanie do nowej
+            for(int c=0;c<newRozmiar&&c<Rozmiar;c++)
+            {
+                for(int d=0;d<newRozmiar&&d<Rozmiar;d++)
+                {
+                    POLE2[c][d]=POLE[c][d];
+                }
+            }
+
+
+            //Usuwanie starej
+            for(int c=0;c<Rozmiar;c++)
+                delete[] POLE[c];
+            delete[] POLE;
+
+            //Tworzenie starej o dobrym rozmiarze
+            POLE= new Dane_ruchu*[newRozmiar];
+            for(int c=0;c<Rozmiar;c++)
+            {
+                POLE[c]=new Dane_ruchu[newRozmiar];
+            }
+
+            //Kopiowanie do starej
+            for(int c=0;c<newRozmiar&&c<Rozmiar;c++)
+                for(int d=0;d<newRozmiar&&d<Rozmiar;d++)
+                    POLE[c][d]=POLE2[c][d];
+
+            //Usunięcie zapasowej
+            for(int c=0;c<newRozmiar;c++)
+                delete[] POLE2[c];
+            delete[] POLE2;
+
+            Rozmiar=newRozmiar;
+
+        }
+
     };
+
+private:
+    RenderWindow *window;
+    sf::Event *Event;
+    Dane_ruchu Aktualne_dane_ruchu;
+    Plansza_gry Plansza;
+    float Granica;
+
+
+    void Zdarzenia_interfejs();
+    void Zdarzenia_plansza();
+    void Rysowanie_plansza();
+    void Rysowanie_interfejs();
 public:
     Piaskownica(RenderWindow &W,sf::Event &E):window(&W),Event(&E){Dzialanie();}
     void Dzialanie();

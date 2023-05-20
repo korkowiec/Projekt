@@ -29,6 +29,7 @@ Szachy::Szachy()
             case 3://gra_szachy
                 {
                     Piaskownica Piaskownica(window,event);
+                    //
                 }
             break;
         default: window.close();
