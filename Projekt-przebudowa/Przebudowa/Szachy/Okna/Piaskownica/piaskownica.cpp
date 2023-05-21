@@ -4,18 +4,21 @@ void Piaskownica::Dzialanie()
 {
 
     //Tworzenie obiektów
-//Plansza.Zmiana_Pola(2);
 
-Plansza_gry P;
-
+    //Plansza
+        Plansza_gry P;
+        Plansza=&P;
+    //
     //Działanie w pętli
     while(okienko==3)
     {
-        //P.Zmiana_Pola(3);
-        Plansza.Zmiana_ruch(2);
+
         Zdarzenia_interfejs();
+
         Zdarzenia_plansza();
+
         Rysowanie_plansza();
+
         Rysowanie_interfejs();
 
     }

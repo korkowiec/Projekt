@@ -32,12 +32,29 @@ protected:
 
     struct Plansza_gry
     {
-        Dane_ruchu **POLE;
-        Dane_ruchu **POLE2;
+
         int Rozmiar=0;
         sf::Color Pole1=sf::Color(181,127,99);
         sf::Color Pole2=sf::Color(240,217,181);
         std::vector<std::vector<Dane_ruchu>> ruch;
+        Plansza_gry()
+        {
+            Rozmiar=5;
+            Pole1=sf::Color(181,127,99);
+            Pole2=sf::Color(240,217,181);
+            for(int c=0;c<Rozmiar;c++)
+            {
+                std::vector<Dane_ruchu> A;
+                for(int c=0;c<Rozmiar;c++)
+                {
+                    A.emplace_back(Dane_ruchu());
+                }
+                //ruch.push_back(A);
+                ruch.emplace_back(A);
+                //ruch.insert(ruch.end(),A);
+                //ruch.emplace_back(std::vector<Dane_ruchu>());
+            }
+        }
         void Zmiana_ruch(int a)
         {
             int NowyRozmiar=a*2+1;
@@ -55,14 +72,13 @@ protected:
             //KOPIUJ
             for(int c=0;c<NowyRozmiar&&c<Rozmiar;c++)
             {
-                for(int d=0;d<NowyRozmiar&&c<Rozmiar;d++)
+                for(int d=0;d<NowyRozmiar&&d<Rozmiar;d++)
                 {
                    To[c][d]=ruch[c][d];
                 }
             }
 
             //Nowy rozmiar
-            if(Rozmiar!=0)
             ruch.clear();
 
             for(int c=0;c<NowyRozmiar;c++)
@@ -74,6 +90,7 @@ protected:
                 }
                 ruch.emplace_back(A);
             }
+
             //Kopiuj
             for(int c=0;c<NowyRozmiar&&c<Rozmiar;c++)
             {
@@ -85,52 +102,6 @@ protected:
 
             Rozmiar=NowyRozmiar;
         }
-        void Zmiana_Pola(int a)
-        {
-            int newRozmiar=a*2+1;
-
-            //Rozmiar nowej tablicy
-            POLE2= new Dane_ruchu*[newRozmiar];
-            for(int c=0;c<newRozmiar;c++)
-            {
-             POLE2[c]=new Dane_ruchu[newRozmiar];
-            }
-
-            //Kopiowanie do nowej
-            for(int c=0;c<newRozmiar&&c<Rozmiar;c++)
-            {
-                for(int d=0;d<newRozmiar&&d<Rozmiar;d++)
-                {
-                    POLE2[c][d]=POLE[c][d];
-                }
-            }
-
-
-            //Usuwanie starej
-            for(int c=0;c<Rozmiar;c++)
-                delete[] POLE[c];
-            delete[] POLE;
-
-            //Tworzenie starej o dobrym rozmiarze
-            POLE= new Dane_ruchu*[newRozmiar];
-            for(int c=0;c<Rozmiar;c++)
-            {
-                POLE[c]=new Dane_ruchu[newRozmiar];
-            }
-
-            //Kopiowanie do starej
-            for(int c=0;c<newRozmiar&&c<Rozmiar;c++)
-                for(int d=0;d<newRozmiar&&d<Rozmiar;d++)
-                    POLE[c][d]=POLE2[c][d];
-
-            //Usunięcie zapasowej
-            for(int c=0;c<newRozmiar;c++)
-                delete[] POLE2[c];
-            delete[] POLE2;
-
-            Rozmiar=newRozmiar;
-
-        }
 
     };
 
@@ -138,7 +109,7 @@ private:
     RenderWindow *window;
     sf::Event *Event;
     Dane_ruchu Aktualne_dane_ruchu;
-    Plansza_gry Plansza;
+    Plansza_gry *Plansza;
     float Granica;
 
 
