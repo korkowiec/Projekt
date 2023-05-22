@@ -13,8 +13,7 @@ class Piaskownica
 protected:
     struct Dane_ruchu
     {
-        ~Dane_ruchu(){}
-        sf::RectangleShape rec;
+
         bool IsSelect=0;
         short x; //ruch w X
         short y; //ruch w Y
@@ -28,98 +27,74 @@ protected:
         bool M =0; //Czy musi być z pozycji początkowej
         bool T =0; //tylko bicie figur
         Dane_ruchu(short x=0,short y=0,u_short EL=1,bool US=0,bool UW=0,bool Z=1,bool ZE=1,bool S=0,bool SE=1,bool M =0,bool T=0):x(x),y(y),EL(EL),US(US),UW(UW),Z(Z),ZE(ZE),S(S),SE(SE),M(M),T(T){}
+        ~Dane_ruchu(){}
     };
 
     struct Plansza_gry
     {
 
-        int Rozmiar=0;
+        int Rozmiar;
         sf::Color Pole1=sf::Color(181,127,99);
         sf::Color Pole2=sf::Color(240,217,181);
-        std::vector<std::vector<Dane_ruchu>> ruch;
-        Plansza_gry()
+        std::vector<std::vector<Dane_ruchu>> Ruch;
+        ~Plansza_gry(){for(std::vector<Dane_ruchu> &A:Ruch)A.clear();Ruch.clear();}
+        Plansza_gry(const int a=2):Rozmiar(2*a+1)
         {
-            Rozmiar=5;
-            Pole1=sf::Color(181,127,99);
-            Pole2=sf::Color(240,217,181);
-            for(int c=0;c<Rozmiar;c++)
-            {
-                std::vector<Dane_ruchu> A;
-                for(int c=0;c<Rozmiar;c++)
-                {
-                    A.emplace_back(Dane_ruchu());
-                }
-                //ruch.push_back(A);
-                ruch.emplace_back(A);
-                //ruch.insert(ruch.end(),A);
-                //ruch.emplace_back(std::vector<Dane_ruchu>());
-            }
+           std::vector<Dane_ruchu> A(Rozmiar);
+           Ruch.resize(Rozmiar,A);
         }
         void Zmiana_ruch(int a)
         {
             int NowyRozmiar=a*2+1;
-            std::vector<std::vector<Dane_ruchu>> To;
+
             //NOWY
-            for(int c=0;c<NowyRozmiar;c++)
-            {
-                std::vector<Dane_ruchu> A;
-                for(int c=0;c<NowyRozmiar;c++)
-                {
-                    A.emplace_back(Dane_ruchu());
-                }
-                To.emplace_back(A);
-            }
+            std::vector<Dane_ruchu> A(NowyRozmiar);
+            std::vector<std::vector<Dane_ruchu>> To(NowyRozmiar,A);
+
             //KOPIUJ
             for(int c=0;c<NowyRozmiar&&c<Rozmiar;c++)
             {
                 for(int d=0;d<NowyRozmiar&&d<Rozmiar;d++)
                 {
-                   To[c][d]=ruch[c][d];
+                   To[c][d]=Ruch[c][d];
                 }
             }
 
             //Nowy rozmiar
-            ruch.clear();
+            Ruch.clear();
+            Ruch.resize(NowyRozmiar,A);
 
-            for(int c=0;c<NowyRozmiar;c++)
-            {
-                std::vector<Dane_ruchu> A;
-                for(int c=0;c<NowyRozmiar;c++)
-                {
-                    A.emplace_back(Dane_ruchu());
-                }
-                ruch.emplace_back(A);
-            }
 
             //Kopiuj
             for(int c=0;c<NowyRozmiar&&c<Rozmiar;c++)
             {
                 for(int d=0;d<NowyRozmiar&&c<Rozmiar;d++)
                 {
-                   ruch[c][d]=To[c][d];
+                   Ruch[c][d]=To[c][d];
                 }
             }
 
             Rozmiar=NowyRozmiar;
         }
-
     };
 
 private:
+    sf::Color Kolory[5]={sf::Color(181,127,99),sf::Color(240,217,181),sf::Color::Green,sf::Color::Red,sf::Color::Yellow};
     RenderWindow *window;
     sf::Event *Event;
     Dane_ruchu Aktualne_dane_ruchu;
-    Plansza_gry *Plansza;
-    float Granica;
-
+    Plansza_gry *Plansza;//Statyczna wywala mi błąd przy wektorze Ruch, gdy chcę nim operować.
+    float Granica;//Wykorzystam do pamiętania końca planszy i początku interfejsu
+    sf::RectangleShape *Rysunek;
 
     void Zdarzenia_interfejs();
     void Zdarzenia_plansza();
     void Rysowanie_plansza();
     void Rysowanie_interfejs();
+    void Dzialanie();
+
 public:
     Piaskownica(RenderWindow &W,sf::Event &E):window(&W),Event(&E){Dzialanie();}
-    void Dzialanie();
     ~Piaskownica(){}
 };
 
