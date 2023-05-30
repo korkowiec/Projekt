@@ -80,21 +80,23 @@ protected:
 
 private:
     sf::Color Kolory[5]={sf::Color(181,127,99),sf::Color(240,217,181),sf::Color::Green,sf::Color::Red,sf::Color::Yellow};
+    float Granica;//Wykorzystam do pamiętania końca planszy i początku interfejsu
+    sf::Vector2f(Rozmiar);
+    std::vector<Przycisk> Przyciski;
     RenderWindow *window;
-    sf::Event *Event;
+    sf::Event *event;
     Dane_ruchu Aktualne_dane_ruchu;
     Plansza_gry *Plansza;//Statyczna wywala mi błąd przy wektorze Ruch, gdy chcę nim operować.
-    float Granica;//Wykorzystam do pamiętania końca planszy i początku interfejsu
     sf::RectangleShape *Rysunek;
-
     void Zdarzenia_interfejs();
     void Zdarzenia_plansza();
     void Rysowanie_plansza();
     void Rysowanie_interfejs();
-    void Dzialanie();
+
 
 public:
-    Piaskownica(RenderWindow &W,sf::Event &E):window(&W),Event(&E){Dzialanie();}
+    Piaskownica(RenderWindow &W,sf::Event &E):window(&W),event(&E){}
+    void Dzialanie();
     ~Piaskownica(){}
 };
 

@@ -87,7 +87,7 @@ private:
         int *ZmieniaintTablica[6]={nullptr,nullptr,nullptr,nullptr,nullptr,nullptr};
 
         //Aktualny stan(potrzebne przy zmien
-        u_short Stan=69;
+        u_short Stan=0;
 
         void Setbool(const bool &B);
         void Setu_short(const u_short &S);

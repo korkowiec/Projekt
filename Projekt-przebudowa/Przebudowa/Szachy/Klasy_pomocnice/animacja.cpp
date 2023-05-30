@@ -4,8 +4,8 @@ Animacja::Animacja(const std::string &S,float C)
 {
     okres=C;
     sf::Image I1,I2;
-    I1.loadFromFile("C:/Users/kubas/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/Grafika/Animacje/"+S+"/Grafika.png");
-    I2.loadFromFile("C:/Users/kubas/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/Grafika/Animacje/"+S+"/Ksztalt.png");
+    I1.loadFromFile("Grafika/Animacje/"+S+"/Grafika.png");
+    I2.loadFromFile("Grafika/Animacje/"+S+"/Ksztalt.png");
     I2.createMaskFromColor(sf::Color::Black);
     for(u_int c=1;c<I2.getSize().x;c++) for(u_int d=1;d<I2.getSize().y;d++)
     {
@@ -22,8 +22,8 @@ Animacja::Animacja(const std::string &S,RenderWindow &W,float C)
     window=&W;
     okres=C;
     sf::Image I1,I2;
-    I1.loadFromFile("C:/Users/kubas/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/Grafika/Animacje/"+S+"/Grafika.png");
-    I2.loadFromFile("C:/Users/kubas/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/Grafika/Animacje/"+S+"/Ksztalt.png");
+    I1.loadFromFile("Grafika/Animacje/"+S+"/Grafika.png");
+    I2.loadFromFile("Grafika/Animacje/"+S+"/Ksztalt.png");
     I2.createMaskFromColor(sf::Color::Black);
     for(u_int c=1;c<I2.getSize().x;c++) for(u_int d=1;d<I2.getSize().y;d++)
     {
