@@ -93,10 +93,11 @@ private:
     void Rysowanie_plansza();
     void Rysowanie_interfejs();
 
-
+    bool STANIK_BRA=1;
 public:
     Piaskownica(RenderWindow &W,sf::Event &E):window(&W),event(&E){}
     void Dzialanie();
+
     ~Piaskownica(){}
 };
 

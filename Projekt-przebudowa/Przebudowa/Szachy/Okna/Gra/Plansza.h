@@ -63,9 +63,9 @@ public:
     sf::Event* event;
     sf::Event event_;//akcje zapisywane celowo tylko dla planszy
     Plansza_gry Plansza_gry;
-    sf::Color Wybor1=sf::Color(0,255,0,128); //wybrana Twoja figura
+    sf::Color Wybor3=sf::Color(0,255,0,128); //wybrana Twoja figura
     sf::Color Wybor2=sf::Color(255,0,0,128); //figura do bicia (wroga lub Twoja)
-    sf::Color Wybor3=sf::Color(0,0,255,128); //wybrana pole do ruchu
+    sf::Color Wybor1=sf::Color(0,0,255,128); //wybrana pole do ruchu
     std::vector<Figura> figury;
 
 };

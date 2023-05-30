@@ -9,6 +9,17 @@ Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
                    sf::Color C)
 {
     Zmieniau_short=&Zmieniacz;
+    for(u_short c=0;c<6;c++) UstawshortTablica[c]=Stany[c];
+    Przycisk_podstawy(W,E,pos,roz,S,C);
+}
+Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
+                   short &Zmieniacz,short Stany[6],
+                   sf::Vector2f (pos),
+                   sf::Vector2f (roz),
+                   std::string S,
+                   sf::Color C)
+{
+    Zmieniashort=&Zmieniacz;
     for(u_short c=0;c<6;c++) Ustawu_shortTablica[c]=Stany[c];
     Przycisk_podstawy(W,E,pos,roz,S,C);
 }
@@ -43,6 +54,17 @@ Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
 {
     Zmieniau_short=&Zmieniacz;
     for(u_short c=0;c<6;c++) Zmieniau_shortTablica[c]=Stany[c];
+    Przycisk_podstawy(W,E,pos,roz,S,C);
+}
+Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
+                   short &Zmieniacz,short *Stany[6],
+                   sf::Vector2f (pos),
+                   sf::Vector2f (roz),
+                   std::string S,
+                   sf::Color C)
+{
+    Zmieniashort=&Zmieniacz;
+    for(u_short c=0;c<6;c++) ZmieniashortTablica[c]=Stany[c];
     Przycisk_podstawy(W,E,pos,roz,S,C);
 }
 Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
@@ -180,9 +202,11 @@ void Przycisk::ZmienStan(const u_short &to)
     if (ZmieniaboolTablica[to]!=nullptr)Setbool(*ZmieniaboolTablica[to]);
     else if (Zmieniau_shortTablica[to]!=nullptr)Setu_short(*Zmieniau_shortTablica[to]);
     else if (ZmieniaintTablica[to]!=nullptr)Setint(*ZmieniaintTablica[to]);
+    else if (ZmieniashortTablica[to]!=nullptr)Setu_short(*ZmieniashortTablica[to]);
     else if(Zmieniabool!=nullptr)Zmienbool(UstawboolTablica[to]);
     else if (Zmieniaint!=nullptr)Zmienint(UstawintTablica[to]);
     else if (Zmieniau_short!=nullptr)Zmienu_short(Ustawu_shortTablica[to]);
+    else if (Zmieniashort!=nullptr)Zmienshort(UstawshortTablica[to]);
     Stan=to;
 }
 void Przycisk::Zmienbool(const bool &B)
@@ -192,6 +216,10 @@ void Przycisk::Zmienbool(const bool &B)
 void Przycisk::Zmienu_short(const u_short &S)
 {
     *Zmieniau_short+=S;
+}
+void Przycisk::Zmienshort(const short &S)
+{
+    *Zmieniashort+=S;
 }
 void Przycisk::Zmienint(const int &I)
 {
@@ -208,6 +236,12 @@ void Przycisk::Setu_short(const u_short &S)
     *Zmieniau_short-=*Zmieniau_short;
     *Zmieniau_short+=S;
     Tutaju_short=*Zmieniau_short;
+}
+void Przycisk::Setshort(const short &S)
+{
+    *Zmieniashort-=*Zmieniashort;
+    *Zmieniashort+=S;
+    Tutajshort=*Zmieniashort;
 }
 void Przycisk::Setint(const int &I)
 {

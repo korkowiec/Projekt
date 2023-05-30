@@ -6,3 +6,6 @@ u_short Tutaju_short;
 int Tutajint;
 bool Tutajbool;
 u_short liczba_1=1;
+short Tutajshort;
+extern bool bool_0=0;
+extern bool bool_1=1;

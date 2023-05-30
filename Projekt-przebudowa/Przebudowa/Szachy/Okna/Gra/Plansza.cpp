@@ -14,21 +14,21 @@ void Plansza::Parametry_Planszy() //rozmiar planszy, kolor pól
             std::getline(Plan, ruch,';');
             Plansza_gry.board_y=(short)stoi(ruch);
             std::getline(Plan, ruch,',');
-            Plansza_gry.Pole1.r=(UINT8)stoi(ruch);
+            Plansza_gry.Pole1.r=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,',');
-            Plansza_gry.Pole1.g=(UINT8)stoi(ruch);
+            Plansza_gry.Pole1.g=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,',');
-            Plansza_gry.Pole1.b=(UINT8)stoi(ruch);
+            Plansza_gry.Pole1.b=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,';');
-            Plansza_gry.Pole1.a=(UINT8)stoi(ruch);
+            Plansza_gry.Pole1.a=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,',');
-            Plansza_gry.Pole2.r=(UINT8)stoi(ruch);
+            Plansza_gry.Pole2.r=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,',');
-            Plansza_gry.Pole2.g=(UINT8)stoi(ruch);
+            Plansza_gry.Pole2.g=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,',');
-            Plansza_gry.Pole2.b=(UINT8)stoi(ruch);
+            Plansza_gry.Pole2.b=(uint8_t)stoi(ruch);
             std::getline(Plan, ruch,';');
-            Plansza_gry.Pole2.a=(UINT8)stoi(ruch);
+            Plansza_gry.Pole2.a=(uint8_t)stoi(ruch);
         }
     }
 
