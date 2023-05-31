@@ -88,11 +88,14 @@ private:
     Dane_ruchu Aktualne_dane_ruchu;
     Plansza_gry *Plansza;//Statyczna wywala mi błąd przy wektorze Ruch, gdy chcę nim operować.
     sf::RectangleShape *Rysunek;
+    std::vector<sf::Text> Teksty;
+    sf::Text TEXTY[8];
     void Zdarzenia_interfejs();
     void Zdarzenia_plansza();
     void Rysowanie_plansza();
     void Rysowanie_interfejs();
-
+    void Utwórz_przyciski_i_tekst();
+    void Rysowanie_tektsu();
     bool STANIK_BRA=1;
 public:
     Piaskownica(RenderWindow &W,sf::Event &E):window(&W),event(&E){}

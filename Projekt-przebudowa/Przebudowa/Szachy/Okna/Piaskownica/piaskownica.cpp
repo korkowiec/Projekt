@@ -12,127 +12,13 @@ void Piaskownica::Dzialanie()
         sf::RectangleShape rec;
         Rysunek=&rec;
 
-
-
-        Rozmiar=sf::Vector2f((1-window->getSize().y/window->getSize().x)*window->getView().getSize().x,window->getView().getSize().y);
-        sf::Vector2f(pos)=sf::Vector2f(0.01,0.01);
-        sf::Vector2f(roz)=sf::Vector2f(0.1,0.1);
-        sf::Vector2f(pos1)=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        sf::Vector2f(roz2)=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-
-
-
-        bool *Stan[6]={&bool_0,&bool_0,&bool_0,&bool_1,&bool_1,&bool_1};
-
-        pos=sf::Vector2f(0.01,0.41);
-        roz=sf::Vector2f(0.9,0.5);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //US
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.US,
-                                        Stan,pos1,roz2,std::string("Unika swoje")));
-
-
-        pos=sf::Vector2f(0.01,0.31);
-        roz=sf::Vector2f(0.9,0.4);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //UW
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.UW,
-                                        Stan,pos1,roz2,std::string("Unika wroga")));
-
-
-        pos=sf::Vector2f(0.01,0.21);
-        roz=sf::Vector2f(0.9,0.3);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //Z
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.Z,
-                                        Stan,pos1,roz2,std::string("Zbicie wroga")));
-
-
-        pos=sf::Vector2f(0.01,0.91);
-        roz=sf::Vector2f(0.9,1);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //ZE
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.ZE,
-                                        Stan,pos1,roz2,std::string("Po zbiciu enemy dalej możesz się ruszać")));
-
-
-        pos=sf::Vector2f(0.01,0.51);
-        roz=sf::Vector2f(0.9,0.6);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //S
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.S,
-                                        Stan,pos1,roz2,std::string("Możliwość zbicia swoich")));
-
-
-        pos=sf::Vector2f(0.01,0.81);
-        roz=sf::Vector2f(0.9,0.9);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //SE
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.SE,
-                                        Stan,pos1,roz2,std::string("Po zbiciu sojusznika dalej możesz się ruszać")));
-
-
-        pos=sf::Vector2f(0.01,0.71);
-        roz=sf::Vector2f(0.9,0.8);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //M
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.M,
-                                        Stan,pos1,roz2,std::string("Musi być w pozycji początkowej")));
-
-
-        pos=sf::Vector2f(0.01,0.61);
-        roz=sf::Vector2f(0.9,0.7);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        //T
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.T,
-                                        Stan,pos1,roz2,std::string("Ruch tylko do bicia")));
-
-
-
-
-        pos=sf::Vector2f(0.01,0.01);
-        roz=sf::Vector2f(0.1,0.1);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        u_short stanik[6]={0,0,1,0,0,1};
-        //+EL
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.EL,
-                                        stanik,pos1,roz2,std::string("+")));
-
-        pos=sf::Vector2f(0.21,0.01);
-        roz=sf::Vector2f(0.3,0.1);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-
-        stanik[2]=-1;
-        stanik[5]=-1;
-        //-EL
-        Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.EL,
-                                        stanik,pos1,roz2,std::string("-")));
-
-
+    Utwórz_przyciski_i_tekst();
     //Działanie w pętli
     while(okienko==3)
     {
         window->clear();
+
+
         //Plansza->Zmiana_ruch(2);
         while(window->pollEvent(*event))
         {
@@ -164,7 +50,387 @@ void Piaskownica::Dzialanie()
     }
 }
 
+void Piaskownica::Utwórz_przyciski_i_tekst()
+{
 
+
+    Rozmiar=sf::Vector2f((1-window->getSize().y/window->getSize().x)*window->getView().getSize().x,window->getView().getSize().y);
+    sf::Vector2f(pos)=sf::Vector2f(0.01,0.01);
+    sf::Vector2f(roz)=sf::Vector2f(0.1,0.1);
+    sf::Vector2f(pos1)=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    sf::Vector2f(roz2)=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    //___________PRZYCISKI___________
+    {
+    bool *Stan[6]={&bool_0,&bool_0,&bool_0,&bool_1,&bool_1,&bool_1};
+    short stanik[6]={0,0,1,
+                      0,0,1};
+
+    //MENU
+    {
+    u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&uliczba_1,&uliczba_1,&uliczba_1};
+    pos=sf::Vector2f(0.81,0.01);
+    roz=sf::Vector2f(1,0.1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,okienko,
+                                    Stan,pos1,roz2,std::string("MENU")));
+    }
+
+
+    //US
+    {
+    pos=sf::Vector2f(0.01,0.41);
+    roz=sf::Vector2f(0.9,0.5);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.US,
+                                    Stan,pos1,roz2,std::string("Unika swoje")));
+    }
+
+    //UW
+    {
+    pos=sf::Vector2f(0.01,0.31);
+    roz=sf::Vector2f(0.9,0.4);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.UW,
+                                    Stan,pos1,roz2,std::string("Unika wroga")));
+    }
+
+    //Z
+    {
+    pos=sf::Vector2f(0.01,0.21);
+    roz=sf::Vector2f(0.9,0.3);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.Z,
+                                    Stan,pos1,roz2,std::string("Zbicie wroga")));
+    }
+
+    //ZE
+    {
+    pos=sf::Vector2f(0.01,0.91);
+    roz=sf::Vector2f(0.9,1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.ZE,
+                                    Stan,pos1,roz2,std::string("Po zbiciu enemy dalej możesz się ruszać")));
+    }
+
+    //S
+    {
+    pos=sf::Vector2f(0.01,0.51);
+    roz=sf::Vector2f(0.9,0.6);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.S,
+                                    Stan,pos1,roz2,std::string("Możliwość zbicia swoich")));
+    }
+
+    //SE
+    {
+    pos=sf::Vector2f(0.01,0.81);
+    roz=sf::Vector2f(0.9,0.9);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.SE,
+                                    Stan,pos1,roz2,std::string("Po zbiciu sojusznika dalej możesz się ruszać")));
+    }
+
+    //M
+    {
+    pos=sf::Vector2f(0.01,0.71);
+    roz=sf::Vector2f(0.9,0.8);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.M,
+                                    Stan,pos1,roz2,std::string("Musi być w pozycji początkowej")));
+    }
+
+    //T
+    {
+    pos=sf::Vector2f(0.01,0.61);
+    roz=sf::Vector2f(0.9,0.7);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.T,
+                                    Stan,pos1,roz2,std::string("Ruch tylko do bicia")));
+    }
+
+    //+EL
+    {
+    pos=sf::Vector2f(0.01,0.01);
+    roz=sf::Vector2f(0.1,0.1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.EL,
+                                    stanik,pos1,roz2,std::string("+")));
+    }
+
+    //-EL
+    {
+    pos=sf::Vector2f(0.21,0.01);
+    roz=sf::Vector2f(0.3,0.1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    stanik[2]=-1;
+    stanik[5]=-1;
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Aktualne_dane_ruchu.EL,
+                                    stanik,pos1,roz2,std::string("-")));
+    }
+    }
+    //____________________TEKSTY______________________
+    //Teksty Zmienne
+    {
+    //EL
+    {
+    pos=sf::Vector2f(0.11,0.01);
+    roz=sf::Vector2f(0.2,0.1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.EL)),*window));
+    }
+
+    //US
+    {
+    pos=sf::Vector2f(0.91,0.41);
+    roz=sf::Vector2f(1,0.5);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.US)),*window));
+    }
+
+    //UW
+    {
+        pos=sf::Vector2f(0.91,0.31);
+        roz=sf::Vector2f(1,0.4);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.UW)),*window));
+    }
+
+    //Z
+    {
+        pos=sf::Vector2f(0.91,0.21);
+        roz=sf::Vector2f(1,0.3);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.Z)),*window));
+    }
+
+    //ZE
+    {
+        pos=sf::Vector2f(0.91,0.91);
+        roz=sf::Vector2f(1,1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.ZE)),*window));
+    }
+
+    //S
+    {
+        pos=sf::Vector2f(0.91,0.51);
+        roz=sf::Vector2f(1,0.6);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.S)),*window));
+    }
+
+    //SE
+    {
+        pos=sf::Vector2f(0.91,0.81);
+        roz=sf::Vector2f(1,0.9);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.SE)),*window));
+    }
+
+    //M
+    {
+        pos=sf::Vector2f(0.91,0.71);
+        roz=sf::Vector2f(1,0.8);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.M)),*window));
+    }
+
+    //T
+    {
+        pos=sf::Vector2f(0.91,0.61);
+        roz=sf::Vector2f(1,0.7);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.T)),*window));
+    }
+    }
+    //Teksty stałe
+    {
+    //Liczba pętli
+    {
+            pos=sf::Vector2f(0.01,0.11);
+                    roz=sf::Vector2f(0.3,0.2);
+                pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+                roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+                Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string("Liczba pętli"),*window));
+
+    }
+    }
+}
+void Piaskownica::Rysowanie_tektsu()
+{
+
+    sf::Vector2f(pos)=sf::Vector2f(0.01,0.01);
+    sf::Vector2f(roz)=sf::Vector2f(0.1,0.1);
+    sf::Vector2f(pos1)=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    sf::Vector2f(roz2)=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+    //Teskt zmienn
+    {
+    //EL
+    {
+    pos=sf::Vector2f(0.11,0.01);
+    roz=sf::Vector2f(0.2,0.1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[0]);
+    Teksty[0].setString(std::to_string(Aktualne_dane_ruchu.EL));
+    Popraw_tekst(pos1,roz2,Teksty[0],*window);
+    }
+
+    //US
+    {
+    pos=sf::Vector2f(0.91,0.41);
+    roz=sf::Vector2f(1,0.5);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[1]);
+    Teksty[1].setString(std::to_string(Aktualne_dane_ruchu.US));
+    Popraw_tekst(pos1,roz2,Teksty[1],*window);
+    }
+
+    //UW
+    {
+        pos=sf::Vector2f(0.91,0.31);
+        roz=sf::Vector2f(1,0.4);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[2]);
+    Teksty[2].setString(std::to_string(Aktualne_dane_ruchu.UW));
+    Popraw_tekst(pos1,roz2,Teksty[2],*window);
+    }
+
+    //Z
+    {
+        pos=sf::Vector2f(0.91,0.21);
+        roz=sf::Vector2f(1,0.3);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[3]);
+    Teksty[3].setString(std::to_string(Aktualne_dane_ruchu.Z));
+    Popraw_tekst(pos1,roz2,Teksty[3],*window);
+    }
+
+    //ZE
+    {
+        pos=sf::Vector2f(0.91,0.91);
+        roz=sf::Vector2f(1,1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[4]);
+    Teksty[4].setString(std::to_string(Aktualne_dane_ruchu.ZE));
+    Popraw_tekst(pos1,roz2,Teksty[4],*window);
+    }
+
+    //S
+    {
+        pos=sf::Vector2f(0.91,0.51);
+        roz=sf::Vector2f(1,0.6);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[5]);
+    Teksty[5].setString(std::to_string(Aktualne_dane_ruchu.S));
+    Popraw_tekst(pos1,roz2,Teksty[5],*window);
+    }
+
+    //SE
+    {
+        pos=sf::Vector2f(0.91,0.81);
+        roz=sf::Vector2f(1,0.9);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[6]);
+    Teksty[6].setString(std::to_string(Aktualne_dane_ruchu.SE));
+    Popraw_tekst(pos1,roz2,Teksty[6],*window);
+    }
+
+    //M
+    {
+        pos=sf::Vector2f(0.91,0.71);
+        roz=sf::Vector2f(1,0.8);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[7]);
+    Teksty[7].setString(std::to_string(Aktualne_dane_ruchu.M));
+    Popraw_tekst(pos1,roz2,Teksty[7],*window);
+    }
+
+    //T
+    {
+        pos=sf::Vector2f(0.91,0.61);
+        roz=sf::Vector2f(1,0.7);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[8]);
+    Teksty[8].setString(std::to_string(Aktualne_dane_ruchu.T));
+    Popraw_tekst(pos1,roz2,Teksty[8],*window);
+    }
+    }
+    //Tekst Stały
+    {
+         //Liczba pętli
+        {
+
+            pos=sf::Vector2f(0.01,0.11);
+                    roz=sf::Vector2f(0.3,0.2);
+                pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+                roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+        window->Rysowanie(Teksty[9]);
+        Popraw_tekst(pos1,roz2,Teksty[9],*window);
+        }
+    }
+}
 
 void Piaskownica::Rysowanie_plansza()
 {
@@ -198,6 +464,7 @@ void Piaskownica::Rysowanie_plansza()
 
 void Piaskownica::Rysowanie_interfejs()
 {
+    Rysowanie_tektsu();
 
     for(Przycisk &P:Przyciski)
     {
@@ -230,7 +497,7 @@ void Piaskownica::Zdarzenia_plansza()
     int X=mouse_position.x/wx;
     int Y=mouse_position.y/wy;
 
-    std::cout<<"MOUSE X "<<mouse_position.x<<"\nMOUSE Y "<<mouse_position.y<<std::endl;
+    //std::cout<<"MOUSE X "<<mouse_position.x<<"\nMOUSE Y "<<mouse_position.y<<std::endl;
     if(Y>=Plansza->Rozmiar||X>=Plansza->Rozmiar||((Y==X)&&(X==((Plansza->Rozmiar-1)/2)))) return;
     else
     {
@@ -238,7 +505,7 @@ void Piaskownica::Zdarzenia_plansza()
         if(Plansza->Ruch[Y][X].IsSelect)
         {
             Plansza->Ruch[Y][X].y=((-Plansza->Rozmiar+1)/2)+Y;
-            Plansza->Ruch[Y][X].x=X;
+            Plansza->Ruch[Y][X].x=((-Plansza->Rozmiar+1)/2)+X;
 
             Plansza->Ruch[Y][X].EL=Aktualne_dane_ruchu.EL;
             Plansza->Ruch[Y][X].M=Aktualne_dane_ruchu.M;

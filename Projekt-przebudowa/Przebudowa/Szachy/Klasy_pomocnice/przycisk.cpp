@@ -1,8 +1,7 @@
 #include <Szachy/Klasy_pomocnice/przycisk.h>
 
-
 Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
-                   u_short &Zmieniacz,u_short Stany[6],
+                   u_short &Zmieniacz,short Stany[6],
                    sf::Vector2f (pos),
                    sf::Vector2f (roz),
                    std::string S,
@@ -13,6 +12,17 @@ Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
     Przycisk_podstawy(W,E,pos,roz,S,C);
 }
 Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
+                   u_short &Zmieniacz,u_short Stany[6],
+                   sf::Vector2f (pos),
+                   sf::Vector2f (roz),
+                   std::string S,
+                   sf::Color C)
+{
+    Zmieniau_short=&Zmieniacz;
+    for(u_short c=0;c<6;c++) Ustawu_shortTablica[c]=Stany[c];
+    Przycisk_podstawy(W,E,pos,roz,S,C);
+}
+Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
                    short &Zmieniacz,short Stany[6],
                    sf::Vector2f (pos),
                    sf::Vector2f (roz),
@@ -20,7 +30,7 @@ Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
                    sf::Color C)
 {
     Zmieniashort=&Zmieniacz;
-    for(u_short c=0;c<6;c++) Ustawu_shortTablica[c]=Stany[c];
+    for(u_short c=0;c<6;c++) UstawshortTablica[c]=Stany[c];
     Przycisk_podstawy(W,E,pos,roz,S,C);
 }
 Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
@@ -205,7 +215,7 @@ void Przycisk::ZmienStan(const u_short &to)
     else if (ZmieniashortTablica[to]!=nullptr)Setu_short(*ZmieniashortTablica[to]);
     else if(Zmieniabool!=nullptr)Zmienbool(UstawboolTablica[to]);
     else if (Zmieniaint!=nullptr)Zmienint(UstawintTablica[to]);
-    else if (Zmieniau_short!=nullptr)Zmienu_short(Ustawu_shortTablica[to]);
+    else if (Zmieniau_short!=nullptr)Zmienu_short(UstawshortTablica[to]);
     else if (Zmieniashort!=nullptr)Zmienshort(UstawshortTablica[to]);
     Stan=to;
 }

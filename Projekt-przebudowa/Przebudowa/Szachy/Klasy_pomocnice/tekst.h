@@ -7,7 +7,7 @@ class Tekst: public sf::Text
 {
 public:
     Tekst(const sf::String &string, const sf::Font &font):sf::Text(string,font,255){}
-    Tekst(const std::string &S):sf::Text(sf::String::fromUtf8(S.begin(), S.end()),Dane_tekstu){}
+    Tekst(const std::string &S):sf::Text(sf::String::fromUtf8(S.begin(), S.end()),Dane_tekstu,255){}
     Tekst(const sf::String &string):sf::Text(string,Dane_tekstu,255){}
     Tekst():sf::Text(" ",Dane_tekstu){}
     //Tekst(const Przycisk &P,const std::string &S=""):sf::Text(sf::String::fromUtf8(S.begin(), S.end()),Dane_tekstu),przycisk(&P){}

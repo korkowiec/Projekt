@@ -159,16 +159,16 @@ void Interfejs::Rysuj_bok()
 void Interfejs::Przyciski()
 {
     Tutaju_short=okienko;
-    u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&liczba_1,&liczba_1,&liczba_1};
+    u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&uliczba_1,&uliczba_1,&uliczba_1};
     Rysunki.emplace_back(std::make_unique<Przycisk>(*window,*event,
                                                       okienko,Stan,
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Menu")));
 
-    Stan[3]=&liczba_0;
-    Stan[4]=&liczba_0;
-    Stan[5]=&liczba_0;
+    Stan[3]=&uliczba_0;
+    Stan[4]=&uliczba_0;
+    Stan[5]=&uliczba_0;
     Rysunki.emplace_back(std::make_unique<Przycisk>(*window,*event,
                                                       okienko,Stan,
                                                       sf::Vector2f(0,0),

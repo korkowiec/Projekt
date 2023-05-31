@@ -16,23 +16,23 @@ Okno_startowe::Okno_startowe(RenderWindow &W,sf::Event &E)
     Przyciski.emplace_back(std::move(tlo));
 
     Tutaju_short=okienko;
-    u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&liczba_2,&liczba_2,&liczba_2};
+    u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&uliczba_2,&uliczba_2,&uliczba_2};
     Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
                                                       okienko,Stan,
                                                       sf::Vector2f(0.4,0.3),
                                                       sf::Vector2f(0.6,0.45),
                                                       std::string("Gra")));
-    Stan[3]=&liczba_0;
-    Stan[4]=&liczba_0;
-    Stan[5]=&liczba_0;
+    Stan[3]=&uliczba_0;
+    Stan[4]=&uliczba_0;
+    Stan[5]=&uliczba_0;
     Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
                                                       okienko,Stan,
                                                       sf::Vector2f(0.4,0.55),
                                                       sf::Vector2f(0.6,0.7),
                                                       std::string("Wyjście")));
-    Stan[3]=&liczba_3;
-    Stan[4]=&liczba_3;
-    Stan[5]=&liczba_3;
+    Stan[3]=&uliczba_3;
+    Stan[4]=&uliczba_3;
+    Stan[5]=&uliczba_3;
     Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
                                                       okienko,Stan,
                                                       sf::Vector2f(0.1,0.40),

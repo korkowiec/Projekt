@@ -6,6 +6,13 @@
 class Przycisk :public sf::RectangleShape
 {
 public:
+    Przycisk(RenderWindow &W,sf::Event &E,
+                       u_short &Zmieniacz,short Stany[6]=0,
+    sf::Vector2f (pos)=sf::Vector2f(0,0),
+    sf::Vector2f (roz)=sf::Vector2f(0,0),
+    std::string S="",
+    sf::Color C=sf::Color::Green
+   );
 
     Przycisk(RenderWindow &W,sf::Event &E,
              bool &Zmieniacz,bool Stany[6]=0,
