@@ -105,6 +105,16 @@ void Przycisk::Przycisk_podstawy(RenderWindow &W,sf::Event &E,
                    std::string S,
                    sf::Color C)
 {
+
+//    {
+//        Kolory.resize(6);
+//     Kolory[0]=sf::Color::Green;
+//     Kolory[1]=sf::Color::Yellow;
+//     Kolory[2]=sf::Color::White;
+//     Kolory[3]=sf::Color::Blue;
+//     Kolory[4]=sf::Color::Cyan;
+//     Kolory[5]=sf::Color::Red;
+//    }
     window=&W;
     event=&E;
     if(pos.x>roz.x)

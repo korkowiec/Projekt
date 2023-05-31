@@ -18,6 +18,7 @@ Szachy::Szachy()
                 {
                     Okno_startowe Start(window,event);
                     Start.Okno_startowe_dzialanie();
+
                 }
             break;
             case 2://gra_szachy

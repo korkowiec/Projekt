@@ -75,11 +75,13 @@ public:
 
 
     void Zmiana(sf::Vector2f (pos),sf::Vector2f (pos1));
-    virtual ~Przycisk() = default;
+    //~Przycisk(){Kolory.clear();}
 
     //To klasa do wypisywania
     Tekst tekst_przycisku;
 private:
+
+        //std::vector<std::unique_ptr<sf::Color>> Kolory;
         //Do kontroli stanu
         bool IsSelect=0;
         bool IsPressed=0;

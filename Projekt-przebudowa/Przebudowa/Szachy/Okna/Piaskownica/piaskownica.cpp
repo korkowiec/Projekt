@@ -63,8 +63,8 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     //___________PRZYCISKI___________
     {
     bool *Stan[6]={&bool_0,&bool_0,&bool_0,&bool_1,&bool_1,&bool_1};
-    short stanik[6]={0,0,1,
-                      0,0,1};
+    short stanik[6]={0,0,1,0,0,1};
+
 
     //MENU
     {
@@ -78,6 +78,38 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
                                     Stan,pos1,roz2,std::string("MENU")));
     }
 
+    //ZAPISZ
+    {
+    pos=sf::Vector2f(0.81,0.11);
+    roz=sf::Vector2f(1,0.2);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Tutajbool,
+                                    Stan,pos1,roz2,std::string("ZAPISZ")));
+    }
+
+    //Załaduj teksture
+    {
+    pos=sf::Vector2f(0.31,0.06);
+    roz=sf::Vector2f(0.80,0.1);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Tutajbool,
+                                    Stan,pos1,roz2,std::string("Wczytaj teksturę")));
+    }
+
+    //Załaduj nazwę tekstury
+    {
+    pos=sf::Vector2f(0.31,0.01);
+    roz=sf::Vector2f(0.80,0.05);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,Tutajbool,
+                                    Stan,pos1,roz2,std::string("Załaduj nazwę tekstury")));
+    }
 
     //US
     {
