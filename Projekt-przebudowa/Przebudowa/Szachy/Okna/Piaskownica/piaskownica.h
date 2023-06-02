@@ -1,11 +1,14 @@
+
+
 #ifndef PIASKOWNICA_H
 #define PIASKOWNICA_H
-
-
+#define STB_IMAGE_WRITE_IMPLEMENTATIO
+#include <stb_image_write.h>
 #include <Szachy/Dane_poczatkowe/Zdarzenia.h>
 #include <Szachy/Klasy_pomocnice/przycisk.h>
 #include <Szachy/Klasy_pomocnice/animacja_plynna.h>
 #include <Szachy/Klasy_pomocnice/animacja.h>
+
 
 
 class Piaskownica
@@ -77,6 +80,53 @@ protected:
             Rozmiar=NowyRozmiar;
         }
     };
+    bool saveImageToFile(const std::string& filename, const std::vector<sf::Uint8>& pixels, const sf::Vector2u& size)
+    {
+        // Make sure the image is not empty
+        if (!pixels.empty() && (size.x > 0) && (size.y > 0))
+        {
+            // Deduce the image type from its extension
+            struct A{
+            static std::string toLower(std::string str)
+            {
+                for (std::string::iterator i = str.begin(); i != str.end(); ++i)
+                    *i = static_cast<char>(std::tolower(*i));
+                return str;
+            }};
+            // Extract the extension
+            const std::size_t dot = filename.find_last_of('.');
+            const std::string extension = dot != std::string::npos ? A::toLower(filename.substr(dot + 1)) : "";
+
+            if (extension == "bmp")
+            {
+                stbi_write_tga(filename.c_str(),size.x,size.y,4,&pixels[0]);
+                // BMP format
+                if (stbi_write_bmp(filename.c_str(), size.x, size.y, 4, &pixels[0]))
+                    return true;
+            }
+            else if (extension == "tga")
+            {
+                // TGA format
+                if (stbi_write_tga(filename.c_str(), size.x, size.y, 4, &pixels[0]))
+                    return true;
+            }
+            else if (extension == "png")
+            {
+                // PNG format
+                if (stbi_write_png(filename.c_str(), size.x, size.y, 4, &pixels[0], 0))
+                    return true;
+            }
+            else if (extension == "jpg" || extension == "jpeg")
+            {
+                // JPG format
+                if (stbi_write_jpg(filename.c_str(), size.x, size.y, 4, &pixels[0], 90))
+                    return true;
+            }
+        }
+
+
+        return false;
+    }
 
 private:
     sf::Color Kolory[5]={sf::Color(181,127,99),sf::Color(240,217,181),sf::Color::Green,sf::Color::Red,sf::Color::Yellow};
@@ -105,6 +155,7 @@ private:
     sf::Texture Tekstura_figury;
     sf::String Nazwapliku="IŚWINIA";
     bool STANIK_BRA=1;
+
 public:
     Piaskownica(RenderWindow &W,sf::Event &E):window(&W),event(&E){}
     void Dzialanie();

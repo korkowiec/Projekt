@@ -56,19 +56,57 @@ void Piaskownica::Dzialanie()
 void Piaskownica::Zapisz_figurę()
 {
     Zapisz_figure=0;
-    std::wofstream outputFile(L"Pliki_tekstowe/Figury_własne/Figury.txt", std::ios::app);
+    //Dodaj do pliku tekstowego figurę
+    std::ofstream outputFile(L"Pliki_tekstowe/Figury_własne/Figury.txt",std::ios::app);
      if (outputFile.is_open()) {  // Sprawdzenie, czy plik został poprawnie otwarty
-           std::string nowyTekst = "To jest nowa zawartość pliku.";
+         std::wstring A(Nazwapliku);
+         std::string NazwaplikuUTF8 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
 
-           outputFile << std::wstring(Nazwapliku);  // Zapis nowego tekstu do pliku
+           outputFile << NazwaplikuUTF8;
 
-           outputFile.close();  // Zamknięcie pliku
+          outputFile.close();  // Zamknięcie pliku
 
          //  std::cout << "Zmieniono zawartość pliku." << std::endl;
        } else {
            std::wcout << "Twoja figura ma błędy" << std::endl;
        }
 
+    //Dodaj to tekstur figurę
+
+     {
+     sf::Image image = Tekstura_figury.copyToImage();
+     std::string NazwaplikuUTF8 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
+
+     // Zapisz obraz do pliku
+     if (!image.saveToFile(NazwaplikuUTF8))
+     {
+         std::wcout << "Ojojo" << std::endl;
+     }
+     std::vector<sf::Uint8> pixels(image.getSize().x * image.getSize().y * 4);
+     std::vector<sf::Uint8> allPixels(image.getSize().x * image.getSize().y * 4);
+
+     // Then we copy the useful pixels from the temporary array to the final one
+     const sf::Uint8* src = &allPixels[0];
+     sf::Uint8* dst = &pixels[0];
+     int srcPitch = image.getSize().x * 4;
+     int dstPitch = image.getSize().x * 4;
+
+     // Handle the case where source pixels are flipped vertically
+
+
+     for (unsigned int i = 0; i < image.getSize().y; ++i)
+     {
+         memcpy(dst, src, dstPitch);
+         src += srcPitch;
+         dst += dstPitch;
+     }
+
+
+     if (!saveImageToFile(NazwaplikuUTF8,allPixels,image.getSize()))
+     {
+         std::wcout << "CHUJ" << std::endl;
+     }
+     }
 }
 
 void Piaskownica::Czytaj_plik()

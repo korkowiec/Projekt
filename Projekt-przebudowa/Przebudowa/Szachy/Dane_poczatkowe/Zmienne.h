@@ -1,6 +1,7 @@
 #ifndef ZMIENNE_H
 #define ZMIENNE_H
 #include <SFML/Graphics.hpp>
+#include <SFML/Main.hpp>
 #include <vector>
 #include <wtypes.h>
 #include <iostream>
@@ -8,6 +9,7 @@
 #include <fstream>
 #include <algorithm>
 #include <math.h>
+
 extern u_short okienko; //które okienko w case
 extern u_short Team;//liczba drużyn
 extern u_short Teraz; //czyj ruch

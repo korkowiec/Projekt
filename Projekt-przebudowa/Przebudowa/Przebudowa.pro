@@ -66,4 +66,5 @@ HEADERS += \
     Szachy/Klasy_pomocnice/animacja.h \
     Szachy/Klasy_pomocnice/animacja_plynna.h \
     \
-    szachy.h
+    szachy.h \
+    stb_image_write.h

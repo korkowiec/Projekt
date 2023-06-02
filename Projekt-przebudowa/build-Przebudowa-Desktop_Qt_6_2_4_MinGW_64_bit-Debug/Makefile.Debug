@@ -100,7 +100,8 @@ DIST          =  Szachy/Dane_poczatkowe/daneliczbowe.h \
 		Szachy/Klasy_pomocnice/tekst.h \
 		Szachy/Klasy_pomocnice/animacja.h \
 		Szachy/Klasy_pomocnice/animacja_plynna.h \
-		szachy.h ..\Przebudowa\Szachy\Dane_poczatkowe\Funkcje.cpp \
+		szachy.h \
+		stb_image_write.h ..\Przebudowa\Szachy\Dane_poczatkowe\Funkcje.cpp \
 		..\Przebudowa\Szachy\Dane_poczatkowe\daneliczbowe.cpp \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zdarzenia.cpp \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.cpp \
@@ -242,6 +243,7 @@ debug/Funkcje.o: ../Przebudowa/Szachy/Dane_poczatkowe/Funkcje.cpp ../Przebudowa/
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/tekst.h \
 		../Przebudowa/Szachy/Dane_poczatkowe/Zdarzenia.h \
@@ -325,7 +327,8 @@ debug/daneliczbowe.o: ../Przebudowa/Szachy/Dane_poczatkowe/daneliczbowe.cpp ../P
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\daneliczbowe.o ..\Przebudowa\Szachy\Dane_poczatkowe\daneliczbowe.cpp
 
 debug/Zdarzenia.o: ../Przebudowa/Szachy/Dane_poczatkowe/Zdarzenia.cpp ../Przebudowa/Szachy/Dane_poczatkowe/Zdarzenia.h \
@@ -406,7 +409,8 @@ debug/Zdarzenia.o: ../Przebudowa/Szachy/Dane_poczatkowe/Zdarzenia.cpp ../Przebud
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Zdarzenia.o ..\Przebudowa\Szachy\Dane_poczatkowe\Zdarzenia.cpp
 
 debug/Zmienne.o: ../Przebudowa/Szachy/Dane_poczatkowe/Zmienne.cpp ../Przebudowa/Szachy/Dane_poczatkowe/Zmienne.h \
@@ -483,7 +487,8 @@ debug/Zmienne.o: ../Przebudowa/Szachy/Dane_poczatkowe/Zmienne.cpp ../Przebudowa/
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Zmienne.o ..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.cpp
 
 debug/Struktury_danych.o: ../Przebudowa/Szachy/Dane_poczatkowe/Struktury_danych.cpp ../Przebudowa/Szachy/Dane_poczatkowe/Struktury_danych.h \
@@ -561,7 +566,8 @@ debug/Struktury_danych.o: ../Przebudowa/Szachy/Dane_poczatkowe/Struktury_danych.
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Struktury_danych.o ..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.cpp
 
 debug/okno_startowe.o: ../Przebudowa/Szachy/Okna/Okno_startowe/okno_startowe.cpp ../Przebudowa/Szachy/Okna/Okno_startowe/okno_startowe.h \
@@ -645,7 +651,8 @@ debug/okno_startowe.o: ../Przebudowa/Szachy/Okna/Okno_startowe/okno_startowe.cpp
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\okno_startowe.o ..\Przebudowa\Szachy\Okna\Okno_startowe\okno_startowe.cpp
 
 debug/Plansza.o: ../Przebudowa/Szachy/Okna/Gra/Plansza.cpp ../Przebudowa/Szachy/Okna/Gra/Plansza.h \
@@ -729,6 +736,7 @@ debug/Plansza.o: ../Przebudowa/Szachy/Okna/Gra/Plansza.cpp ../Przebudowa/Szachy/
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Okna/Gra/interfejs.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/tekst.h \
@@ -816,6 +824,7 @@ debug/figura.o: ../Przebudowa/Szachy/Okna/Gra/figura.cpp ../Przebudowa/Szachy/Ok
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Okna/Gra/Plansza.h \
 		../Przebudowa/Szachy/Okna/Gra/interfejs.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
@@ -904,6 +913,7 @@ debug/interfejs.o: ../Przebudowa/Szachy/Okna/Gra/interfejs.cpp ../Przebudowa/Sza
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/tekst.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.h \
@@ -990,6 +1000,7 @@ debug/piaskownica.o: ../Przebudowa/Szachy/Okna/Piaskownica/piaskownica.cpp ../Pr
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/tekst.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.h \
@@ -1079,6 +1090,7 @@ debug/tekst.o: ../Przebudowa/Szachy/Klasy_pomocnice/tekst.cpp ../Przebudowa/Szac
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tekst.o ..\Przebudowa\Szachy\Klasy_pomocnice\tekst.cpp
 
@@ -1162,7 +1174,8 @@ debug/przycisk.o: ../Przebudowa/Szachy/Klasy_pomocnice/przycisk.cpp ../Przebudow
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\przycisk.o ..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.cpp
 
 debug/animacja.o: ../Przebudowa/Szachy/Klasy_pomocnice/animacja.cpp ../Przebudowa/Szachy/Klasy_pomocnice/animacja.h \
@@ -1244,7 +1257,8 @@ debug/animacja.o: ../Przebudowa/Szachy/Klasy_pomocnice/animacja.cpp ../Przebudow
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\animacja.o ..\Przebudowa\Szachy\Klasy_pomocnice\animacja.cpp
 
 debug/animacja_plynna.o: ../Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.cpp ../Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.h \
@@ -1326,7 +1340,8 @@ debug/animacja_plynna.o: ../Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.cp
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
-		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
+		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\animacja_plynna.o ..\Przebudowa\Szachy\Klasy_pomocnice\animacja_plynna.cpp
 
 debug/szachy.o: ../Przebudowa/szachy.cpp ../Przebudowa/szachy.h \
@@ -1411,6 +1426,7 @@ debug/szachy.o: ../Przebudowa/szachy.cpp ../Przebudowa/szachy.h \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Okna/Gra/interfejs.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/tekst.h \
@@ -1502,6 +1518,7 @@ debug/main.o: ../Przebudowa/main.cpp ../Przebudowa/szachy.h \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/Text.hpp \
 		C:/SFML-2.5.1-sources/SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+		../Przebudowa/stb_image_write.h \
 		../Przebudowa/Szachy/Okna/Gra/interfejs.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/przycisk.h \
 		../Przebudowa/Szachy/Klasy_pomocnice/tekst.h \
