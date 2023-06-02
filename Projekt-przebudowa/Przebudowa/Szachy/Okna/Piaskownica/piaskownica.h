@@ -95,7 +95,15 @@ private:
     void Rysowanie_plansza();
     void Rysowanie_interfejs();
     void Utwórz_przyciski_i_tekst();
-    void Rysowanie_tektsu();
+    void Rysowanie_tektsu_i_przycisków();
+    void Czytaj_plik();
+    void Zapisz_figurę();
+    bool Zapisz_figure=0;
+    bool CzytajPlik=0;
+    sf::String Lokalizacja_pliku;
+    sf::Sprite Figura;
+    sf::Texture Tekstura_figury;
+    sf::String Nazwapliku="IŚWINIA";
     bool STANIK_BRA=1;
 public:
     Piaskownica(RenderWindow &W,sf::Event &E):window(&W),event(&E){}

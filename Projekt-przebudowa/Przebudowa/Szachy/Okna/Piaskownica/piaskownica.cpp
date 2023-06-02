@@ -11,6 +11,7 @@ void Piaskownica::Dzialanie()
         Plansza=&P;
         sf::RectangleShape rec;
         Rysunek=&rec;
+        Tekstura_figury.create(0,0);
 
     Utwórz_przyciski_i_tekst();
     //Działanie w pętli
@@ -33,6 +34,8 @@ void Piaskownica::Dzialanie()
 
             Zdarzenia_interfejs();
 
+        if(CzytajPlik) Czytaj_plik();
+        if(Zapisz_figure&&Tekstura_figury.getSize().x&&Tekstura_figury.getSize().y)Zapisz_figurę();
 
             if(STANIK_BRA&&(event->type == sf::Event::MouseButtonPressed)&&(event->mouseButton.button == sf::Mouse::Left))
             {
@@ -47,6 +50,116 @@ void Piaskownica::Dzialanie()
         Rysowanie_interfejs();
 
         window->display();
+    }
+}
+
+void Piaskownica::Zapisz_figurę()
+{
+    Zapisz_figure=0;
+    std::wofstream outputFile(L"Pliki_tekstowe/Figury_własne/Figury.txt", std::ios::app);
+     if (outputFile.is_open()) {  // Sprawdzenie, czy plik został poprawnie otwarty
+           std::string nowyTekst = "To jest nowa zawartość pliku.";
+
+           outputFile << std::wstring(Nazwapliku);  // Zapis nowego tekstu do pliku
+
+           outputFile.close();  // Zamknięcie pliku
+
+         //  std::cout << "Zmieniono zawartość pliku." << std::endl;
+       } else {
+           std::wcout << "Twoja figura ma błędy" << std::endl;
+       }
+
+}
+
+void Piaskownica::Czytaj_plik()
+{
+    CzytajPlik=0;
+
+    Lokalizacja_pliku =sf::Clipboard::getString();
+    //reinterpret_cast<const char*> (&value);
+    std::string Dzialaj;
+    for(unsigned int &D:Lokalizacja_pliku)
+    {
+        Dzialaj+=reinterpret_cast<const char*> (&D);
+    }
+    Lokalizacja_pliku.replace(sf::String(L"\\"),sf::String(L"/"));
+    //if(Lokalizacja_pliku[1]!=':') std::cout<<"CHUJ"<<std::endl;
+    if(Tekstura_figury.loadFromFile(Dzialaj))
+    {
+        std::cout<<"PIZDA NAD GŁOWĄ"<<std::endl;
+
+        Figura.setTexture(Tekstura_figury,1);
+        sf::String::Iterator It[2];
+        for(sf::String::Iterator first=Lokalizacja_pliku.end();first!=Lokalizacja_pliku.begin();first--)
+        {
+            if(*first=='.') It[0]=first;
+            else if(*first=='/')
+            {
+                It[1]=first;
+                break;
+            }
+        }
+        Nazwapliku.clear();
+        It[1]++;
+        for(sf::String::Iterator first=It[1];first!=Lokalizacja_pliku.end();first++)
+        {
+            Nazwapliku+=*first;
+        }
+        Nazwapliku+="\n";
+    }
+    else
+    {
+        std::wcout<<"CO SI POPSUO"<<std::endl;
+        std::wstring filePath = Lokalizacja_pliku;
+
+        std::wifstream file(filePath.data(), std::ios::binary);
+        if (file)
+        {
+            // Określenie rozmiaru pliku
+            file.seekg(0, std::ios::end);
+            std::streampos fileSize = file.tellg();
+            file.seekg(0, std::ios::beg);
+
+            // Przygotowanie bufora na dane pliku
+            std::vector<wchar_t> fileData(fileSize);
+            file.read(&fileData[0], fileSize);
+              std::vector<char> fileData1(fileSize);
+              for (unsigned int c=0;c<fileSize;c++)
+                  {
+                      fileData1[c]=fileData[c];
+                  }
+            // Załadowanie danych tekstury z pamięci
+
+            if (Tekstura_figury.loadFromMemory(&fileData1[0], fileSize))
+            {
+
+                Figura.setTexture(Tekstura_figury,1);
+                sf::String::Iterator It[2];
+                for(sf::String::Iterator first=Lokalizacja_pliku.end();first!=Lokalizacja_pliku.begin();first--)
+                {
+                    if(*first=='.') It[0]=first;
+                    else if(*first=='/')
+                    {
+                        It[1]=first;
+                        break;
+                    }
+                }
+                Nazwapliku.clear();
+                It[1]++;
+                for(sf::String::Iterator first=It[1];first!=Lokalizacja_pliku.end();first++)
+                {
+                    Nazwapliku+=*first;
+                }
+                Nazwapliku+="\n";
+            }
+            else
+            {
+                std::cout<<"Co kurwa?"<<std::endl;
+            }
+            file.close();
+        }
+        else std::cout<<"PSP JEBAC PSA"<<std::endl;
+
     }
 }
 
@@ -80,23 +193,25 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
 
     //ZAPISZ
     {
+        bool *Stan[6]={&bool_0,&bool_0,&bool_1,&bool_0,&bool_0,&bool_1};
     pos=sf::Vector2f(0.81,0.11);
     roz=sf::Vector2f(1,0.2);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-    Przyciski.emplace_back(Przycisk(*window,*event,Tutajbool,
+    Przyciski.emplace_back(Przycisk(*window,*event,Zapisz_figure,
                                     Stan,pos1,roz2,std::string("ZAPISZ")));
     }
 
     //Załaduj teksture
     {
+        bool *Stan[6]={&bool_0,&bool_0,&bool_1,&bool_0,&bool_0,&bool_1};
     pos=sf::Vector2f(0.31,0.06);
     roz=sf::Vector2f(0.80,0.1);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-    Przyciski.emplace_back(Przycisk(*window,*event,Tutajbool,
+    Przyciski.emplace_back(Przycisk(*window,*event,CzytajPlik,
                                     Stan,pos1,roz2,std::string("Wczytaj teksturę")));
     }
 
@@ -227,6 +342,7 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     //____________________TEKSTY______________________
     //Teksty Zmienne
     {
+
     //EL
     {
     pos=sf::Vector2f(0.11,0.01);
@@ -315,6 +431,17 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
     Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.T)),*window));
+
+    //Teksty
+    {
+    pos=sf::Vector2f(0.31,0.11);
+    roz=sf::Vector2f(0.8,0.2);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,Lokalizacja_pliku,*window));
+    }
+
     }
     }
     //Teksty stałe
@@ -331,14 +458,21 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     }
     }
 }
-void Piaskownica::Rysowanie_tektsu()
+
+void Piaskownica::Rysowanie_tektsu_i_przycisków()
 {
 
     sf::Vector2f(pos)=sf::Vector2f(0.01,0.01);
     sf::Vector2f(roz)=sf::Vector2f(0.1,0.1);
     sf::Vector2f(pos1)=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     sf::Vector2f(roz2)=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-    //Teskt zmienn
+
+
+
+
+
+    //---------TEKSTY----------------
+    //Teskt zmienny
     {
     //EL
     {
@@ -447,6 +581,19 @@ void Piaskownica::Rysowanie_tektsu()
     Teksty[8].setString(std::to_string(Aktualne_dane_ruchu.T));
     Popraw_tekst(pos1,roz2,Teksty[8],*window);
     }
+
+        //TEKSTY
+        {
+            pos=sf::Vector2f(0.31,0.11);
+            roz=sf::Vector2f(0.8,0.2);
+        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+        window->Rysowanie(Teksty[9]);
+        Teksty[9].setString(Lokalizacja_pliku);
+        Popraw_tekst(pos1,roz2,Teksty[9],*window);
+        }
+
     }
     //Tekst Stały
     {
@@ -458,8 +605,8 @@ void Piaskownica::Rysowanie_tektsu()
                 pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
                 roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-        window->Rysowanie(Teksty[9]);
-        Popraw_tekst(pos1,roz2,Teksty[9],*window);
+        window->Rysowanie(Teksty[10]);
+        Popraw_tekst(pos1,roz2,Teksty[10],*window);
         }
     }
 }
@@ -492,11 +639,20 @@ void Piaskownica::Rysowanie_plansza()
 
         }
     }
+    if(Tekstura_figury.getSize().x&&Tekstura_figury.getSize().y)
+    {
+
+    Figura.setScale(window->getView().getSize().x/Figura.getTexture()->getSize().x*wx/(Plansza->Rozmiar*window->getSize().x),
+             window->getView().getSize().y/Figura.getTexture()->getSize().y*wy/(Plansza->Rozmiar*window->getSize().y));
+    Figura.setPosition((((Plansza->Rozmiar-1)/2)%Plansza->Rozmiar)*window->getView().getSize().x*wx/Plansza->Rozmiar/window->getSize().x,
+                       (((Plansza->Rozmiar-1)/2)%Plansza->Rozmiar)*window->getView().getSize().y*wy/Plansza->Rozmiar/window->getSize().y);
+    window->draw(Figura);
+    }
 }
 
 void Piaskownica::Rysowanie_interfejs()
 {
-    Rysowanie_tektsu();
+    Rysowanie_tektsu_i_przycisków();
 
     for(Przycisk &P:Przyciski)
     {

@@ -151,12 +151,12 @@ void Przycisk::Akcje()
                IsPressed=1;
                if(IsSelect)
                {
-                   setFillColor(sf::Color::Red);
+                   setFillColor(Kolory[5]);
                    ZmienStan(5);
                }
                else
                {
-                   setFillColor(sf::Color::White);
+                   setFillColor(Kolory[2]);
                    ZmienStan(2);
                }
             }
@@ -169,12 +169,12 @@ void Przycisk::Akcje()
                 }
                 if(IsSelect)
                 {
-                    setFillColor(sf::Color::Cyan);
+                    setFillColor(Kolory[4]);
                     ZmienStan(4);
                 }
                 else
                 {
-                    setFillColor(sf::Color::Yellow);
+                    setFillColor(Kolory[1]);
                     ZmienStan(1);
                 }
 
@@ -185,12 +185,12 @@ void Przycisk::Akcje()
             IsPressed=0;
             if(IsSelect)
             {
-                setFillColor(sf::Color::Blue);
+                setFillColor(Kolory[3]);
                 ZmienStan(3);
             }
             else
             {
-                setFillColor(sf::Color::Green);
+                setFillColor(Kolory[0]);
                 ZmienStan(0);
             }
         }

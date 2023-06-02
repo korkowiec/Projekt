@@ -4,6 +4,9 @@
 #include <vector>
 #include <wtypes.h>
 #include <iostream>
+#include <codecvt>
+#include <fstream>
+#include <algorithm>
 #include <math.h>
 extern u_short okienko; //które okienko w case
 extern u_short Team;//liczba drużyn

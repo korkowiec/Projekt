@@ -322,12 +322,19 @@ void Plansza::akcja_gra_szachy()
 }
 void Plansza::Tworzenie_calosci()
 {
+    Ładuj_nazwy_figur();
 
     tekstury.resize(size(NazwyFigur));
     for(short c=0;c<short(size(NazwyFigur));c++)
     {
         tekstury[c].name=NazwyFigur[c];
-        tekstury[c].texture.loadFromFile("Grafika/Figury/"+tekstury[c].name+".png");
+        if(tekstury[c].texture.loadFromFile("Grafika/Figury/"+tekstury[c].name+".png"));
+            else if(tekstury[c].texture.loadFromFile("Grafika/Figury_własne/"+tekstury[c].name));
+            else
+        {
+            okienko=1;
+            return;
+        }
     }
 
     Parametry_Planszy();
@@ -353,4 +360,25 @@ bool Plansza::Gracz_ma_figury_specjalne()
     bool a=std::any_of(figury.cbegin(),figury.cend(),[](Figura F){return F.team==Teraz&&F.King;});
         //std::cout<<a<<std::endl;
         return (std::any_of(figury.cbegin(),figury.cend(),[](Figura F){return F.team==Teraz&&F.King;}));
+}
+void Plansza::Ładuj_nazwy_figur()
+{
+    std::fstream Plan("Pliki_tekstowe/Plansze/"+Plansza_gry.nazwa+"/Figury.txt", std::fstream::in);
+    if(Plan.is_open())
+    {
+        std::string ruch;
+        while(std::getline(Plan, ruch))
+        {
+            NazwyFigur.emplace_back(ruch);
+        }
+    }
+    std::fstream Plan1("Pliki_tekstowe/Plansze/"+Plansza_gry.nazwa+"/Figury_własne.txt", std::fstream::in);
+    if(Plan1.is_open())
+    {
+        std::string ruch;
+        while(std::getline(Plan1, ruch))
+        {
+            NazwyFigur.emplace_back(ruch);
+        }
+    }
 }

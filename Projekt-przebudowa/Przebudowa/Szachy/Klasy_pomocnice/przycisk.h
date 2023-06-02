@@ -82,6 +82,7 @@ public:
 private:
 
         //std::vector<std::unique_ptr<sf::Color>> Kolory;
+    sf::Color Kolory[6]={sf::Color::Green,sf::Color::Yellow,sf::Color::White,sf::Color::Blue,sf::Color::Cyan,sf::Color::Red};
         //Do kontroli stanu
         bool IsSelect=0;
         bool IsPressed=0;

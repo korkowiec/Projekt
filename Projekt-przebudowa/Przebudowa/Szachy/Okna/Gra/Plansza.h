@@ -45,6 +45,7 @@ private:
     bool Stan();
 public:
     Plansza(RenderWindow &W,sf::Event &E,std::string Nazwa_Planszy="Szachy"):interfejs(W,E),window(&W),event(&E),Plansza_gry(Nazwa_Planszy){Tworzenie_calosci();}
+    void Ładuj_nazwy_figur();
     void Gra();
     void Zdarzenia_Podstawowe();
     void Parametry();

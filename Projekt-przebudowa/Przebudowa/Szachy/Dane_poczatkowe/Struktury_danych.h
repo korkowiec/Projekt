@@ -2,7 +2,7 @@
 #define STRUKTURY_DANYCH_H
 
 #include <Szachy/Dane_poczatkowe/Zmienne.h>
-extern std::string NazwyFigur[12];
+extern std::vector<std::string> NazwyFigur;
 
 
 #endif // STRUKTURY_DANYCH_H
