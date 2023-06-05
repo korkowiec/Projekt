@@ -9,7 +9,7 @@
 #include <fstream>
 #include <algorithm>
 #include <math.h>
-
+#include <stb_image_write.h>
 extern u_short okienko; //które okienko w case
 extern u_short Team;//liczba drużyn
 extern u_short Teraz; //czyj ruch

@@ -7,6 +7,8 @@ extern int Tutajint;
 extern bool Tutajbool;
 extern u_short uliczba_2;
 extern u_short uliczba_3;
+extern u_short uliczba_4;
+extern u_short uliczba_5;
 extern u_short uliczba_1;
 extern u_short uliczba_0;
 extern short liczba_2;

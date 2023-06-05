@@ -1,9 +1,6 @@
-
-
 #ifndef PIASKOWNICA_H
 #define PIASKOWNICA_H
-#define STB_IMAGE_WRITE_IMPLEMENTATIO
-#include <stb_image_write.h>
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <Szachy/Dane_poczatkowe/Zdarzenia.h>
 #include <Szachy/Klasy_pomocnice/przycisk.h>
 #include <Szachy/Klasy_pomocnice/animacja_plynna.h>
@@ -80,11 +77,17 @@ protected:
             Rozmiar=NowyRozmiar;
         }
     };
-    bool saveImageToFile(const std::string& filename, const std::vector<sf::Uint8>& pixels, const sf::Vector2u& size)
+
+    bool saveImageToFile(const std::string& filename, const std::vector<sf::Uint8>& pixels, const sf::Vector2u& size,const wchar_t *I)
     {
+
+
+
+
         // Make sure the image is not empty
         if (!pixels.empty() && (size.x > 0) && (size.y > 0))
         {
+
             // Deduce the image type from its extension
             struct A{
             static std::string toLower(std::string str)
@@ -96,30 +99,30 @@ protected:
             // Extract the extension
             const std::size_t dot = filename.find_last_of('.');
             const std::string extension = dot != std::string::npos ? A::toLower(filename.substr(dot + 1)) : "";
-
+  // std::ofstream outputFile(T1);
             if (extension == "bmp")
             {
-                stbi_write_tga(filename.c_str(),size.x,size.y,4,&pixels[0]);
+                stbi_write_tga(filename.c_str(),size.x,size.y,4,&pixels[0],I);
                 // BMP format
-                if (stbi_write_bmp(filename.c_str(), size.x, size.y, 4, &pixels[0]))
+                if (stbi_write_bmp(filename.c_str(), size.x, size.y, 4, &pixels[0],I))
                     return true;
             }
             else if (extension == "tga")
             {
                 // TGA format
-                if (stbi_write_tga(filename.c_str(), size.x, size.y, 4, &pixels[0]))
+                if (stbi_write_tga(filename.c_str(), size.x, size.y, 4, &pixels[0],I))
                     return true;
             }
             else if (extension == "png")
             {
                 // PNG format
-                if (stbi_write_png(filename.c_str(), size.x, size.y, 4, &pixels[0], 0))
+                if (stbi_write_png(filename.c_str(), size.x, size.y, 4, &pixels[0], 0,I))
                     return true;
             }
             else if (extension == "jpg" || extension == "jpeg")
             {
                 // JPG format
-                if (stbi_write_jpg(filename.c_str(), size.x, size.y, 4, &pixels[0], 90))
+                if (stbi_write_jpg(filename.c_str(), size.x, size.y, 4, &pixels[0], 90,I))
                     return true;
             }
         }

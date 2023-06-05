@@ -3,6 +3,7 @@ release/daneliczbowe.o
 release/Zdarzenia.o
 release/Zmienne.o
 release/Struktury_danych.o
+release/Wlasna_plasza.o
 release/okno_startowe.o
 release/Plansza.o
 release/figura.o

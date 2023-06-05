@@ -56,13 +56,18 @@ void Piaskownica::Dzialanie()
 void Piaskownica::Zapisz_figurę()
 {
     Zapisz_figure=0;
+    if(Nazwapliku[Nazwapliku.getSize()-1]=='\n')
+    {
+        Nazwapliku.erase(Nazwapliku.getSize()-1);
+    }
     //Dodaj do pliku tekstowego figurę
+    {
     std::ofstream outputFile(L"Pliki_tekstowe/Figury_własne/Figury.txt",std::ios::app);
      if (outputFile.is_open()) {  // Sprawdzenie, czy plik został poprawnie otwarty
          std::wstring A(Nazwapliku);
          std::string NazwaplikuUTF8 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
 
-           outputFile << NazwaplikuUTF8;
+           outputFile <<'\n'<< NazwaplikuUTF8;
 
           outputFile.close();  // Zamknięcie pliku
 
@@ -70,21 +75,71 @@ void Piaskownica::Zapisz_figurę()
        } else {
            std::wcout << "Twoja figura ma błędy" << std::endl;
        }
-
-    //Dodaj to tekstur figurę
-
+    }
+    //Dodaj do tekstur figurę
+    //NIE DZIALA DLA ZNAKOW SPOZA ASCII
      {
-     sf::Image image = Tekstura_figury.copyToImage();
-     std::string NazwaplikuUTF8 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
+        //std::locale loc( ".1250" );
+        sf::Image image = Tekstura_figury.copyToImage();
 
+        sf::String As=L"Grafika/Figury_wlasne/";
+        sf::String Asd=As+Nazwapliku;
+        if(As[As.getSize()-1]=='\n')
+        {
+            As.erase(As.getSize()-1);
+        }
+    std::string ABC(As.begin(),As.end());
+     std::string NazwaplikuUTF9 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(As);
+     if(Asd[Asd.getSize()-1]=='\n')
+     {
+         Asd.erase(Asd.getSize()-1);
+     }
      // Zapisz obraz do pliku
-     if (!image.saveToFile(NazwaplikuUTF8))
+    if(1)
+    {
+     if (!image.saveToFile(Asd))
      {
          std::wcout << "Ojojo" << std::endl;
      }
+    }
+     //Pozostałości śmieci
+     if(0)
+     {
+
+         std::wstring C=L"Grafika/Figury_wlasne/"+Nazwapliku;
+
+         std::vector<wchar_t> t;
+         for(wchar_t &D:C)
+         {
+             t.emplace_back(D);
+         }
+         wchar_t T[t.size()];
+         for(int c=0;c<t.size();c++)
+         {
+             T[c]=t[c];
+         }
+         wchar_t *T1=new wchar_t[t.size()+1];
+         for(int c=0;c<t.size();c++)
+         {
+             T1[c]=t[c];
+         }
+         T1[t.size()]='\0';
+
+
      std::vector<sf::Uint8> pixels(image.getSize().x * image.getSize().y * 4);
      std::vector<sf::Uint8> allPixels(image.getSize().x * image.getSize().y * 4);
-
+        for(int c=0;c<image.getSize().x*image.getSize().y;c++)
+        {
+            sf::Color C=image.getPixel(c,0);
+            pixels[4*c]=C.r;
+                    pixels[4*c+1]=C.g;
+                    pixels[4*c+2]=C.b;
+                    pixels[4*c+3]=C.a;
+                    allPixels[4*c]=C.r;
+                            allPixels[4*c+1]=C.g;
+                            allPixels[4*c+2]=C.b;
+                            allPixels[4*c+3]=C.a;
+        }
      // Then we copy the useful pixels from the temporary array to the final one
      const sf::Uint8* src = &allPixels[0];
      sf::Uint8* dst = &pixels[0];
@@ -102,11 +157,69 @@ void Piaskownica::Zapisz_figurę()
      }
 
 
-     if (!saveImageToFile(NazwaplikuUTF8,allPixels,image.getSize()))
+     if (!saveImageToFile(Asd,allPixels,image.getSize(),T1))
      {
          std::wcout << "CHUJ" << std::endl;
      }
      }
+     }
+    //Dodaj definicję ruchu
+    {
+
+    std::string Ab= std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
+    std::wstring A=L"Pliki_tekstowe/Ruchy_figur_własnych/";
+    std::string b=std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(A);
+    std::string c=b+Ab+".txt";
+    std::wstring C=L"Pliki_tekstowe/Ruchy_figur_własnych/"+Nazwapliku+".txt";
+
+    std::vector<wchar_t> t;
+    for(wchar_t &D:C)
+    {
+        t.emplace_back(D);
+    }
+    wchar_t T[t.size()];
+    for(int c=0;c<t.size();c++)
+    {
+        T[c]=t[c];
+    }
+    wchar_t *T1=new wchar_t[t.size()+1];
+    for(int c=0;c<t.size();c++)
+    {
+        T1[c]=t[c];
+    }
+    T1[t.size()]='\0';
+    wchar_t ok=T[t.size()-1];
+    std::ofstream outputFile(T1);
+
+    if (outputFile.is_open()) {  // Sprawdzenie, czy plik został poprawnie otwarty
+
+;
+        for(const std::vector<Dane_ruchu> &Ruch:Plansza->Ruch)
+        for(const Dane_ruchu &Ruch:Ruch)
+        {
+            if(Ruch.IsSelect==0)continue;
+
+            outputFile << Ruch.x<<','<<Ruch.y<<','<<Ruch.EL<<','<<
+                          Ruch.US<<','<<Ruch.UW<<','<<Ruch.Z<<','<<
+                         Ruch.ZE<<','<<Ruch.S<<','<<Ruch.SE<<','<<
+                          Ruch.M<<','<<Ruch.T<<";,\n";
+        }
+
+
+
+
+
+        outputFile.close();  // Zamknięcie pliku
+
+        //  std::cout << "Zmieniono zawartość pliku." << std::endl;
+        }
+    else
+        {
+           std::wcout << "Twoja figura ma basdasdasłędy" << std::endl;
+        }
+
+    }
+
 }
 
 void Piaskownica::Czytaj_plik()
@@ -723,7 +836,7 @@ void Piaskownica::Zdarzenia_plansza()
     int X=mouse_position.x/wx;
     int Y=mouse_position.y/wy;
 
-    //std::cout<<"MOUSE X "<<mouse_position.x<<"\nMOUSE Y "<<mouse_position.y<<std::endl;
+    std::cout<<"MOUSE X "<<mouse_position.x<<"\nMOUSE Y "<<mouse_position.y<<std::endl;
     if(Y>=Plansza->Rozmiar||X>=Plansza->Rozmiar||((Y==X)&&(X==((Plansza->Rozmiar-1)/2)))) return;
     else
     {

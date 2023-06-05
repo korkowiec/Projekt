@@ -84,6 +84,7 @@ void Plansza::Ruch_Figur()
             std::string ruch;
             while(std::getline(Plik, ruch,','))
             {
+                if(ruch=="\n") break;
                 PoruszanieSie a; //Nowa struktura 'a'
                 if(ruch[ruch.size()-1]!=';')
                 {
@@ -369,16 +370,27 @@ void Plansza::Ładuj_nazwy_figur()
         std::string ruch;
         while(std::getline(Plan, ruch))
         {
+            if(ruch=="\n") break;
             NazwyFigur.emplace_back(ruch);
         }
     }
-    std::fstream Plan1("Pliki_tekstowe/Plansze/"+Plansza_gry.nazwa+"/Figury_własne.txt", std::fstream::in);
+    std::wstring C="Pliki_tekstowe/Plansze/"+sf::String(Plansza_gry.nazwa)+L"/Figury_własne.txt";
+    wchar_t T[C.size()+1];
+    for(int c=0;c<C.size();c++)
+    {
+        T[c]=C[c];
+    }
+    T[C.size()]='\0';
+    std::fstream Plan1(T, std::fstream::in);
     if(Plan1.is_open())
     {
         std::string ruch;
+        std::getline(Plan1, ruch);
         while(std::getline(Plan1, ruch))
         {
+            if(ruch=="\n") continue;
             NazwyFigur.emplace_back(ruch);
         }
     }
+
 }

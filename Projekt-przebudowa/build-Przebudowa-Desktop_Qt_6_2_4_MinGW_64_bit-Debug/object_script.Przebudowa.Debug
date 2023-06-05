@@ -3,6 +3,7 @@ debug/daneliczbowe.o
 debug/Zdarzenia.o
 debug/Zmienne.o
 debug/Struktury_danych.o
+debug/Wlasna_plasza.o
 debug/okno_startowe.o
 debug/Plansza.o
 debug/figura.o

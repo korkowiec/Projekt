@@ -35,10 +35,25 @@ Okno_startowe::Okno_startowe(RenderWindow &W,sf::Event &E)
     Stan[5]=&uliczba_3;
     Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
                                                       okienko,Stan,
-                                                      sf::Vector2f(0.1,0.40),
-                                                      sf::Vector2f(0.2,0.60),
+                                                      sf::Vector2f(0.1,0.20),
+                                                      sf::Vector2f(0.2,0.40),
                                                       std::string("Piasek")));
-
+    Stan[3]=&uliczba_4;
+    Stan[4]=&uliczba_4;
+    Stan[5]=&uliczba_4;
+    Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
+                                                      okienko,Stan,
+                                                      sf::Vector2f(0.1,0.41),
+                                                      sf::Vector2f(0.3,0.60),
+                                                      std::string("Stwórz_plansze")));
+    Stan[3]=&uliczba_5;
+    Stan[4]=&uliczba_5;
+    Stan[5]=&uliczba_5;
+    Przyciski.emplace_back(std::make_unique<Przycisk>(W,E,
+                                                      okienko,Stan,
+                                                      sf::Vector2f(0.8,0.40),
+                                                      sf::Vector2f(0.99,0.60),
+                                                      std::string("Zagraj_własną\nplanszę")));
 }
 
 void Okno_startowe::Okno_startowe_dzialanie()

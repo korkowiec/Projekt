@@ -18,24 +18,35 @@ Szachy::Szachy()
 
         switch (okienko)
         {
-            case 1:
+            case 1: //MENU
                 {
                     Okno_startowe Start(window,event);
                     Start.Okno_startowe_dzialanie();
-
                 }
             break;
-            case 2://gra_szachy
+            case 2://GRA_SZACHY
                 {
-
                     Plansza Plansza(window,event,"Szachy");
                     Plansza.Gra();
                 }
-            case 3://gra_szachy
+            break;
+            case 3://PIASKOWNICA
                 {
                     Piaskownica Piaskownica(window,event);
                     Piaskownica.Dzialanie();
-                    //
+                }
+            break;
+            case 4://WŁASNA_PLANSZA
+                {
+                    Wlasna_plasza Wlasna_plasza(window,event);
+
+
+                }
+            break;
+            case 5://ŁADUJ_WŁASNĄ_PLANSZĘ
+                {
+
+
                 }
             break;
         default: window.close();

@@ -27,6 +27,8 @@ SOURCES += \
     Szachy/Dane_poczatkowe/Zmienne.cpp \
     Szachy/Dane_poczatkowe/Struktury_danych.cpp \
     \
+    Szachy/Okna/Wlasna_plansza/Wlasna_plasza.cpp \
+    \
     Szachy/Okna/Okno_startowe/okno_startowe.cpp \
     \
     Szachy/Okna/Gra/Plansza.cpp \
@@ -52,6 +54,8 @@ HEADERS += \
     Szachy/Dane_poczatkowe/Zmienne.h \
     Szachy/Dane_poczatkowe/funkcje.h \
     \
+    Szachy/Okna/Wlasna_plansza/Wlasna_plasza.h \
+    \
     Szachy/Okna/Okno_startowe/okno_startowe.h \
     \
     Szachy/Okna/Gra/interfejs.h \
@@ -66,5 +70,5 @@ HEADERS += \
     Szachy/Klasy_pomocnice/animacja.h \
     Szachy/Klasy_pomocnice/animacja_plynna.h \
     \
-    szachy.h \
-    stb_image_write.h
+    stb_image_write.h \
+    szachy.h
