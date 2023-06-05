@@ -18,11 +18,11 @@ protected:
         u_short Rozmiar_y1;
         sf::Color Pole1=sf::Color(181,127,99);
         sf::Color Pole2=sf::Color(240,217,181);
-        std::vector<std::vector<std::pair<sf::String,sf::Sprite>>> Ruch;
-        ~Plansza_gry(){for(std::vector<std::pair<sf::String,sf::Sprite>> &A:Ruch)A.clear();Ruch.clear();}
+        std::vector<std::vector<std::pair<std::pair<sf::String,bool>,sf::Sprite>>> Ruch;
+        ~Plansza_gry(){for(std::vector<std::pair<std::pair<sf::String,bool>,sf::Sprite>> &A:Ruch)A.clear();Ruch.clear();}
         Plansza_gry(RenderWindow &W,const int x=8,const int y=8):Rozmiar_x(x),Rozmiar_y(y),Rozmiar_x1(x),Rozmiar_y1(y),window(&W)
         {
-           std::vector<std::pair<sf::String,sf::Sprite>> A(y);
+           std::vector<std::pair<std::pair<sf::String,bool>,sf::Sprite>> A(y);
            Ruch.resize(x,A);
            float wx=window->getSize().x,wy=window->getSize().y;
            if(wy<wx) wx=wy; else wy=wx;
@@ -43,8 +43,8 @@ protected:
 
 
             //NOWY
-            std::vector<std::pair<sf::String,sf::Sprite>> A(Rozmiar_y1);
-            std::vector<std::vector<std::pair<sf::String,sf::Sprite>>> To(Rozmiar_x1,A);
+            std::vector<std::pair<std::pair<sf::String,bool>,sf::Sprite>> A(Rozmiar_y1);
+            std::vector<std::vector<std::pair<std::pair<sf::String,bool>,sf::Sprite>>> To(Rozmiar_x1,A);
 
             //KOPIUJ
             for(int c=0;c<Rozmiar_x1&&c<Rozmiar_x;c++)

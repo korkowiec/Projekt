@@ -45,9 +45,9 @@ void Wlasna_plasza::Rysowanie_plansza()
     }
 
 
-    for(std::vector<std::pair<sf::String,sf::Sprite>> &P:Plansza.Ruch)for(std::pair<sf::String,sf::Sprite> &P:P)
+    for(std::vector<std::pair<std::pair<sf::String,bool>,sf::Sprite>> &P:Plansza.Ruch)for(std::pair<std::pair<sf::String,bool>,sf::Sprite> &P:P)
     {
-        if(P.first!="")
+        if(P.first.first!="")
         {
             window->Rysowanie(P.second);
         }
@@ -142,9 +142,9 @@ void Wlasna_plasza::Akcja_plansza()
     if(Y>=Plansza.Rozmiar_y||X>=Plansza.Rozmiar_x||Aktualny=="") return;
     else
     {
-        if(Plansza.Ruch[Y][X].first=="")
+        if(Plansza.Ruch[Y][X].first.first=="")
         {
-            Plansza.Ruch[Y][X].first=Aktualny;
+            Plansza.Ruch[Y][X].first.first=Aktualny;
             std::vector<std::pair<sf::String,sf::Texture>>::iterator IT;
             for(std::vector<std::pair<sf::String,sf::Texture>>::iterator it=Tekstury.begin();it<Tekstury.end();it++)
             {
@@ -159,11 +159,11 @@ void Wlasna_plasza::Akcja_plansza()
         if(wy<wx) wx=wy; else wy=wx;
         Plansza.Ruch[Y][X].second.setScale(window->getView().getSize().x/IT->second.getSize().x*wx/(Plansza.Rozmiar_x*window->getSize().x),
                                                window->getView().getSize().y/IT->second.getSize().x*wy/(Plansza.Rozmiar_y*window->getSize().y));
-       // Plansza.Ruch[X][Y].second.setScale(0.1,0.1);
+        Plansza.Ruch[Y][X].first.second=TEAM;
         }
         else
         {
-           Plansza.Ruch[Y][X].first="";
+           Plansza.Ruch[Y][X].first.first="";
         }
 
     }
