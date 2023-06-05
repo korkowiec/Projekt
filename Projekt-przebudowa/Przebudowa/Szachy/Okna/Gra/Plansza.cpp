@@ -50,6 +50,7 @@ if(Ustawienie.is_open())
         std::getline(Ustawienie, Pozycja,',');
         while(std::getline(Ustawienie, Pozycja,','))
         {
+            if(Pozycja==""||Pozycja=="\n")continue;
 
             nazwa=Pozycja; //Nazwa figury
             std::getline(Ustawienie, Pozycja,',');
@@ -77,7 +78,19 @@ void Plansza::Ruch_Figur()
 {
     for(auto &T:tekstury)
     {
-        std::fstream Plik("Pliki_tekstowe/Ruchy_figur/"+T.name+".txt", std::fstream::in);
+        std::fstream Plik;
+        if(T.name.find('.')==std::string::npos) Plik.open("Pliki_tekstowe/Ruchy_figur/"+T.name+".txt", std::fstream::in);
+        else
+        {
+            std::wstring C=L"Pliki_tekstowe/Ruchy_figur_własnych/"+sf::String(T.name)+".txt";
+            wchar_t T[C.size()+1];
+            for(int c=0;c<C.size();c++)
+            {
+                T[c]=C[c];
+            }
+            T[C.size()]='\0';
+            Plik.open(T, std::fstream::in);
+        }
         //Ruch figury zależy od jego nazwy. Jak król biały, to ustawi ruch figury dla króla białego
         if(Plik.is_open())
         {
@@ -330,7 +343,7 @@ void Plansza::Tworzenie_calosci()
     {
         tekstury[c].name=NazwyFigur[c];
         if(tekstury[c].texture.loadFromFile("Grafika/Figury/"+tekstury[c].name+".png"));
-            else if(tekstury[c].texture.loadFromFile("Grafika/Figury_własne/"+tekstury[c].name));
+            else if(tekstury[c].texture.loadFromFile("Grafika/Figury_wlasne/"+tekstury[c].name));
             else
         {
             okienko=1;
@@ -370,9 +383,10 @@ void Plansza::Ładuj_nazwy_figur()
         std::string ruch;
         while(std::getline(Plan, ruch))
         {
-            if(ruch=="\n") break;
+            if(ruch=="\n"||ruch=="") continue;
             NazwyFigur.emplace_back(ruch);
         }
+        Plan.close();
     }
     std::wstring C="Pliki_tekstowe/Plansze/"+sf::String(Plansza_gry.nazwa)+L"/Figury_własne.txt";
     wchar_t T[C.size()+1];
@@ -385,12 +399,12 @@ void Plansza::Ładuj_nazwy_figur()
     if(Plan1.is_open())
     {
         std::string ruch;
-        std::getline(Plan1, ruch);
         while(std::getline(Plan1, ruch))
         {
-            if(ruch=="\n") continue;
+            if(ruch=="\n"||ruch=="") continue;
             NazwyFigur.emplace_back(ruch);
         }
+        Plan1.close();
     }
 
 }

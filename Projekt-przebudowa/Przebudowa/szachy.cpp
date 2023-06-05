@@ -45,7 +45,7 @@ Szachy::Szachy()
             break;
             case 5://ŁADUJ_WŁASNĄ_PLANSZĘ
                 {
-
+                    Zagraj_wlasna_plansze Zagraj_wlasna_plasze(window,event);
 
                 }
             break;

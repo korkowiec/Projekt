@@ -37,6 +37,8 @@ SOURCES += \
     \
     Szachy/Okna/Piaskownica/piaskownica.cpp \
     \
+    Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.cpp \
+    \
     Szachy/Klasy_pomocnice/suwak.cpp \
     Szachy/Klasy_pomocnice/tekst.cpp \
     Szachy/Klasy_pomocnice/przycisk.cpp \
@@ -63,6 +65,8 @@ HEADERS += \
     Szachy/Okna/Gra/Plansza.h \
     \
     Szachy/Okna/Piaskownica/piaskownica.h \
+    \
+    Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.h \
     \
     Szachy/Klasy_pomocnice/przycisk.h \
     Szachy/Klasy_pomocnice/suwak.h \
