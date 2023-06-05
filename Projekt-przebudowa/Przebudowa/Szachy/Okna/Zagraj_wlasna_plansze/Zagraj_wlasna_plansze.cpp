@@ -64,7 +64,6 @@ void Zagraj_wlasna_plansze::Dzialanie()
     {
         Plansza Plansza(*window,*event,Wybór);
         Plansza.Gra();
-        okienko=1;
     }
 }
 
@@ -86,16 +85,17 @@ void Zagraj_wlasna_plansze::Twórz()
       Plansze.emplace_back(Przycisk(*window,*event,okienko,
                                     Tablica1,pos,roz,"MENU"));
 
-    for(int c=0;c<C;c++)for(int c=0;c<C;c++)for(int d=0;d<D&&c*D+d<Nazwy.size();d++)
+    for(int c=0;c<C;c++)for(int d=0;d<D&&c*D+d<Nazwy.size()+1;d++)
 
     {
-        Tablica[3]=D*c+d+1;
-        Tablica[4]=D*c+d+1;
-        Tablica[5]=D*c+d+1;
-        pos=sf::Vector2f(0.00+c*0.99/C,0.00+d*0.99/D+0.99/D);
-        roz=sf::Vector2f(0.00+c*0.99/C+0.99/C,0.00+d*0.99/D+0.99/D+0.99/D);
+        if(c==0&&d==0)continue;
+        Tablica[3]=D*c+d;
+        Tablica[4]=D*c+d;
+        Tablica[5]=D*c+d;
+        pos=sf::Vector2f(0.00+c*0.99/C,0.00+d*0.99/D);
+        roz=sf::Vector2f(0.00+c*0.99/C+0.99/C,0.00+d*0.99/D+0.99/D);
           Plansze.emplace_back(Przycisk(*window,*event,aktualny,
-                                        Tablica,pos,roz,Nazwy[D*c+d]));
+                                        Tablica,pos,roz,Nazwy[D*c+d-1]));
 
     }
 

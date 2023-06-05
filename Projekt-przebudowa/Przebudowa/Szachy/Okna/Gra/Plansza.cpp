@@ -312,6 +312,7 @@ void Plansza::Gra()
             window->display();
         }
     }
+    NazwyFigur.clear();
 }
 void Plansza::Koniec_gry()
 {

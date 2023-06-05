@@ -1,2 +1,4 @@
 Szachy
 wi
+hasFocus
+hasFocus
