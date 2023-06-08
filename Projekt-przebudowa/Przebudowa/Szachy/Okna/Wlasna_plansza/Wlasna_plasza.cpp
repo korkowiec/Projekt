@@ -68,7 +68,7 @@ void Wlasna_plasza::Rysowanie_interfejs()
         //NAZWA
         {
         pos=sf::Vector2f(0.61,0.01);
-        roz=sf::Vector2f(0.9,0.1);
+        roz=sf::Vector2f(0.8,0.1);
         pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
         roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
@@ -154,9 +154,9 @@ void Wlasna_plasza::Akcja_plansza()
     if(Y>=Plansza.Rozmiar_y||X>=Plansza.Rozmiar_x||Aktualny=="") return;
     else
     {
-        if(Plansza.Ruch[Y][X].first.first=="")
+        if(Plansza.Ruch[X][Y].first.first=="")
         {
-            Plansza.Ruch[Y][X].first.first=Aktualny;
+            Plansza.Ruch[X][Y].first.first=Aktualny;
             std::vector<std::pair<sf::String,sf::Texture>>::iterator IT;
             for(std::vector<std::pair<sf::String,sf::Texture>>::iterator it=Tekstury.begin();it<Tekstury.end();it++)
             {
@@ -166,17 +166,17 @@ void Wlasna_plasza::Akcja_plansza()
                     break;
                 }
             }
-        Plansza.Ruch[Y][X].second.setTexture(IT->second,1);
+        Plansza.Ruch[X][Y].second.setTexture(IT->second,1);
         float wx=window->getSize().x,wy=window->getSize().y;
         if(wy<wx) wx=wy; else wy=wx;
-        Plansza.Ruch[Y][X].second.setScale(window->getView().getSize().x/IT->second.getSize().x*wx/(Plansza.Rozmiar_x*window->getSize().x),
-                                               window->getView().getSize().y/IT->second.getSize().x*wy/(Plansza.Rozmiar_y*window->getSize().y));
-        Plansza.Ruch[Y][X].first.second.first=TEAM;
-        Plansza.Ruch[Y][X].first.second.second=WAŻNA;
+        Plansza.Ruch[X][Y].second.setScale(window->getView().getSize().x/IT->second.getSize().x*wx/(Plansza.Rozmiar_x*window->getSize().x),
+                                               window->getView().getSize().y/IT->second.getSize().y*wy/(Plansza.Rozmiar_y*window->getSize().y));
+        Plansza.Ruch[X][Y].first.second.first=TEAM;
+        Plansza.Ruch[X][Y].first.second.second=WAŻNA;
         }
         else
         {
-           Plansza.Ruch[Y][X].first.first="";
+           Plansza.Ruch[X][Y].first.first="";
         }
 
     }
@@ -454,7 +454,7 @@ void Wlasna_plasza::Tworzenie_obiektów()
         //NAZWA
         {
             pos=sf::Vector2f(0.51,0.01);
-            roz=sf::Vector2f(0.9,0.2);
+            roz=sf::Vector2f(0.8,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
@@ -565,7 +565,7 @@ void Wlasna_plasza::Zapisz()
                 if(Plansza.Ruch[c][d].first.first=="") continue;
                 S.emplace(Plansza.Ruch[c][d].first.first,1);
                 std::wstring W=Plansza.Ruch[c][d].first.first;
-                New<<','<<W<<','<<d<<','<<c<<','<<Plansza.Ruch[c][d].first.second.first<<','<<Plansza.Ruch[c][d].first.second.second<<",\n";
+                New<<','<<W<<','<<c<<','<<d<<','<<Plansza.Ruch[c][d].first.second.first<<','<<Plansza.Ruch[c][d].first.second.second<<",\n";
             }
             New.close();
 

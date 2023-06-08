@@ -79,7 +79,7 @@ void Zagraj_wlasna_plansze::Twórz()
     while(C*D<Nazwy.size()+1)if((D+C)%2)D++;else C++;
 
     u_short *Tablica1[6]={&uliczba_5,&uliczba_5,&uliczba_5,&uliczba_1,&uliczba_1,&uliczba_1};
-
+    sf::Color C2[6]={sf::Color::Green,sf::Color::Green,sf::Color::Red,sf::Color::Red,sf::Color::Red,sf::Color::Red};
     pos=sf::Vector2f(0.00,0.00);
     roz=sf::Vector2f(0.00+0.99/C,0.00+0.99/D);
       Plansze.emplace_back(Przycisk(*window,*event,okienko,
@@ -97,6 +97,7 @@ void Zagraj_wlasna_plansze::Twórz()
           Plansze.emplace_back(Przycisk(*window,*event,aktualny,
                                         Tablica,pos,roz,Nazwy[D*c+d-1]));
 
+        Plansze.rbegin()->Kolor(C2);
     }
 
 }

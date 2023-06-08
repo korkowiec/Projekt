@@ -1,0 +1,3 @@
+,PionekBialy,3,3,1,1,
+,PionekBialy,5,3,0,1,
+,PionekBialy,4,5,0,0,

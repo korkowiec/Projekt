@@ -367,6 +367,7 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     }
 
     //Załaduj nazwę tekstury
+    if(0)
     {
     pos=sf::Vector2f(0.31,0.01);
     roz=sf::Vector2f(0.80,0.05);
@@ -377,6 +378,30 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
                                     Stan,pos1,roz2,std::string("Załaduj nazwę tekstury")));
     }
 
+    //+R
+    {
+    pos=sf::Vector2f(0.31,0.01);
+    roz=sf::Vector2f(0.4,0.05);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Przyciski.emplace_back(Przycisk(*window,*event,aktualny_rozmiar,
+                                    stanik,pos1,roz2,std::string("R+")));
+    }
+
+    //-R
+    {
+    pos=sf::Vector2f(0.71,0.01);
+    roz=sf::Vector2f(0.8,0.05);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    stanik[2]=-1;
+    stanik[5]=-1;
+
+    Przyciski.emplace_back(Przycisk(*window,*event,aktualny_rozmiar,
+                                    stanik,pos1,roz2,std::string("R-")));
+    }
     //US
     {
     pos=sf::Vector2f(0.01,0.41);
@@ -467,6 +492,8 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
 
     //+EL
     {
+    stanik[2]=1;
+    stanik[5]=1;
     pos=sf::Vector2f(0.01,0.01);
     roz=sf::Vector2f(0.1,0.1);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -582,7 +609,7 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
     Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::string(std::to_string(Aktualne_dane_ruchu.T)),*window));
-
+    }
     //Teksty
     {
     pos=sf::Vector2f(0.31,0.11);
@@ -593,7 +620,19 @@ void Piaskownica::Utwórz_przyciski_i_tekst()
     Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,Lokalizacja_pliku,*window));
     }
 
+    //Rozmiar
+
+    {
+
+
+    pos=sf::Vector2f(0.41,0.01);
+    roz=sf::Vector2f(0.7,0.05);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    Teksty.emplace_back(Tworzymy_tekst(pos1,roz2,std::to_string(aktualny_rozmiar*2+1),*window));
     }
+
     }
     //Teksty stałe
     {
@@ -733,17 +772,31 @@ void Piaskownica::Rysowanie_tektsu_i_przycisków()
     Popraw_tekst(pos1,roz2,Teksty[8],*window);
     }
 
-        //TEKSTY
-        {
-            pos=sf::Vector2f(0.31,0.11);
-            roz=sf::Vector2f(0.8,0.2);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+    //TEKSTY
+    {
+        pos=sf::Vector2f(0.31,0.11);
+        roz=sf::Vector2f(0.8,0.2);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-        window->Rysowanie(Teksty[9]);
-        Teksty[9].setString(Lokalizacja_pliku);
-        Popraw_tekst(pos1,roz2,Teksty[9],*window);
-        }
+    window->Rysowanie(Teksty[9]);
+    Teksty[9].setString(Lokalizacja_pliku);
+    Popraw_tekst(pos1,roz2,Teksty[9],*window);
+    }
+
+    //ROZMIAR
+    {
+
+
+    pos=sf::Vector2f(0.41,0.01);
+    roz=sf::Vector2f(0.7,0.05);
+    pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+    roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+    window->Rysowanie(Teksty[10]);
+    Teksty[10].setString(std::to_string(aktualny_rozmiar*2+1));
+    Popraw_tekst(pos1,roz2,Teksty[10],*window);
+    }
 
     }
     //Tekst Stały
@@ -756,8 +809,8 @@ void Piaskownica::Rysowanie_tektsu_i_przycisków()
                 pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
                 roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-        window->Rysowanie(Teksty[10]);
-        Popraw_tekst(pos1,roz2,Teksty[10],*window);
+        window->Rysowanie(Teksty[11]);
+        Popraw_tekst(pos1,roz2,Teksty[11],*window);
         }
     }
 }
@@ -819,6 +872,8 @@ void Piaskownica::Zdarzenia_interfejs()
     {
         P.Akcje();
     }
+    if(aktualny_rozmiar==0)aktualny_rozmiar=1;
+    else if(aktualny_rozmiar*2+1!=Plansza->Rozmiar)Plansza->Zmiana_ruch(aktualny_rozmiar);
 }
 
 void Piaskownica::Zdarzenia_plansza()

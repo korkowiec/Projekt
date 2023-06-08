@@ -153,6 +153,7 @@ private:
     void Zapisz_figurę();
     bool Zapisz_figure=0;
     bool CzytajPlik=0;
+    u_short aktualny_rozmiar=2;
     sf::String Lokalizacja_pliku;
     sf::Sprite Figura;
     sf::Texture Tekstura_figury;

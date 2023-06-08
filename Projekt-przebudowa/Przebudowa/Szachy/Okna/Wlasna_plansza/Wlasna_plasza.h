@@ -31,7 +31,7 @@ protected:
                for(int d=0;d<A.size();d++)
                {
 
-                  Ruch[c][d].second.setPosition((d%Rozmiar_x1)*window->getView().getSize().x*wx/Rozmiar_x1/window->getSize().x,(c%Rozmiar_y1)*window->getView().getSize().y*wy/Rozmiar_y1/window->getSize().y);
+                  Ruch[c][d].second.setPosition((c%Rozmiar_x1)*window->getView().getSize().x*wx/Rozmiar_x1/window->getSize().x,(d%Rozmiar_y1)*window->getView().getSize().y*wy/Rozmiar_y1/window->getSize().y);
 
                }
            }
@@ -62,15 +62,28 @@ protected:
             float wx=window->getSize().x,wy=window->getSize().y;
             if(wy<wx) wx=wy; else wy=wx;
 
+            for(int c=0;c<Rozmiar_x1;c++)
+            {
+                for(int d=0;d<Rozmiar_y1;d++)
+                {
+                   Ruch[c][d].second.setPosition((c%Rozmiar_x1)*window->getView().getSize().x*wx/Rozmiar_x1/window->getSize().x,(d%Rozmiar_y1)*window->getView().getSize().y*wy/Rozmiar_y1/window->getSize().y);
+
+                }
+            }
 
             //Kopiuj
             for(int c=0;c<Rozmiar_x1&&c<Rozmiar_x;c++)
             {
-                for(int d=0;d<Rozmiar_y1&&c<Rozmiar_y;d++)
+                for(int d=0;d<Rozmiar_y1&&d<Rozmiar_y;d++)
                 {
                    Ruch[c][d]=To[c][d];
-                   Ruch[c][d].second.setPosition((d%Rozmiar_x1)*window->getView().getSize().x*wx/Rozmiar_x1/window->getSize().x,(c%Rozmiar_y1)*window->getView().getSize().y*wy/Rozmiar_y1/window->getSize().y);
+                   Ruch[c][d].second.setPosition((c%Rozmiar_x1)*window->getView().getSize().x*wx/Rozmiar_x1/window->getSize().x,(d%Rozmiar_y1)*window->getView().getSize().y*wy/Rozmiar_y1/window->getSize().y);
+                  if(Ruch[c][d].first.first!="")
+                  {
+                      Ruch[c][d].second.setScale(window->getView().getSize().x/Ruch[c][d].second.getTexture()->getSize().x*wx/(Rozmiar_x1*window->getSize().x),
+                                                             window->getView().getSize().y/Ruch[c][d].second.getTexture()->getSize().y*wy/(Rozmiar_y1*window->getSize().y));
 
+                  }
                 }
             }
 
@@ -95,8 +108,8 @@ private:
     //short Pamiętaj=0;
     sf::String Nazwa_pliku;
     bool ZAPISZ=0;
-    bool WAŻNA;
-    bool TEAM;
+    bool WAŻNA=0;
+    bool TEAM=0;
     bool CzytajPlik=0;
     bool StanMyszki=0;
 

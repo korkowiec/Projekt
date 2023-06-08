@@ -73,7 +73,8 @@ public:
 
     void Akcje();
 
-
+    void Kolor(const sf::Color &D,const u_short &gdzie){Kolory[gdzie]=D;}
+    void Kolor(sf::Color D[6]){for(u_short c=0;c<6;c++) Kolory[c]=D[c];}
     void Zmiana(sf::Vector2f (pos),sf::Vector2f (pos1));
     //~Przycisk(){Kolory.clear();}
 
