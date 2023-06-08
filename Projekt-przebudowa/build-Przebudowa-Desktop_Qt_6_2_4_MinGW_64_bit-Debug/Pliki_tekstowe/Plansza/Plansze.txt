@@ -1,13 +1,1 @@
 Szachy
-wi
-hasFocus
-hasFocus
-uch
-uch
-numer
-
-numer
-ze()
-ze()
-load
-load

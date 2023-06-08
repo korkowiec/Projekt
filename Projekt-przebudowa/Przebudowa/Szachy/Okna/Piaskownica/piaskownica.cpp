@@ -78,12 +78,13 @@ void Piaskownica::Zapisz_figurę()
     }
     //Dodaj do tekstur figurę
     //NIE DZIALA DLA ZNAKOW SPOZA ASCII
-     {
+
+
         //std::locale loc( ".1250" );
         sf::Image image = Tekstura_figury.copyToImage();
 
         sf::String As=L"Grafika/Figury_wlasne/";
-        sf::String Asd=As+Nazwapliku;
+        sf::String Asd=Nazwapliku;
         if(As[As.getSize()-1]=='\n')
         {
             As.erase(As.getSize()-1);
@@ -94,75 +95,62 @@ void Piaskownica::Zapisz_figurę()
      {
          Asd.erase(Asd.getSize()-1);
      }
+     if(1)
+     {
+      if (!image.saveToFile(Asd))
+      {
+          std::wcout << "Ojojo" << std::endl;
+      }
+     }
+     {
+         std::wstring destinationPath=L"Grafika/Figury_własne/"+Nazwapliku;
+             std::filesystem::path sourceFilePath(Lokalizacja_pliku);
+             std::filesystem::path destinationFilePath(destinationPath);
+
+             if (!std::filesystem::exists(sourceFilePath)) {
+                 std::wcout << L"Plik źródłowy nie istnieje." << std::endl;
+                 return;
+             }
+
+             // Kopiowanie ścieżki bezwzględnej
+             std::wstring absoluteSourcePath = std::filesystem::absolute(sourceFilePath).wstring();
+             std::wstring absoluteDestinationPath = std::filesystem::absolute(destinationFilePath).wstring();
+
+             std::wcout << L"Ścieżka bezwzględna pliku źródłowego: " << absoluteSourcePath << std::endl;
+
+             // Otwieranie plików
+             std::wifstream sourceFile(sourceFilePath, std::ios::binary);
+             std::wofstream destinationFile(destinationFilePath, std::ios::binary);
+
+             if (!sourceFile) {
+                 std::wcout << L"Nie można otworzyć pliku źródłowego." << std::endl;
+                 return;
+             }
+
+             if (!destinationFile) {
+                 std::wcout << L"Nie można otworzyć pliku docelowego." << std::endl;
+                 return;
+             }
+
+             // Kopiowanie zawartości pliku
+             destinationFile << sourceFile.rdbuf();
+
+             // Zamykanie plików
+             sourceFile.close();
+             destinationFile.close();
+
+             std::wcout << L"Plik został skopiowany z '" << absoluteSourcePath << L"' do '" << absoluteDestinationPath << L"'" << std::endl;
+         }
+
+
+
+
      // Zapisz obraz do pliku
-    if(1)
-    {
-     if (!image.saveToFile(Asd))
-     {
-         std::wcout << "Ojojo" << std::endl;
-     }
-    }
+
      //Pozostałości śmieci
-     if(0)
-     {
-
-         std::wstring C=L"Grafika/Figury_wlasne/"+Nazwapliku;
-
-         std::vector<wchar_t> t;
-         for(wchar_t &D:C)
-         {
-             t.emplace_back(D);
-         }
-         wchar_t T[t.size()];
-         for(int c=0;c<t.size();c++)
-         {
-             T[c]=t[c];
-         }
-         wchar_t *T1=new wchar_t[t.size()+1];
-         for(int c=0;c<t.size();c++)
-         {
-             T1[c]=t[c];
-         }
-         T1[t.size()]='\0';
 
 
-     std::vector<sf::Uint8> pixels(image.getSize().x * image.getSize().y * 4);
-     std::vector<sf::Uint8> allPixels(image.getSize().x * image.getSize().y * 4);
-        for(int c=0;c<image.getSize().x*image.getSize().y;c++)
-        {
-            sf::Color C=image.getPixel(c,0);
-            pixels[4*c]=C.r;
-                    pixels[4*c+1]=C.g;
-                    pixels[4*c+2]=C.b;
-                    pixels[4*c+3]=C.a;
-                    allPixels[4*c]=C.r;
-                            allPixels[4*c+1]=C.g;
-                            allPixels[4*c+2]=C.b;
-                            allPixels[4*c+3]=C.a;
-        }
-     // Then we copy the useful pixels from the temporary array to the final one
-     const sf::Uint8* src = &allPixels[0];
-     sf::Uint8* dst = &pixels[0];
-     int srcPitch = image.getSize().x * 4;
-     int dstPitch = image.getSize().x * 4;
 
-     // Handle the case where source pixels are flipped vertically
-
-
-     for (unsigned int i = 0; i < image.getSize().y; ++i)
-     {
-         memcpy(dst, src, dstPitch);
-         src += srcPitch;
-         dst += dstPitch;
-     }
-
-
-     if (!saveImageToFile(Asd,allPixels,image.getSize(),T1))
-     {
-         std::wcout << "CHUJ" << std::endl;
-     }
-     }
-     }
     //Dodaj definicję ruchu
     {
 

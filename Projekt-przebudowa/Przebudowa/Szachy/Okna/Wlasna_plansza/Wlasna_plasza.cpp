@@ -101,6 +101,28 @@ void Wlasna_plasza::Rysowanie_interfejs()
             Teksty[2].setString(std::to_string(WAŻNA));
             Popraw_tekst(pos1,roz2,Teksty[2],*window);
         }
+        //X
+        {
+            pos=sf::Vector2f(0.11,0.01);
+            roz=sf::Vector2f(0.2,0.1);
+            pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+            roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+            window->Rysowanie(Teksty[3]);
+            Teksty[3].setString(std::to_string(Plansza.Rozmiar_x));
+            Popraw_tekst(pos1,roz2,Teksty[3],*window);
+        }
+        //Y
+        {
+            pos=sf::Vector2f(0.11,0.11);
+            roz=sf::Vector2f(0.2,0.2);
+            pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+            roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+            window->Rysowanie(Teksty[4]);
+            Teksty[4].setString(std::to_string(Plansza.Rozmiar_y));
+            Popraw_tekst(pos1,roz2,Teksty[4],*window);}
+
     }
     //SPRITE
     {
@@ -350,10 +372,6 @@ void Wlasna_plasza::Tworzenie_obiektów()
         std::fstream Plan1(T, std::fstream::in);
         if(Plan1.is_open())
         {
-
-            std::cout<<"DZIAL"<<std::endl;
-
-
             std::string ruch;
             std::getline(Plan1, ruch);
             while(std::getline(Plan1, ruch))
@@ -361,16 +379,13 @@ void Wlasna_plasza::Tworzenie_obiektów()
                 if(ruch=="\n") continue;
                 NazwyFigur.emplace_back(ruch);
                 P.first=ruch;
+                if(ruch.find('.')!=std::string::npos)
 
 
 
-                if(!P.second.loadFromFile("Grafika/Figury_własne/"+ruch))
                 {
 
-
-
-
-                    std::wcout<<"CO SI POPSUO"<<std::endl;
+                    //std::wcout<<"CO SI POPSUO"<<std::endl;
                     std::wstring filePath = L"Grafika/Figury_wlasne/";
                     for(char &B:ruch)
                     {
@@ -400,23 +415,18 @@ void Wlasna_plasza::Tworzenie_obiektów()
 
                            Tekstury.emplace_back(P);
                         }
-                        else
-                        {
-                            std::cout<<"Co kurwa?"<<std::endl;
-                        }
+
                         file.close();
                     }
-                    else
-                    {
-                        std::cout<<"Nawet to nie udalo sie"<<std::endl;
-                    }
-
-
-
-
-
 
                 }
+                else if(!P.second.loadFromFile("Grafika/Figury_własne/"+ruch));
+
+
+
+
+
+
                 else
                 {
                 Tekstury.emplace_back(P);
@@ -479,6 +489,24 @@ void Wlasna_plasza::Tworzenie_obiektów()
 
         Teksty.emplace_back(Tworzymy_tekst(pos1,roz1,std::string(std::to_string(WAŻNA)),*window));
         }
+        //X
+        {
+            pos=sf::Vector2f(0.11,0.2);
+            roz=sf::Vector2f(0.01,0.1);
+            pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+            roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+        Teksty.emplace_back(Tworzymy_tekst(pos1,roz1,std::string(std::to_string(Plansza.Rozmiar_x)),*window));
+        }
+        //Y
+        {
+            pos=sf::Vector2f(0.11,0.2);
+            roz=sf::Vector2f(0.11,0.2);
+            pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+            roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+
+        Teksty.emplace_back(Tworzymy_tekst(pos1,roz1,std::string(std::to_string(Plansza.Rozmiar_y)),*window));
+        }
     }
     //SPRITE
     {
@@ -522,7 +550,9 @@ void Wlasna_plasza::Akcje()
 void Wlasna_plasza::Zapisz()
 {
     ZAPISZ=0;
+
     std::string Nazwa=Nazwa_pliku;
+    if(Nazwa=="Szachy")return;
     std::string A="Pliki_tekstowe/Plansze/"+Nazwa;
     std::wstring C;
     std::filesystem::create_directories(A);
@@ -616,6 +646,18 @@ void Wlasna_plasza::Zapisz()
 
     //Dodaj do plansz
     {
+    std::fstream Plan(L"Pliki_tekstowe/Plansza/Plansze.txt", std::fstream::in);
+    {
+        if(Plan.is_open())
+        {
+            std::string ruch;
+            while(std::getline(Plan, ruch))
+            {
+                if(ruch==Nazwa_pliku)return;
+            }
+        }
+    }
+
     C=L"Pliki_tekstowe/Plansza/Plansze.txt";
     wchar_t T[C.size()+1];
     for(int c=0;c<C.size();c++)
