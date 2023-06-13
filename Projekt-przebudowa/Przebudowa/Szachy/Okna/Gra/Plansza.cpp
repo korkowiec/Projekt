@@ -344,12 +344,49 @@ void Plansza::Tworzenie_calosci()
     {
         tekstury[c].name=NazwyFigur[c];
         if(tekstury[c].texture.loadFromFile("Grafika/Figury/"+tekstury[c].name+".png"));
-            else if(tekstury[c].texture.loadFromFile("Grafika/Figury_wlasne/"+tekstury[c].name));
-            else
+
+        else if(tekstury[c].texture.loadFromFile("Grafika/Figury_wlasne/"+tekstury[c].name));
+
+        else
         {
-            okienko=1;
-            return;
+            //std::string NazwaplikuUTF8 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
+
+            std::wstring filePath = L"Grafika/Figury_własne/";
+            filePath+=std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>>().from_bytes(NazwyFigur[c]);
+//                        for(char &B:ruch)
+//                        {
+//                            filePath+=B;
+//                        }
+
+            std::wifstream file(filePath.data(), std::ios::binary);
+
+            if(file)
+            {
+                // Określenie rozmiaru pliku
+                file.seekg(0, std::ios::end);
+                std::streampos fileSize = file.tellg();
+                file.seekg(0, std::ios::beg);
+
+                // Przygotowanie bufora na dane pliku
+                std::vector<wchar_t> fileData(fileSize);
+                file.read(&fileData[0], fileSize);
+                  std::vector<char> fileData1(fileSize);
+                  for (unsigned int c=0;c<fileSize;c++)
+                      {
+                          fileData1[c]=fileData[c];
+                      }
+                // Załadowanie danych tekstury z pamięci
+
+                if (tekstury[c].texture.loadFromMemory(&fileData1[0], fileSize)) continue;
+
+
+                file.close();
+            }
+
+                okienko=1;
+                return;
         }
+
     }
 
     Parametry_Planszy();

@@ -95,13 +95,17 @@ void Piaskownica::Zapisz_figurę()
      {
          Asd.erase(Asd.getSize()-1);
      }
-     if(1)
+
+
+     if(0)
      {
       if (!image.saveToFile(Asd))
       {
           std::wcout << "Ojojo" << std::endl;
       }
      }
+
+     else
      {
          std::wstring destinationPath=L"Grafika/Figury_własne/"+Nazwapliku;
              std::filesystem::path sourceFilePath(Lokalizacja_pliku);

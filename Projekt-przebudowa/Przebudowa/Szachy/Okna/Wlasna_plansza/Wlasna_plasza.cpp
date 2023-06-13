@@ -418,8 +418,49 @@ void Wlasna_plasza::Tworzenie_obiektów()
 
                         file.close();
                     }
+                    else
+                    {
+                        //std::string NazwaplikuUTF8 = std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(Nazwapliku);
+
+                        std::wstring filePath = L"Grafika/Figury_własne/";
+                        filePath+=std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>>().from_bytes(ruch);
+//                        for(char &B:ruch)
+//                        {
+//                            filePath+=B;
+//                        }
+
+                        std::wifstream file(filePath.data(), std::ios::binary);
+
+                        if(file)
+                        {
+                            // Określenie rozmiaru pliku
+                            file.seekg(0, std::ios::end);
+                            std::streampos fileSize = file.tellg();
+                            file.seekg(0, std::ios::beg);
+
+                            // Przygotowanie bufora na dane pliku
+                            std::vector<wchar_t> fileData(fileSize);
+                            file.read(&fileData[0], fileSize);
+                              std::vector<char> fileData1(fileSize);
+                              for (unsigned int c=0;c<fileSize;c++)
+                                  {
+                                      fileData1[c]=fileData[c];
+                                  }
+                            // Załadowanie danych tekstury z pamięci
+
+                            if (P.second.loadFromMemory(&fileData1[0], fileSize))
+                            {
+
+                               Tekstury.emplace_back(P);
+                            }
+
+                            file.close();
+                        }
+                    }
 
                 }
+
+
                 else if(!P.second.loadFromFile("Grafika/Figury_własne/"+ruch));
 
 
