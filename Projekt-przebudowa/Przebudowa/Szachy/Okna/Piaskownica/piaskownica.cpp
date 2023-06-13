@@ -883,7 +883,7 @@ void Piaskownica::Zdarzenia_plansza()
     int X=mouse_position.x/wx;
     int Y=mouse_position.y/wy;
 
-    std::cout<<"MOUSE X "<<mouse_position.x<<"\nMOUSE Y "<<mouse_position.y<<std::endl;
+    //std::cout<<"MOUSE X "<<mouse_position.x<<"\nMOUSE Y "<<mouse_position.y<<std::endl;
     if(Y>=Plansza->Rozmiar||X>=Plansza->Rozmiar||((Y==X)&&(X==((Plansza->Rozmiar-1)/2)))) return;
     else
     {

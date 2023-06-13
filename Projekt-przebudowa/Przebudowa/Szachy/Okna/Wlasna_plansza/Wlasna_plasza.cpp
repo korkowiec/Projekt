@@ -373,7 +373,7 @@ void Wlasna_plasza::Tworzenie_obiektów()
         if(Plan1.is_open())
         {
             std::string ruch;
-            std::getline(Plan1, ruch);
+            //std::getline(Plan1, ruch);
             while(std::getline(Plan1, ruch))
             {
                 if(ruch=="\n") continue;

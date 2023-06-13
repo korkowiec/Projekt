@@ -60,7 +60,7 @@ void Zagraj_wlasna_plansze::Dzialanie()
         }
         window->display();
     }
-    if(okienko==2)
+    while(okienko==2)
     {
         Plansza Plansza(*window,*event,Wybór);
         Plansza.Gra();

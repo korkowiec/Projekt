@@ -82,7 +82,10 @@ void Plansza::Ruch_Figur()
         if(T.name.find('.')==std::string::npos) Plik.open("Pliki_tekstowe/Ruchy_figur/"+T.name+".txt", std::fstream::in);
         else
         {
-            std::wstring C=L"Pliki_tekstowe/Ruchy_figur_własnych/"+sf::String(T.name)+".txt";
+            std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+            std::wstring convertedWstr = converter.from_bytes(T.name);
+            std::wstring C=L"Pliki_tekstowe/Ruchy_figur_własnych/"+convertedWstr;
+            C+=L".txt";
             wchar_t T[C.size()+1];
             for(int c=0;c<C.size();c++)
             {
