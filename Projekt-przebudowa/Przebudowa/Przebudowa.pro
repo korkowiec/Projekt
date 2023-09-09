@@ -6,18 +6,14 @@ CONFIG -= qt
 
 
 
-INCLUDEPATH += "C:/SFML-2.5.1-sources/SFML-2.5.1/include"
-DEPENDPATH += "C:/SFML-2.5.1-sources/SFML-2.5.1/include"
+INCLUDEPATH += "C:/SFML-2.5.1/include"
 
-
-LIBS += -L"C:/Biblioteka/LIBS"
-CONFIG(debug, debug|release){
-    LIBS += -lsfml-audio-d -lsfml-graphics-d -lsfml-network-d -lsfml-system-d -lsfml-window-d
-} else {
-    LIBS += -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
-}
-
-
+        LIBS += -L"C:/SFML-2.5.1/lib"
+        CONFIG(debug, debug|release){
+            LIBS += -lsfml-audio-d -lsfml-graphics-d -lsfml-network-d -lsfml-system-d -lsfml-window-d
+        } else {
+            LIBS += -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
+        }
 
 
 SOURCES += \
