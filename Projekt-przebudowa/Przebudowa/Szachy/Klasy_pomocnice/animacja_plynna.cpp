@@ -155,7 +155,7 @@ void Animacja_plynna::ustaw_rotacja_poczatkowa()
      if(this->pos_poz.x-this->pos.x>0&&this->pos.y-this->pos_poz.y==0) rotacja_poczatek=0;
      else if(this->pos_poz.x-this->pos.x>0&&this->pos.y-this->pos_poz.y>0) rotacja_poczatek=abs(atan((pos.y-this->pos_poz.y)/(this->pos_poz.x-this->pos.x))*180/M_PI);
      else if (this->pos_poz.x-this->pos.x==0&&this->pos.y-this->pos_poz.y>0) rotacja_poczatek=90;
-     else if (this->pos_poz.x-this->pos.x<0&&this->pos.y-this->pos_poz.y>0) rotacja_poczatek=90+abs(atan((pos.y-this->pos_poz.y)/(this->pos_poz.x-this->pos.x))*180/M_PI);
+
      else if (this->pos_poz.x-this->pos.x<0&&this->pos.y-this->pos_poz.y==0) rotacja_poczatek=180;
      else if (this->pos_poz.x-this->pos.x<0&&this->pos.y-this->pos_poz.y<0) rotacja_poczatek=180+abs(atan((pos.y-this->pos_poz.y)/(this->pos_poz.x-this->pos.x))*180/M_PI);
      else if (this->pos_poz.x-this->pos.x==0&&this->pos.y-this->pos_poz.y<0) rotacja_poczatek=270;

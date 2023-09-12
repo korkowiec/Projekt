@@ -1,4 +1,0 @@
-Szachy
-
-loads
-convertedWstr

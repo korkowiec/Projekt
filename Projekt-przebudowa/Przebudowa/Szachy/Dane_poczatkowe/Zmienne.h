@@ -1,5 +1,7 @@
 #ifndef ZMIENNE_H
 #define ZMIENNE_H
+#include <Szachy/Dane_poczatkowe/Matematyka.h>
+#include <SFML/Main.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Main.hpp>
 #include <vector>
@@ -21,3 +23,4 @@ extern sf::Vector2f mouse_position;
 extern sf::Font Dane_tekstu;
 //extern void* Okienko1;
 #endif // ZMIENNE_H
+
