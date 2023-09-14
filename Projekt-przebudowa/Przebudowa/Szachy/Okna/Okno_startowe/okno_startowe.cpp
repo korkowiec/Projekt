@@ -1,4 +1,5 @@
 #include <Szachy/Okna/Okno_startowe/okno_startowe.h>
+
 Okno_startowe::Okno_startowe(RenderWindow &W,sf::Event &E)
 {
 

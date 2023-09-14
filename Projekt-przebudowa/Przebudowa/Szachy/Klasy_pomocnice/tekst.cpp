@@ -7,18 +7,18 @@ void Tekst::Kalibrowanie(const Przycisk &P)
     setCharacterSize(255);
     setOutlineColor(sf::Color::Black);
     setOutlineThickness(10);
-        float a=P.getScale().x*P.getLocalBounds().width*0.9/getLocalBounds().width;
-        float b=P.getScale().y*P.getLocalBounds().height*0.9/getLocalBounds().height;
-        setScale(b*window->getView().getSize().x/window->getView().getSize().y,b);
-        setPosition(P.getPosition().x-getScale().x*getLocalBounds().left+P.getLocalBounds().width*P.getScale().x*0.5-getScale().x*getLocalBounds().width*0.5,
-                      P.getPosition().y-getScale().y*getLocalBounds().top+P.getLocalBounds().height*P.getScale().y*0.05);
+    float a=P.getScale().x*P.getLocalBounds().width*0.9/getLocalBounds().width;
+    float b=P.getScale().y*P.getLocalBounds().height*0.9/getLocalBounds().height;
+    setScale(b*window->getView().getSize().x/window->getView().getSize().y,b);
+    setPosition(P.getPosition().x-getScale().x*getLocalBounds().left+P.getLocalBounds().width*P.getScale().x*0.5-getScale().x*getLocalBounds().width*0.5,
+                P.getPosition().y-getScale().y*getLocalBounds().top+P.getLocalBounds().height*P.getScale().y*0.05);
 
-        if(getLocalBounds().width*getScale().x>P.getLocalBounds().width*P.getScale().x*0.95)
-        {
-            setScale(a,a*window->getView().getSize().y/window->getView().getSize().x);
-            setPosition(P.getPosition().x-getScale().x*getLocalBounds().left+P.getLocalBounds().width*P.getScale().x*0.05,
-                          P.getPosition().y-getScale().y*getLocalBounds().top+P.getLocalBounds().height*P.getScale().y*0.5-getScale().y*getLocalBounds().height*0.5);
-        }
+    if(getLocalBounds().width*getScale().x>P.getLocalBounds().width*P.getScale().x*0.95)
+    {
+        setScale(a,a*window->getView().getSize().y/window->getView().getSize().x);
+        setPosition(P.getPosition().x-getScale().x*getLocalBounds().left+P.getLocalBounds().width*P.getScale().x*0.05,
+                    P.getPosition().y-getScale().y*getLocalBounds().top+P.getLocalBounds().height*P.getScale().y*0.5-getScale().y*getLocalBounds().height*0.5);
+    }
 
 }
 void Tekst::Kalibrowanie()
@@ -27,13 +27,13 @@ void Tekst::Kalibrowanie()
     float b=przycisk->getScale().y*przycisk->getLocalBounds().height*0.9/getLocalBounds().height;
     setScale(b*window->getView().getSize().x/window->getView().getSize().y,b);
     setPosition(przycisk->getPosition().x-getScale().x*getLocalBounds().left+przycisk->getLocalBounds().width*przycisk->getScale().x*0.5-getScale().x*getLocalBounds().width*0.5,
-                  przycisk->getPosition().y-getScale().y*getLocalBounds().top+przycisk->getLocalBounds().height*przycisk->getScale().y*0.05);
+                przycisk->getPosition().y-getScale().y*getLocalBounds().top+przycisk->getLocalBounds().height*przycisk->getScale().y*0.05);
 
     if(getLocalBounds().width*getScale().x>przycisk->getLocalBounds().width*przycisk->getScale().x*0.95)
     {
         setScale(a,a*window->getView().getSize().y/window->getView().getSize().x);
         setPosition(przycisk->getPosition().x-getScale().x*getLocalBounds().left+przycisk->getLocalBounds().width*przycisk->getScale().x*0.05,
-                      przycisk->getPosition().y-getScale().y*getLocalBounds().top+przycisk->getLocalBounds().height*przycisk->getScale().y*0.5-getScale().y*getLocalBounds().height*0.5);
+                    przycisk->getPosition().y-getScale().y*getLocalBounds().top+przycisk->getLocalBounds().height*przycisk->getScale().y*0.5-getScale().y*getLocalBounds().height*0.5);
     }
 
 }

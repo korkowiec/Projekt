@@ -100,21 +100,21 @@ Przycisk::Przycisk(RenderWindow &W,sf::Event &E,
     Przycisk_podstawy(W,E,pos,roz,S,C);
 }
 void Przycisk::Przycisk_podstawy(RenderWindow &W,sf::Event &E,
-                   sf::Vector2f (pos),
-                   sf::Vector2f (roz),
-                   std::string S,
-                   sf::Color C)
+                                 sf::Vector2f (pos),
+                                 sf::Vector2f (roz),
+                                 std::string S,
+                                 sf::Color C)
 {
 
-//    {
-//        Kolory.resize(6);
-//     Kolory[0]=sf::Color::Green;
-//     Kolory[1]=sf::Color::Yellow;
-//     Kolory[2]=sf::Color::White;
-//     Kolory[3]=sf::Color::Blue;
-//     Kolory[4]=sf::Color::Cyan;
-//     Kolory[5]=sf::Color::Red;
-//    }
+    //    {
+    //        Kolory.resize(6);
+    //     Kolory[0]=sf::Color::Green;
+    //     Kolory[1]=sf::Color::Yellow;
+    //     Kolory[2]=sf::Color::White;
+    //     Kolory[3]=sf::Color::Blue;
+    //     Kolory[4]=sf::Color::Cyan;
+    //     Kolory[5]=sf::Color::Red;
+    //    }
     window=&W;
     event=&E;
     if(pos.x>roz.x)
@@ -141,60 +141,60 @@ void Przycisk::Przycisk_podstawy(RenderWindow &W,sf::Event &E,
 void Przycisk::Akcje()
 {
 
-   if((sf::Mouse::isButtonPressed(sf::Mouse::Left)&&PrzyjechalemNieWcisniety)||!getGlobalBounds().contains(mouse_position))PrzyjechalemNieWcisniety=1;
+    if((sf::Mouse::isButtonPressed(sf::Mouse::Left)&&PrzyjechalemNieWcisniety)||!getGlobalBounds().contains(mouse_position))PrzyjechalemNieWcisniety=1;
     else PrzyjechalemNieWcisniety=0;
 
-        if(!PrzyjechalemNieWcisniety&&getGlobalBounds().contains(mouse_position))
+    if(!PrzyjechalemNieWcisniety&&getGlobalBounds().contains(mouse_position))
+    {
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
-            if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            IsPressed=1;
+            if(IsSelect)
             {
-               IsPressed=1;
-               if(IsSelect)
-               {
-                   setFillColor(Kolory[5]);
-                   ZmienStan(5);
-               }
-               else
-               {
-                   setFillColor(Kolory[2]);
-                   ZmienStan(2);
-               }
+                setFillColor(Kolory[5]);
+                ZmienStan(5);
             }
             else
             {
-                if(IsPressed)
-                {
-                    IsPressed=0;
-                    IsSelect=!IsSelect;
-                }
-                if(IsSelect)
-                {
-                    setFillColor(Kolory[4]);
-                    ZmienStan(4);
-                }
-                else
-                {
-                    setFillColor(Kolory[1]);
-                    ZmienStan(1);
-                }
-
+                setFillColor(Kolory[2]);
+                ZmienStan(2);
             }
         }
         else
         {
-            IsPressed=0;
+            if(IsPressed)
+            {
+                IsPressed=0;
+                IsSelect=!IsSelect;
+            }
             if(IsSelect)
             {
-                setFillColor(Kolory[3]);
-                ZmienStan(3);
+                setFillColor(Kolory[4]);
+                ZmienStan(4);
             }
             else
             {
-                setFillColor(Kolory[0]);
-                ZmienStan(0);
+                setFillColor(Kolory[1]);
+                ZmienStan(1);
             }
+
         }
-        //Zmiana();
+    }
+    else
+    {
+        IsPressed=0;
+        if(IsSelect)
+        {
+            setFillColor(Kolory[3]);
+            ZmienStan(3);
+        }
+        else
+        {
+            setFillColor(Kolory[0]);
+            ZmienStan(0);
+        }
+    }
+    //Zmiana();
 
 }
 void Przycisk::Zmiana(sf::Vector2f (pos),sf::Vector2f (pos1))

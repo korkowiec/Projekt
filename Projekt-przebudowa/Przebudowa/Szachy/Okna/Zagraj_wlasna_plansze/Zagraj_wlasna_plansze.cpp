@@ -1,4 +1,5 @@
 #include <Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.h>
+
 Zagraj_wlasna_plansze::Zagraj_wlasna_plansze(RenderWindow &W,sf::Event &E):window(&W),event(&E)
 {
     Czytaj();

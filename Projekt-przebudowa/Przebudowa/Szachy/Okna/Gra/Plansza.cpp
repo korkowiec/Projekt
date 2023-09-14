@@ -1,6 +1,5 @@
 #include <Szachy/Okna/Gra/Plansza.h>
 
-
 void Plansza::Parametry_Planszy() //rozmiar planszy, kolor pól
 {
 

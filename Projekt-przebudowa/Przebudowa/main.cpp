@@ -21,14 +21,14 @@ int main()
     while(window.isOpen())
     {
 
-    A_P.Kalibrowanie();
-    A.Kalibrowanie(sf::Vector2f(0.5,0.5),sf::Vector2f(0.6,0.6));
+        A_P.Kalibrowanie();
+        A.Kalibrowanie(sf::Vector2f(0.5,0.5),sf::Vector2f(0.6,0.6));
 
 
 
 
 
-       // A_P.move(0,moc*clock.getElapsedTime().asMilliseconds());
+        // A_P.move(0,moc*clock.getElapsedTime().asMilliseconds());
 
         sf::Event event;
         while(window.pollEvent(event))
@@ -43,7 +43,7 @@ int main()
         //std::cout<<A_P.getPosition().x<<" "<<A_P.getPosition().y<<std::endl;
 
         window.clear();
-    //    window.Rysowanie(A);
+        //    window.Rysowanie(A);
         window.Rysowanie(A_P);
 
         window.display();
