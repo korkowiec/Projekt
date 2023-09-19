@@ -133,7 +133,7 @@ private:
     sf::Color Kolory[5] = {sf::Color(181, 127, 99), sf::Color(240, 217, 181), sf::Color::Green, sf::Color::Red, sf::Color::Yellow};
     float Granica; //Wykorzystam do pamiętania końca planszy i początku interfejsu
     sf::Vector2f(Rozmiar);
-    std::vector<Przycisk> Przyciski;
+    std::vector<std::unique_ptr<PrzyciskAkcje>> Przyciski;
     RenderWindow *window;
     sf::Event *event;
     Dane_ruchu Aktualne_dane_ruchu;

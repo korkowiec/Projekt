@@ -109,8 +109,8 @@ private:
     std::vector<sf::Text> Teksty;
     sf::RectangleShape Rysunek;
     Plansza_gry Plansza;
-    std::vector<Przycisk> Przyciski;
-    std::vector<std::pair<sf::Sprite, Przycisk>> Wybór_figur;
+    std::vector<std::unique_ptr<PrzyciskAkcje>> Przyciski;
+    std::vector<std::pair<sf::Sprite, std::unique_ptr<PrzyciskAkcje>>> Wybór_figur;
         std::vector<std::pair<sf::String, sf::Texture>> Tekstury;
     std::pair<sf::Sprite, short> Aktualny_wybór;
         sf::String Aktualny = "";

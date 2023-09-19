@@ -1,6 +1,7 @@
 #include  <szachy.h>
 int main()
 {
+
     Szachy Szachy;
     return 0;
     RenderWindow window(sf::VideoMode(1000,400), "Szachy");

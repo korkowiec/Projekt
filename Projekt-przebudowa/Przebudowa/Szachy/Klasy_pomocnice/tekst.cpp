@@ -1,6 +1,6 @@
 #include <Szachy/Klasy_pomocnice/tekst.h>
 #include <Szachy/Klasy_pomocnice/przycisk.h>
-void Tekst::Kalibrowanie(const Przycisk &P)
+void Tekst::Kalibrowanie(const PrzyciskAkcje &P)
 {
     setColor(sf::Color::White);
     setStyle(Text::Regular);
@@ -37,7 +37,7 @@ void Tekst::Kalibrowanie()
     }
 
 }
-void Tekst::Dane_poczatek(RenderWindow &W,const Przycisk &P,const std::string &S)
+void Tekst::Dane_poczatek(RenderWindow &W,const PrzyciskAkcje &P,const std::string &S)
 {
     przycisk=&P;
     window=&W;

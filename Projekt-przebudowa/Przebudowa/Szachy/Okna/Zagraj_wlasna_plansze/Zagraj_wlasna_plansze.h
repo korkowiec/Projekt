@@ -8,7 +8,7 @@ class Zagraj_wlasna_plansze
 protected:
     RenderWindow *window;
     sf::Event *event;
-    std::vector<Przycisk> Plansze;
+    std::vector<std::unique_ptr<PrzyciskAkcje>> Plansze;
     std::vector<std::string> Nazwy;
     std::string Wybór;
     short aktualny = 0;

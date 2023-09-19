@@ -1,4 +1,3 @@
-
 #ifndef ZMIENNE_H
 #define ZMIENNE_H
 

@@ -9,7 +9,7 @@ void SetDisplay(sf::RenderWindow &window,sf::Vector2i (a) ,sf::Vector2u(c)) //po
    window.setPosition(a);
 }
 
-void RenderWindow::Rysowanie(const Przycisk &P){draw(P);draw(P.tekst_przycisku);}
+void RenderWindow::Rysowanie(const PrzyciskAkcje &P){draw(P);draw(P.tekst_przycisku);}
 void RenderWindow::Rysowanie( Animacja &A)
 {
     A.Zmien();

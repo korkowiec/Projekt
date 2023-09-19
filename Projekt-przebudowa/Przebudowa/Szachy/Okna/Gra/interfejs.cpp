@@ -64,7 +64,7 @@ void Interfejs::Ustal_Pole()
         sf::Vector2f(roz);
         for(u_short c=0;c<Rysunki.size();c++)
         {
-            Przycisk *przycisk=dynamic_cast<Przycisk *>(Rysunki[c].get());
+            PrzyciskAkcje *przycisk=dynamic_cast<PrzyciskAkcje *>(Rysunki[c].get());
             if(przycisk != nullptr)
             {
                 if(przycisk->tekst_przycisku.getString()=="Menu")
@@ -159,18 +159,20 @@ void Interfejs::Rysuj_bok()
 void Interfejs::Przyciski()
 {
     Tutaju_short=okienko;
-    u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&uliczba_1,&uliczba_1,&uliczba_1};
-    Rysunki.emplace_back(std::make_unique<Przycisk>(*window,*event,
-                                                      okienko,Stan,
+    u_short jeden=1;
+    u_short zero=0;
+    u_short *Stan[6]={&okienko,&okienko,&okienko,&jeden,&jeden,&jeden};
+    Rysunki.emplace_back(std::make_unique<Przycisk<u_short,u_short>>(*window,*event,
+                                                      okienko,Stan,1,
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Menu")));
 
-    Stan[3]=&uliczba_0;
-    Stan[4]=&uliczba_0;
-    Stan[5]=&uliczba_0;
-    Rysunki.emplace_back(std::make_unique<Przycisk>(*window,*event,
-                                                      okienko,Stan,
+    Stan[3]=&zero;
+    Stan[4]=&zero;
+    Stan[5]=&zero;
+    Rysunki.emplace_back(std::make_unique<Przycisk<u_short,u_short>>(*window,*event,
+                                                                      okienko,Stan,1,
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Wyjście")));
@@ -189,7 +191,7 @@ void Interfejs::Akcje_i_rysowanie()
     if(Rodzaj!=0)for(u_short c=0;c<Rysunki.size();c++)
     {
 
-        Przycisk *przycisk=dynamic_cast<Przycisk *>(Rysunki[c].get());
+        PrzyciskAkcje *przycisk=dynamic_cast<PrzyciskAkcje *>(Rysunki[c].get());
         if(przycisk != nullptr) {przycisk->Akcje();window->Rysowanie(*przycisk);}
         else
         {

@@ -3,7 +3,7 @@
 
 #include <Szachy/Dane_poczatkowe/Zdarzenia.h>
 
-class Przycisk;
+class PrzyciskAkcje;
 
 class Tekst : public sf::Text
 {
@@ -13,12 +13,12 @@ public:
     Tekst(const sf::String &string) : sf::Text(string, Dane_tekstu, 255) {}
     Tekst() : sf::Text(" ", Dane_tekstu) {}
 
-    void Kalibrowanie(const Przycisk &P);
+    void Kalibrowanie(const PrzyciskAkcje &P);
     void Kalibrowanie();
-    void Dane_poczatek(RenderWindow &W, const Przycisk &P, const std::string &S = "");
+    void Dane_poczatek(RenderWindow &W, const PrzyciskAkcje &P, const std::string &S = "");
 
 private:
-    const Przycisk *przycisk;
+    const PrzyciskAkcje *przycisk;
     RenderWindow *window;
 };
 

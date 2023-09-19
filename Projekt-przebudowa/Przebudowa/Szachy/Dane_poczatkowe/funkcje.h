@@ -6,7 +6,7 @@
 void SetDisplay(sf::RenderWindow &window, sf::Vector2i a = sf::Vector2i(0, 0),
                 sf::Vector2u c = sf::Vector2u(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height));
 
-class Przycisk;
+class PrzyciskAkcje;
 class Animacja;
 class Animacja_plynna;
 
@@ -19,7 +19,7 @@ public:
     RenderWindow(sf::WindowHandle handle, const sf::ContextSettings &settings = sf::ContextSettings())
         : sf::RenderWindow(handle, settings) {}
 
-    void Rysowanie(const Przycisk &P);
+    void Rysowanie(const PrzyciskAkcje &P);
     void Rysowanie(Animacja &A);
     void Rysowanie(Animacja_plynna &A);
     void Rysowanie(const sf::VertexBuffer &vertexBuffer, std::size_t firstVertex, std::size_t vertexCount, const sf::RenderStates &states = sf::RenderStates::Default);

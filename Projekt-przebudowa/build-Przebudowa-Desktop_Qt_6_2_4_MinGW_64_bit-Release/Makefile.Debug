@@ -199,11 +199,10 @@ debug\Funkcje.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Funkcje.cpp ..\Przebudow
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -274,6 +273,7 @@ debug\Funkcje.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Funkcje.cpp ..\Przebudow
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\tekst.h \
@@ -286,11 +286,10 @@ debug\daneliczbowe.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\daneliczbowe.cpp ..
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -361,6 +360,7 @@ debug\daneliczbowe.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\daneliczbowe.cpp ..
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\daneliczbowe.obj ..\Przebudowa\Szachy\Dane_poczatkowe\daneliczbowe.cpp
 
@@ -370,11 +370,10 @@ debug\Zdarzenia.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Zdarzenia.cpp ..\Przeb
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -445,16 +444,16 @@ debug\Zdarzenia.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Zdarzenia.cpp ..\Przeb
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\Zdarzenia.obj ..\Przebudowa\Szachy\Dane_poczatkowe\Zdarzenia.cpp
 
 debug\Zmienne.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.cpp ..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -525,17 +524,17 @@ debug\Zmienne.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.cpp ..\Przebudow
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\Zmienne.obj ..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.cpp
 
 debug\Struktury_danych.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.cpp ..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -606,6 +605,7 @@ debug\Struktury_danych.obj: ..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danyc
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\Struktury_danych.obj ..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.cpp
 
@@ -617,11 +617,10 @@ debug\Wlasna_plasza.obj: ..\Przebudowa\Szachy\Okna\Wlasna_plansza\Wlasna_plasza.
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -692,6 +691,7 @@ debug\Wlasna_plasza.obj: ..\Przebudowa\Szachy\Okna\Wlasna_plansza\Wlasna_plasza.
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\animacja_plynna.h \
@@ -707,11 +707,10 @@ debug\okno_startowe.obj: ..\Przebudowa\Szachy\Okna\Okno_startowe\okno_startowe.c
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -782,6 +781,7 @@ debug\okno_startowe.obj: ..\Przebudowa\Szachy\Okna\Okno_startowe\okno_startowe.c
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\okno_startowe.obj ..\Przebudowa\Szachy\Okna\Okno_startowe\okno_startowe.cpp
 
@@ -793,11 +793,10 @@ debug\Plansza.obj: ..\Przebudowa\Szachy\Okna\Gra\Plansza.cpp ..\Przebudowa\Szach
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -868,6 +867,7 @@ debug\Plansza.obj: ..\Przebudowa\Szachy\Okna\Gra\Plansza.cpp ..\Przebudowa\Szach
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Okna\Gra\interfejs.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
@@ -883,11 +883,10 @@ debug\figura.obj: ..\Przebudowa\Szachy\Okna\Gra\figura.cpp ..\Przebudowa\Szachy\
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -958,6 +957,7 @@ debug\figura.obj: ..\Przebudowa\Szachy\Okna\Gra\figura.cpp ..\Przebudowa\Szachy\
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Okna\Gra\Plansza.h \
 		..\Przebudowa\Szachy\Okna\Gra\interfejs.h \
@@ -974,11 +974,10 @@ debug\interfejs.obj: ..\Przebudowa\Szachy\Okna\Gra\interfejs.cpp ..\Przebudowa\S
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1049,6 +1048,7 @@ debug\interfejs.obj: ..\Przebudowa\Szachy\Okna\Gra\interfejs.cpp ..\Przebudowa\S
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\tekst.h \
@@ -1063,11 +1063,10 @@ debug\piaskownica.obj: ..\Przebudowa\Szachy\Okna\Piaskownica\piaskownica.cpp ..\
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1138,6 +1137,7 @@ debug\piaskownica.obj: ..\Przebudowa\Szachy\Okna\Piaskownica\piaskownica.cpp ..\
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\tekst.h \
@@ -1154,11 +1154,10 @@ debug\Zagraj_wlasna_plansze.obj: ..\Przebudowa\Szachy\Okna\Zagraj_wlasna_plansze
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1229,6 +1228,7 @@ debug\Zagraj_wlasna_plansze.obj: ..\Przebudowa\Szachy\Okna\Zagraj_wlasna_plansze
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Okna\Gra\interfejs.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
@@ -1247,11 +1247,10 @@ debug\tekst.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\tekst.cpp ..\Przebudowa\Sz
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1322,6 +1321,7 @@ debug\tekst.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\tekst.cpp ..\Przebudowa\Sz
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\tekst.obj ..\Przebudowa\Szachy\Klasy_pomocnice\tekst.cpp
@@ -1334,11 +1334,10 @@ debug\przycisk.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.cpp ..\Przebud
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1409,6 +1408,7 @@ debug\przycisk.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.cpp ..\Przebud
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\przycisk.obj ..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.cpp
 
@@ -1419,11 +1419,10 @@ debug\animacja.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\animacja.cpp ..\Przebud
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1494,6 +1493,7 @@ debug\animacja.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\animacja.cpp ..\Przebud
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\animacja.obj ..\Przebudowa\Szachy\Klasy_pomocnice\animacja.cpp
 
@@ -1504,11 +1504,10 @@ debug\animacja_plynna.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\animacja_plynna.
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1579,6 +1578,7 @@ debug\animacja_plynna.obj: ..\Przebudowa\Szachy\Klasy_pomocnice\animacja_plynna.
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -Fodebug\animacja_plynna.obj ..\Przebudowa\Szachy\Klasy_pomocnice\animacja_plynna.cpp
 
@@ -1591,11 +1591,10 @@ debug\szachy.obj: ..\Przebudowa\szachy.cpp ..\Przebudowa\szachy.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1666,6 +1665,7 @@ debug\szachy.obj: ..\Przebudowa\szachy.cpp ..\Przebudowa\szachy.h \
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Okna\Gra\interfejs.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
@@ -1687,11 +1687,10 @@ debug\main.obj: ..\Przebudowa\main.cpp ..\Przebudowa\szachy.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Struktury_danych.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Zmienne.h \
 		..\Przebudowa\Szachy\Dane_poczatkowe\Matematyka.h \
-		C:\SFML-2.5.1\include\SFML\Main.hpp \
-		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics.hpp \
 		C:\SFML-2.5.1\include\SFML\Window.hpp \
 		C:\SFML-2.5.1\include\SFML\System.hpp \
+		C:\SFML-2.5.1\include\SFML\Config.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Clock.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Export.hpp \
 		C:\SFML-2.5.1\include\SFML\System\Time.hpp \
@@ -1762,6 +1761,7 @@ debug\main.obj: ..\Przebudowa\main.cpp ..\Przebudowa\szachy.h \
 		C:\SFML-2.5.1\include\SFML\Graphics\Sprite.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\Text.hpp \
 		C:\SFML-2.5.1\include\SFML\Graphics\VertexBuffer.hpp \
+		C:\SFML-2.5.1\include\SFML\Main.hpp \
 		..\Przebudowa\stb_image_write.h \
 		..\Przebudowa\Szachy\Okna\Gra\interfejs.h \
 		..\Przebudowa\Szachy\Klasy_pomocnice\przycisk.h \
