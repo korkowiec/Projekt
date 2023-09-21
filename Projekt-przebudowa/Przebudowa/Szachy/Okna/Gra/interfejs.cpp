@@ -159,18 +159,18 @@ void Interfejs::Rysuj_bok()
 void Interfejs::Przyciski()
 {
     Tutaju_short=okienko;
-    u_short jeden=1;
-    u_short zero=0;
-    u_short *Stan[6]={&okienko,&okienko,&okienko,&jeden,&jeden,&jeden};
+    std::shared_ptr<u_short> jeden=std::make_shared<u_short>(1);
+    std::shared_ptr<u_short> zero=std::make_shared<u_short>(0);
+    u_short *Stan[6]={&okienko,&okienko,&okienko,&(*jeden),&(*jeden),&(*jeden)};
     Rysunki.emplace_back(std::make_unique<Przycisk<u_short,u_short>>(*window,*event,
                                                       okienko,Stan,1,
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Menu")));
 
-    Stan[3]=&zero;
-    Stan[4]=&zero;
-    Stan[5]=&zero;
+    Stan[3]=&(*zero);
+    Stan[4]=&(*zero);
+    Stan[5]=&(*zero);
     Rysunki.emplace_back(std::make_unique<Przycisk<u_short,u_short>>(*window,*event,
                                                                       okienko,Stan,1,
                                                       sf::Vector2f(0,0),

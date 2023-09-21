@@ -46,7 +46,6 @@ SOURCES += \
 
 
 HEADERS += \
-    Szachy/Dane_poczatkowe/Matematyka.h \
     Szachy/Dane_poczatkowe/daneliczbowe.h \
     Szachy/Dane_poczatkowe/Struktury_danych.h \
     Szachy/Dane_poczatkowe/Zdarzenia.h \

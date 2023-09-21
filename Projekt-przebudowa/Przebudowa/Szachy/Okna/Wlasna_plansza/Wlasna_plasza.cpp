@@ -372,14 +372,14 @@ void Wlasna_plasza::Tworzenie_obiektów()
             }
         }
         std::wstring C=L"Pliki_tekstowe/Figury_własne/Figury.txt";
-//        wchar_t T[C.size()+1];
-//        for(int c=0;c<C.size();c++)
-//        {
-//            T[c]=C[c];
-//        }
-//        T[C.size()]='\0';
+        wchar_t T[C.size()+1];
+        for(int c=0;c<C.size();c++)
+        {
+            T[c]=C[c];
+        }
+        T[C.size()]='\0';
         C+=L'\0';
-        std::fstream Plan1(C, std::fstream::in);
+        std::fstream Plan1(T, std::fstream::in);
         if(Plan1.is_open())
         {
             std::string ruch;
@@ -610,15 +610,15 @@ void Wlasna_plasza::Zapisz()
     //PLANSZA
     {
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/"+Nazwa_pliku+"Plansza.txt";
-        C+=L'\0';
-//        wchar_t T[C.size()+1];
-//        for(int c=0;c<C.size();c++)
-//        {
-//            T[c]=C[c];
-//        }
-//        T[C.size()]='\0';
 
-        std::ofstream New(C);
+        wchar_t T[C.size()+1];
+        for(int c=0;c<C.size();c++)
+        {
+            T[c]=C[c];
+        }
+        T[C.size()]='\0';
+    C+=L'\0';
+        std::ofstream New(T);
         if(New.is_open())
         {
             New<<Plansza.Rozmiar_x<<';'<<Plansza.Rozmiar_y<<';'<<(int)Plansza.Pole1.r<<','<<(int)Plansza.Pole1.g<<','<<(int)Plansza.Pole1.b<<','<<(int)Plansza.Pole1.a<<';'<<(int)Plansza.Pole2.r<<','<<(int)Plansza.Pole2.g<<','<<(int)Plansza.Pole2.b<<','<<(int)Plansza.Pole2.a<<';';
@@ -631,15 +631,15 @@ void Wlasna_plasza::Zapisz()
 
     {
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/"+Nazwa_pliku+"UstawienieFigur.txt";
-        C+=L'\0';
-//        wchar_t T[C.size()+1];
-//        for(int c=0;c<C.size();c++)
-//        {
-//            T[c]=C[c];
-//        }
-//        T[C.size()]='\0';
 
-        std::wofstream New(C);
+        wchar_t T[C.size()+1];
+        for(int c=0;c<C.size();c++)
+        {
+            T[c]=C[c];
+        }
+        T[C.size()]='\0';
+C+=L'\0';
+        std::wofstream New(T);
         if(New.is_open())
         {
             for(int c=0;c<Plansza.Ruch.size();c++)for(int d=0;d<Plansza.Ruch[0].size();d++)
@@ -657,23 +657,25 @@ void Wlasna_plasza::Zapisz()
     //FIGURY
     {
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/Figury.txt";
+
+        wchar_t T[C.size()+1];
+        for(int c=0;c<C.size();c++)
+        {
+            T[c]=C[c];
+        }
+        T[C.size()]='\0';
         C+=L'\0';
-//        wchar_t T[C.size()+1];
-//        for(int c=0;c<C.size();c++)
-//        {
-//            T[c]=C[c];
-//        }
-//        T[C.size()]='\0';
-        std::wofstream New(C);
+        std::wofstream New(T);
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/Figury_własne.txt";
+
+        wchar_t D[C.size()+1];
+        for(int c=0;c<C.size();c++)
+        {
+            D[c]=C[c];
+        }
+        D[C.size()]='\0';
         C+=L'\0';
-//        wchar_t D[C.size()+1];
-//        for(int c=0;c<C.size();c++)
-//        {
-//            D[c]=C[c];
-//        }
-//        D[C.size()]='\0';
-        std::wofstream New1(C);
+        std::wofstream New1(D);
 
         if(New.is_open()&&New1.is_open())
         {
@@ -714,15 +716,15 @@ void Wlasna_plasza::Zapisz()
     }
 
     C=L"Pliki_tekstowe/Plansza/Plansze.txt";
-    C+=L'\0';
-//    wchar_t T[C.size()+1];
-//    for(int c=0;c<C.size();c++)
-//    {
-//        T[c]=C[c];
-//    }
-//    T[C.size()]='\0';
 
-    std::wofstream New(C,std::ios::app);
+    wchar_t T[C.size()+1];
+    for(int c=0;c<C.size();c++)
+    {
+        T[c]=C[c];
+    }
+    T[C.size()]='\0';
+C+=L'\0';
+    std::wofstream New(T,std::ios::app);
     if(New.is_open())
     {
         std::wstring W=Nazwa_pliku;

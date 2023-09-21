@@ -85,14 +85,15 @@ void Plansza::Ruch_Figur()
             std::wstring convertedWstr = converter.from_bytes(T.name);
             std::wstring C=L"Pliki_tekstowe/Ruchy_figur_własnych/"+convertedWstr;
             C+=L".txt";
+
+            wchar_t T[C.size()+1];
+            for(int c=0;c<C.size();c++)
+            {
+                T[c]=C[c];
+            }
+            T[C.size()]='\0';
             C+=L'\0';
-//            wchar_t T[C.size()+1];
-//            for(int c=0;c<C.size();c++)
-//            {
-//                T[c]=C[c];
-//            }
-//            T[C.size()]='\0';
-            Plik.open(C, std::fstream::in);
+            Plik.open(T, std::fstream::in);
         }
         //Ruch figury zależy od jego nazwy. Jak król biały, to ustawi ruch figury dla króla białego
         if(Plik.is_open())
@@ -430,14 +431,15 @@ void Plansza::Ładuj_nazwy_figur()
         Plan.close();
     }
     std::wstring C="Pliki_tekstowe/Plansze/"+sf::String(Plansza_gry.nazwa)+L"/Figury_własne.txt";
-                     C+=L'\0';
-//    wchar_t T[C.size()+1];
-//    for(int c=0;c<C.size();c++)
-//    {
-//        T[c]=C[c];
-//    }
-//    T[C.size()]='\0';
-    std::fstream Plan1(C, std::fstream::in);
+
+    wchar_t T[C.size()+1];
+    for(int c=0;c<C.size();c++)
+    {
+        T[c]=C[c];
+    }
+    T[C.size()]='\0';
+    C+=L'\0';
+    std::fstream Plan1(T, std::fstream::in);
     if(Plan1.is_open())
     {
         std::string ruch;

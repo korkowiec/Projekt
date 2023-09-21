@@ -78,8 +78,8 @@ void Zagraj_wlasna_plansze::Twórz()
     int C=1,D=3;
 
     while(C*D<Nazwy.size()+1)if((D+C)%2)D++;else C++;
-    u_short Tablica2[6]={0,0,0,1,1,1};
-    u_short *Tablica1[6]={&okienko,&okienko,&okienko,&Tablica2[3],&Tablica2[4],&Tablica2[5]};
+    std::shared_ptr<u_short>jeden=std::make_shared<u_short>(1);
+    u_short *Tablica1[6]={&okienko,&okienko,&okienko,&(*jeden),&(*jeden),&(*jeden)};
     sf::Color C2[6]={sf::Color::Green,sf::Color::Green,sf::Color::Red,sf::Color::Red,sf::Color::Red,sf::Color::Red};
     pos=sf::Vector2f(0.00,0.00);
     roz=sf::Vector2f(0.00+0.99/C,0.00+0.99/D);
@@ -90,8 +90,9 @@ void Zagraj_wlasna_plansze::Twórz()
 
     {
         if(c==0&&d==0)continue;
-        short Tablica1[6]={0,0,0,short(D*c+d),short(D*c+d),short(D*c+d)};
-        short *Tablica[6]={&Tablica1[0],&Tablica1[1],&Tablica1[2],&Tablica1[3],&Tablica1[4],&Tablica1[5]};
+        std::unique_ptr<short> Tablica12=std::make_unique<short>(0);
+        std::unique_ptr<short> Tablica1=std::make_unique<short>(D*c+d);
+        short *Tablica[6]={&(*Tablica12),&(*Tablica12),&(*Tablica12),&(*Tablica1),&(*Tablica1),&(*Tablica1)};
         pos=sf::Vector2f(0.00+c*0.99/C,0.00+d*0.99/D);
         roz=sf::Vector2f(0.00+c*0.99/C+0.99/C,0.00+d*0.99/D+0.99/D);
         Plansze.emplace_back(std::make_unique<Przycisk<short,short>>(*window,*event,aktualny,

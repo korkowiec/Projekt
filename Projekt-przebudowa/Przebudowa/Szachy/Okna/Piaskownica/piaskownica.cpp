@@ -164,24 +164,24 @@ void Piaskownica::Zapisz_figurę()
     std::string c=b+Ab+".txt";
     std::wstring C=L"Pliki_tekstowe/Ruchy_figur_własnych/"+Nazwapliku+".txt";
                      C+=L'\0';
-//    std::vector<wchar_t> t;
-//    for(wchar_t &D:C)
-//    {
-//        t.emplace_back(D);
-//    }
-//    wchar_t T[t.size()];
-//    for(int c=0;c<t.size();c++)
-//    {
-//        T[c]=t[c];
-//    }
-//    wchar_t *T1=new wchar_t[t.size()+1];
-//    for(int c=0;c<t.size();c++)
-//    {
-//        T1[c]=t[c];
-//    }
-//    T1[t.size()]='\0';
-//    wchar_t ok=T[t.size()-1];
-    std::ofstream outputFile(C);
+    std::vector<wchar_t> t;
+    for(wchar_t &D:C)
+    {
+        t.emplace_back(D);
+    }
+    wchar_t T[t.size()];
+    for(int c=0;c<t.size();c++)
+    {
+        T[c]=t[c];
+    }
+    wchar_t *T1=new wchar_t[t.size()+1];
+    for(int c=0;c<t.size();c++)
+    {
+        T1[c]=t[c];
+    }
+    T1[t.size()]='\0';
+    wchar_t ok=T[t.size()-1];
+    std::ofstream outputFile(T1);
 
     if (outputFile.is_open()) {  // Sprawdzenie, czy plik został poprawnie otwarty
 

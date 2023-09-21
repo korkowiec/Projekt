@@ -2,7 +2,7 @@
 #define PRZYCISK_H
 
 #include <Szachy/Klasy_pomocnice/tekst.h>
-
+#include <typeinfo>
 class PrzyciskAkcje: public sf::RectangleShape
 {
 protected:
@@ -125,7 +125,8 @@ public:
              std::string S = "",
              sf::Color C = sf::Color::Green
              ):Zmienna(Zmieniacz),Zastap(How),PrzyciskAkcje(W,E,pos,roz,S,C){
-        for(int c=0;c<6;c++)ZmianyZmiennej[c]=std::make_shared<Change*>(Stany[c]);
+        for(int c=0;c<6;c++)if((reinterpret_cast<void*>(Stany[c]) == reinterpret_cast<void*>(&Zmieniacz)))ZmianyZmiennej[c]=Stany[c];
+        else  WartosciZmiennej[c]=*Stany[c],ZmianyZmiennej[c]=&WartosciZmiennej[c];
     }
 
 
@@ -195,14 +196,16 @@ public:
 
 private:
     Base& Zmienna;
-    std::shared_ptr<Change*> ZmianyZmiennej[6];
+    //std::shared_ptr<Change*> ZmianyZmiennej[6];
+    Change* ZmianyZmiennej[6];
+    Change  WartosciZmiennej[6];
     bool Zastap;
 
     //std::string Zawartosc_tekstu = "";
 
     void ZmienStan(const u_short &to){
-        if(Zastap) Zmienna=(**ZmianyZmiennej[to]);
-        else Zmienna+=(**ZmianyZmiennej[to]);
+        if(Zastap) Zmienna=(*ZmianyZmiennej[to]);
+        else Zmienna+=(*ZmianyZmiennej[to]);
 
     }
 
