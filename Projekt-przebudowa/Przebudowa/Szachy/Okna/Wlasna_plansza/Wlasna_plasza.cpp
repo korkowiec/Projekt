@@ -57,7 +57,7 @@ void Wlasna_plasza::Rysowanie_plansza()
 
 void Wlasna_plasza::Rysowanie_interfejs()
 {
-    for(Przycisk &P:Przyciski) window->Rysowanie(P);
+    for(std::unique_ptr<PrzyciskAkcje> &P:Przyciski) window->Rysowanie(*P);
     //TEKST
     {
         sf::Vector2f(pos)=sf::Vector2f(0.01,0.01);
@@ -207,8 +207,8 @@ void Wlasna_plasza::Akcja_plansza()
 void Wlasna_plasza::Akcja_interfejs()
 {
     if(CzytajPlik) Czytaj_plik();
-    for(Przycisk &P:Przyciski) P.Akcje();
-    for(std::pair<sf::Sprite,Przycisk> &P:Wybór_figur)P.second.Akcje();
+    for(std::unique_ptr<PrzyciskAkcje> &P:Przyciski) P->Akcje();
+    for(std::pair<sf::Sprite,std::unique_ptr<PrzyciskAkcje>> &P:Wybór_figur)P.second->Akcje();
     if(Aktualny_wybór.second)
     {
 
@@ -243,102 +243,111 @@ void Wlasna_plasza::Tworzenie_obiektów()
     {
         //MENU
         {
-            u_short *Stan[6]={&Tutaju_short,&Tutaju_short,&Tutaju_short,&uliczba_1,&uliczba_1,&uliczba_1};
+         u_short Stan1[6]={0,0,0,1,1,1};
+            u_short *Stan[6]={&okienko,&okienko,&okienko,&Stan1[3],&Stan1[4],&Stan1[5]};
             pos=sf::Vector2f(0.91,0.01);
             roz=sf::Vector2f(1,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,okienko,
-                                    Stan,pos1,roz1,std::string("MENU")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<u_short,u_short>>(*window,*event,okienko,
+                                    Stan,1,pos1,roz1,std::string("MENU")));
         }
 
 
         //X+
         {
             short stanik[6]={0,0,1,0,0,1};
+            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.01,0.01);
             roz=sf::Vector2f(0.1,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,Plansza.Rozmiar_x1,
-                                            stanik,pos1,roz1,std::string("X+")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<u_short,short>>(*window,*event,Plansza.Rozmiar_x1,
+                                            stanik1,0,pos1,roz1,std::string("X+")));
 
         }
         //X-
         {
             short stanik[6]={0,0,-1,0,0,-1};
+            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.21,0.01);
             roz=sf::Vector2f(0.3,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,Plansza.Rozmiar_x1,
-                                            stanik,pos1,roz1,std::string("X-")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<u_short,short>>(*window,*event,Plansza.Rozmiar_x1,
+                                            stanik1,0,pos1,roz1,std::string("X-")));
         }
         //Y+
         {
             short stanik[6]={0,0,1,0,0,1};
+            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.01,0.11);
             roz=sf::Vector2f(0.1,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,Plansza.Rozmiar_y1,
-                                            stanik,pos1,roz1,std::string("Y+")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<u_short,short>>(*window,*event,Plansza.Rozmiar_y1,
+                                            stanik1,0,pos1,roz1,std::string("Y+")));
         }
         //Y-
         {
             short stanik[6]={0,0,-1,0,0,-1};
+            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.21,0.11);
             roz=sf::Vector2f(0.3,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,Plansza.Rozmiar_y1,
-                                            stanik,pos1,roz1,std::string("Y-")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<u_short,short>>(*window,*event,Plansza.Rozmiar_y1,
+                                            stanik1,0,pos1,roz1,std::string("Y-")));
         }
         //Drużyna
         {
-            bool *Stan[6]={&bool_0,&bool_0,&bool_0,&bool_1,&bool_1,&bool_1};
+            bool stanik[6]={0,0,0,1,1,1};
+            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.31,0.11);
             roz=sf::Vector2f(0.5,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,TEAM,
-                                    Stan,pos1,roz1,std::string("TEAM")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<bool,bool>>(*window,*event,TEAM,
+                                    Stan,1,pos1,roz1,std::string("TEAM")));
         }
         //Załaduj teksture
         {
-        bool *Stan[6]={&bool_0,&bool_0,&bool_1,&bool_0,&bool_0,&bool_1};
-        pos=sf::Vector2f(0.31,0.01);
-        roz=sf::Vector2f(0.60,0.1);
-        pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
-        roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+            bool stanik[6]={0,0,0,1,1,1};
+            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            pos=sf::Vector2f(0.31,0.01);
+            roz=sf::Vector2f(0.60,0.1);
+            pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
+            roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-        Przyciski.emplace_back(Przycisk(*window,*event,CzytajPlik,
-                                        Stan,pos1,roz1,std::string("Wczytaj\n nazwę")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<bool,bool>>(*window,*event,CzytajPlik,
+                                            Stan,1,pos1,roz1,std::string("Wczytaj\n nazwę")));
 
         }
         //ZAPISZ
         {
-            bool *Stan[6]={&bool_0,&bool_0,&bool_1,&bool_0,&bool_0,&bool_1};
+            bool stanik[6]={0,0,0,1,1,1};
+            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.91,0.11);
             roz=sf::Vector2f(1,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-            Przyciski.emplace_back(Przycisk(*window,*event,ZAPISZ,
-                                            Stan,pos1,roz1,std::string("ZAPISZ")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<bool,bool>>(*window,*event,ZAPISZ,
+                                            Stan,1,pos1,roz1,std::string("ZAPISZ")));
 
         }
 
         //WAŻNA
         {
-            bool *Stan[6]={&bool_0,&bool_0,&bool_0,&bool_1,&bool_1,&bool_1};
+            bool stanik[6]={0,0,0,1,1,1};
+            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
             pos=sf::Vector2f(0.84,0.01);
             roz=sf::Vector2f(0.9,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-            Przyciski.emplace_back(Przycisk(*window,*event,WAŻNA,
-                                            Stan,pos1,roz1,std::string("WAŻNA")));
+            Przyciski.emplace_back(std::make_unique<Przycisk<bool,bool>>(*window,*event,WAŻNA,
+                                            Stan,1,pos1,roz1,std::string("WAŻNA")));
 
         }
 
@@ -369,6 +378,7 @@ void Wlasna_plasza::Tworzenie_obiektów()
             T[c]=C[c];
         }
         T[C.size()]='\0';
+        C+=L'\0';
         std::fstream Plan1(T, std::fstream::in);
         if(Plan1.is_open())
         {
@@ -484,19 +494,19 @@ void Wlasna_plasza::Tworzenie_obiektów()
         pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
         roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
         int C=1,D=3;
-        short Tablica[6]={0,0,0,0,0,0};
+        //short Tablica[6]={0,0,0,0,0,0};
         while(C*D<Tekstury.size())if((D+C)%2)D++;else C++;
 
         for(int c=0;c<C;c++)for(int d=0;d<D&&c*D+d<Tekstury.size();d++)
         {
-            Tablica[2]=D*c+d+1;
-            Tablica[5]=D*c+d+1;
+                short Tablica1[6]={0,0,short(D*c+d+1),0,0,short(D*c+d+1)};
+            short *Tablica[6]={&Tablica1[0],&Tablica1[1],&Tablica1[2],&Tablica1[3],&Tablica1[4],&Tablica1[5]};
             pos=sf::Vector2f(0.01+c*0.99/C,0.21+d*0.79/D);
             roz=sf::Vector2f(0.01+c*0.99/C+0.99/C,0.21+d*0.79/D+0.79/D);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-            Przyciski.emplace_back(Przycisk(*window,*event,Aktualny_wybór.second,
-                                            Tablica,pos1,roz1,Tekstury[D*c+d].first));
+            Przyciski.emplace_back(std::make_unique<Przycisk<short,short>>(*window,*event,Aktualny_wybór.second,
+                                            Tablica,0,pos1,roz1,Tekstury[D*c+d].first));
 
         }
     }
@@ -600,13 +610,14 @@ void Wlasna_plasza::Zapisz()
     //PLANSZA
     {
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/"+Nazwa_pliku+"Plansza.txt";
+
         wchar_t T[C.size()+1];
         for(int c=0;c<C.size();c++)
         {
             T[c]=C[c];
         }
         T[C.size()]='\0';
-
+    C+=L'\0';
         std::ofstream New(T);
         if(New.is_open())
         {
@@ -620,13 +631,14 @@ void Wlasna_plasza::Zapisz()
 
     {
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/"+Nazwa_pliku+"UstawienieFigur.txt";
+
         wchar_t T[C.size()+1];
         for(int c=0;c<C.size();c++)
         {
             T[c]=C[c];
         }
         T[C.size()]='\0';
-
+C+=L'\0';
         std::wofstream New(T);
         if(New.is_open())
         {
@@ -645,22 +657,26 @@ void Wlasna_plasza::Zapisz()
     //FIGURY
     {
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/Figury.txt";
+
         wchar_t T[C.size()+1];
         for(int c=0;c<C.size();c++)
         {
             T[c]=C[c];
         }
         T[C.size()]='\0';
-
+        C+=L'\0';
+        std::wofstream New(T);
         C="Pliki_tekstowe/Plansze/"+Nazwa_pliku+L"/Figury_własne.txt";
+
         wchar_t D[C.size()+1];
         for(int c=0;c<C.size();c++)
         {
             D[c]=C[c];
         }
         D[C.size()]='\0';
+        C+=L'\0';
         std::wofstream New1(D);
-        std::wofstream New(T);
+
         if(New.is_open()&&New1.is_open())
         {
             for(auto &S:S)
@@ -700,13 +716,14 @@ void Wlasna_plasza::Zapisz()
     }
 
     C=L"Pliki_tekstowe/Plansza/Plansze.txt";
+
     wchar_t T[C.size()+1];
     for(int c=0;c<C.size();c++)
     {
         T[c]=C[c];
     }
     T[C.size()]='\0';
-
+C+=L'\0';
     std::wofstream New(T,std::ios::app);
     if(New.is_open())
     {

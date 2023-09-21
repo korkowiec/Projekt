@@ -7,15 +7,15 @@
 class Okno_startowe
 {
 public:
-    Okno_startowe(RenderWindow &W,sf::Event &E);
+    Okno_startowe(RenderWindow &W, sf::Event &E);
     void Okno_startowe_dzialanie();
-    void Okno_startowe_akcje ();
+    void Okno_startowe_akcje();
+
 private:
-    RenderWindow* window;
-    sf::Event* event;
+    RenderWindow *window;
+    sf::Event *event;
     std::vector<std::unique_ptr<sf::Drawable>> Przyciski;
     sf::Texture tlo_textura;
-    //sf::Event Event_l;
 };
 
 #endif // OKNO_STARTOWE_H

@@ -1,140 +1,214 @@
 #ifndef PRZYCISK_H
 #define PRZYCISK_H
+
 #include <Szachy/Klasy_pomocnice/tekst.h>
+#include <typeinfo>
+class PrzyciskAkcje: public sf::RectangleShape
+{
+protected:
+    ; //Po prostu tekst przycisku
+    RenderWindow *window; //Okno
+    sf::Event *event; //Akcje
+
+    // Do kontroli stanu
+    bool IsSelect = 0;
+    bool IsPressed = 0;
+    bool PrzyjechalemNieWcisniety = 0;
+
+    // Aktualny stan (potrzebne przy zmien
+    u_short Stan = 0;
+    sf::Color Kolory[6] = {sf::Color::Green, sf::Color::Yellow, sf::Color::White, sf::Color::Blue, sf::Color::Cyan, sf::Color::Red};
+public:
+    Tekst tekst_przycisku;
+    void Kolor(const sf::Color &D, const u_short &gdzie) { if(gdzie<=5)Kolory[gdzie] = D; }
+    void Kolor(sf::Color D[6]) { for (u_short c = 0; c < 6; c++) Kolory[c] = D[c]; }
+    virtual ~PrzyciskAkcje() {}
+    PrzyciskAkcje(RenderWindow &W, sf::Event &E,
+                  sf::Vector2f pos = sf::Vector2f(0, 0),
+                  sf::Vector2f roz = sf::Vector2f(0, 0),
+                  std::string S = "",
+                  sf::Color C = sf::Color::Green):window(&W),event(&E){Zmiana(pos,roz),setFillColor(C);tekst_przycisku.Dane_poczatek(*window,*this,S);}
+    void Zmiana(sf::Vector2f pos, sf::Vector2f pos1){
+        if(pos.x>pos1.x)
+        {
+            float x=pos.x;
+            pos.x=pos1.x;
+            pos1.x=x-pos.x;
+        }
+        else pos1.x-=pos.x;
+        if(pos.y>pos1.y)
+        {
+            float y=pos.y;
+            pos.y=pos1.y;
+            pos1.y=y-pos.y;
+        }
+        else pos1.y-=pos.y;
+        setPosition(window->getView().getSize().x*pos.x,window->getView().getSize().y*pos.y);
+        setSize(sf::Vector2f(window->getView().getSize().x*pos1.x,window->getView().getSize().y*pos1.y));
+    }
+    virtual void Akcje() {
+
+        if((sf::Mouse::isButtonPressed(sf::Mouse::Left)&&PrzyjechalemNieWcisniety)||!getGlobalBounds().contains(mouse_position))PrzyjechalemNieWcisniety=1;
+        else PrzyjechalemNieWcisniety=0;
+
+        if(!PrzyjechalemNieWcisniety&&getGlobalBounds().contains(mouse_position))
+        {
+            if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            {
+                IsPressed=1;
+                if(IsSelect)
+                {
+                    setFillColor(Kolory[5]);
+                    //ZmienStan(5);
+                }
+                else
+                {
+                    setFillColor(Kolory[2]);
+                    //ZmienStan(2);
+                }
+            }
+            else
+            {
+                if(IsPressed)
+                {
+                    IsPressed=0;
+                    IsSelect=!IsSelect;
+                }
+                if(IsSelect)
+                {
+                    setFillColor(Kolory[4]);
+                    //ZmienStan(4);
+                }
+                else
+                {
+                    setFillColor(Kolory[1]);
+                    //ZmienStan(1);
+                }
+
+            }
+        }
+        else
+        {
+            IsPressed=0;
+            if(IsSelect)
+            {
+                setFillColor(Kolory[3]);
+                //ZmienStan(3);
+            }
+            else
+            {
+                setFillColor(Kolory[0]);
+                //ZmienStan(0);
+            }
+        }
+        //Zmiana();
+
+    }
+};
 
 
-class Przycisk :public sf::RectangleShape
+
+//Przycisk<bool,u_short>(window,event,okienko,TABLICE)
+
+
+
+
+
+
+template <typename Base, typename Change>
+class Przycisk: public PrzyciskAkcje
 {
 public:
-    Przycisk(RenderWindow &W,sf::Event &E,
-                       u_short &Zmieniacz,short Stany[6]=0,
-    sf::Vector2f (pos)=sf::Vector2f(0,0),
-    sf::Vector2f (roz)=sf::Vector2f(0,0),
-    std::string S="",
-    sf::Color C=sf::Color::Green
-   );
+    Przycisk(RenderWindow &W, sf::Event &E, Base &Zmieniacz, Change* Stany[6] = 0,bool How=0,
+             sf::Vector2f pos = sf::Vector2f(0, 0),
+             sf::Vector2f roz = sf::Vector2f(0, 0),
+             std::string S = "",
+             sf::Color C = sf::Color::Green
+             ):Zmienna(Zmieniacz),Zastap(How),PrzyciskAkcje(W,E,pos,roz,S,C){
+        for(int c=0;c<6;c++)if((reinterpret_cast<void*>(Stany[c]) == reinterpret_cast<void*>(&Zmieniacz)))ZmianyZmiennej[c]=Stany[c];
+        else  WartosciZmiennej[c]=*Stany[c],ZmianyZmiennej[c]=&WartosciZmiennej[c];
+    }
 
-    Przycisk(RenderWindow &W,sf::Event &E,
-             bool &Zmieniacz,bool Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-            );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             bool &Zmieniacz,bool *Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-             );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             short &Zmieniacz,short Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-            );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             short &Zmieniacz,short *Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-             );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             u_short &Zmieniacz,u_short Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-             );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             u_short &Zmieniacz,u_short *Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-             );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             int &Zmieniacz,int Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-            );
-    Przycisk(RenderWindow &W,sf::Event &E,
-             int &Zmieniacz,int *Stany[6]=0,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green
-            );
 
-    void Akcje();
+    void Akcje() override
+    {
 
-    void Kolor(const sf::Color &D,const u_short &gdzie){Kolory[gdzie]=D;}
-    void Kolor(sf::Color D[6]){for(u_short c=0;c<6;c++) Kolory[c]=D[c];}
-    void Zmiana(sf::Vector2f (pos),sf::Vector2f (pos1));
+        if((sf::Mouse::isButtonPressed(sf::Mouse::Left)&&PrzyjechalemNieWcisniety)||!getGlobalBounds().contains(mouse_position))PrzyjechalemNieWcisniety=1;
+        else PrzyjechalemNieWcisniety=0;
+
+        if(!PrzyjechalemNieWcisniety&&getGlobalBounds().contains(mouse_position))
+        {
+            if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            {
+                IsPressed=1;
+                if(IsSelect)
+                {
+                    setFillColor(Kolory[5]);
+                    ZmienStan(5);
+                }
+                else
+                {
+                    setFillColor(Kolory[2]);
+                    ZmienStan(2);
+                }
+            }
+            else
+            {
+                if(IsPressed)
+                {
+                    IsPressed=0;
+                    IsSelect=!IsSelect;
+                }
+                if(IsSelect)
+                {
+                    setFillColor(Kolory[4]);
+                    ZmienStan(4);
+                }
+                else
+                {
+                    setFillColor(Kolory[1]);
+                    ZmienStan(1);
+                }
+
+            }
+        }
+        else
+        {
+            IsPressed=0;
+            if(IsSelect)
+            {
+                setFillColor(Kolory[3]);
+                ZmienStan(3);
+            }
+            else
+            {
+                setFillColor(Kolory[0]);
+                ZmienStan(0);
+            }
+        }
+        //Zmiana();
+
+    }
+
     //~Przycisk(){Kolory.clear();}
 
-    //To klasa do wypisywania
-    Tekst tekst_przycisku;
+    // To klasa do wypisywania
+
 private:
+    Base& Zmienna;
+    //std::shared_ptr<Change*> ZmianyZmiennej[6];
+    Change* ZmianyZmiennej[6];
+    Change  WartosciZmiennej[6];
+    bool Zastap;
 
-        //std::vector<std::unique_ptr<sf::Color>> Kolory;
-    sf::Color Kolory[6]={sf::Color::Green,sf::Color::Yellow,sf::Color::White,sf::Color::Blue,sf::Color::Cyan,sf::Color::Red};
-        //Do kontroli stanu
-        bool IsSelect=0;
-        bool IsPressed=0;
-        bool PrzyjechalemNieWcisniety=0;
+    //std::string Zawartosc_tekstu = "";
 
-        //Dane wejściowe
-        RenderWindow *window;
-        sf::Event *event;
+    void ZmienStan(const u_short &to){
+        if(Zastap) Zmienna=(*ZmianyZmiennej[to]);
+        else Zmienna+=(*ZmianyZmiennej[to]);
 
-        //Nazwa tekstu
-        std::string Zawartosc_tekstu="";
+    }
 
-        //Wzkaźniki na wartości, które przycisk ma zmieniać
-        bool *Zmieniabool=nullptr;
-        u_short *Zmieniau_short=nullptr;
-        short *Zmieniashort=nullptr;
-        int *Zmieniaint=nullptr;
-
-        //Tablica wartości- zmienia o wartość z tablicy
-        bool UstawboolTablica[6];
-        short UstawshortTablica[6];
-        u_short Ustawu_shortTablica[6];
-        int UstawintTablica[6];
-
-        //Tablica wartości- zmienia NA wartość z tablicy
-        bool *ZmieniaboolTablica[6]={nullptr,nullptr,nullptr,nullptr,nullptr,nullptr};
-        short *ZmieniashortTablica[6]={nullptr,nullptr,nullptr,nullptr,nullptr,nullptr};
-        u_short *Zmieniau_shortTablica[6]={nullptr,nullptr,nullptr,nullptr,nullptr,nullptr};
-        int *ZmieniaintTablica[6]={nullptr,nullptr,nullptr,nullptr,nullptr,nullptr};
-
-        //Aktualny stan(potrzebne przy zmien
-        u_short Stan=0;
-
-        void Setbool(const bool &B);
-        void Setshort(const short &S);
-        void Setu_short(const u_short &S);
-        void Setint(const int &I);
-
-
-        void Zmienbool(const bool &B);
-        void Zmienshort(const short &S);
-        void Zmienu_short(const u_short &S);
-        void Zmienint(const int &I);
-
-        void ZmienStan(const u_short &to);
-
-        void Przycisk_podstawy(RenderWindow &W,sf::Event &E,
-             sf::Vector2f (pos)=sf::Vector2f(0,0),
-             sf::Vector2f (roz)=sf::Vector2f(0,0),
-             std::string S="",
-             sf::Color C=sf::Color::Green);
 
 };
 

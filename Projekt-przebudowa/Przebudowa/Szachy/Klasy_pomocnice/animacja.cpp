@@ -8,9 +8,9 @@ Animacja::Animacja(const std::string &S,float C)
     I2.loadFromFile("Grafika/Animacje/"+S+"/Ksztalt.png");
     I2.createMaskFromColor(sf::Color::Black);
     for(u_int c=1;c<I2.getSize().x;c++) for(u_int d=1;d<I2.getSize().y;d++)
-    {
-     if(I2.getPixel(c,d).a!=0)I2.setPixel(c,d,I1.getPixel(c,d));
-    }
+        {
+            if(I2.getPixel(c,d).a!=0)I2.setPixel(c,d,I1.getPixel(c,d));
+        }
     this->texture.loadFromImage(I2);
     this->setTexture(texture);
 
@@ -26,9 +26,9 @@ Animacja::Animacja(const std::string &S,RenderWindow &W,float C)
     I2.loadFromFile("Grafika/Animacje/"+S+"/Ksztalt.png");
     I2.createMaskFromColor(sf::Color::Black);
     for(u_int c=1;c<I2.getSize().x;c++) for(u_int d=1;d<I2.getSize().y;d++)
-    {
-     if(I2.getPixel(c,d).a!=0)I2.setPixel(c,d,I1.getPixel(c,d));
-    }
+        {
+            if(I2.getPixel(c,d).a!=0)I2.setPixel(c,d,I1.getPixel(c,d));
+        }
     this->texture.loadFromImage(I2);
     this->setTexture(texture);
 
@@ -92,7 +92,7 @@ void Animacja::Kalibrowanie(sf::Vector2f(pos),sf::Vector2f(roz))
         setPosition(window->getView().getSize().x*pos.x,window->getView().getSize().y*pos.y);
         setScale(roz.x*window->getView().getSize().x/getTextureRect().width,
                  roz.y*window->getView().getSize().y/getTextureRect().height);
- //       setSize(sf::Vector2f(window->getView().getSize().x*roz.x,window->getView().getSize().y*roz.y));
+        //       setSize(sf::Vector2f(window->getView().getSize().x*roz.x,window->getView().getSize().y*roz.y));
 
 
     }
