@@ -6,17 +6,19 @@
 class PrzyciskAkcje: public sf::RectangleShape
 {
 protected:
-    ; //Po prostu tekst przycisku
-    RenderWindow *window; //Okno
-    sf::Event *event; //Akcje
+
+    RenderWindow &window;
+    sf::Event &event;
 
     // Do kontroli stanu
     bool IsSelect = 0;
     bool IsPressed = 0;
     bool PrzyjechalemNieWcisniety = 0;
 
-    // Aktualny stan (potrzebne przy zmien
+
     u_short Stan = 0;
+
+
     sf::Color Kolory[6] = {sf::Color::Green, sf::Color::Yellow, sf::Color::White, sf::Color::Blue, sf::Color::Cyan, sf::Color::Red};
 public:
     Tekst tekst_przycisku;
@@ -27,7 +29,7 @@ public:
                   sf::Vector2f pos = sf::Vector2f(0, 0),
                   sf::Vector2f roz = sf::Vector2f(0, 0),
                   std::string S = "",
-                  sf::Color C = sf::Color::Green):window(&W),event(&E){Zmiana(pos,roz),setFillColor(C);tekst_przycisku.Dane_poczatek(*window,*this,S);}
+                  sf::Color C = sf::Color::Green):window(W),event(E){Zmiana(pos,roz),setFillColor(C);tekst_przycisku.Dane_poczatek(window,*this,S);}
     void Zmiana(sf::Vector2f pos, sf::Vector2f pos1){
         if(pos.x>pos1.x)
         {
@@ -43,8 +45,8 @@ public:
             pos1.y=y-pos.y;
         }
         else pos1.y-=pos.y;
-        setPosition(window->getView().getSize().x*pos.x,window->getView().getSize().y*pos.y);
-        setSize(sf::Vector2f(window->getView().getSize().x*pos1.x,window->getView().getSize().y*pos1.y));
+        setPosition(window.getView().getSize().x*pos.x,window.getView().getSize().y*pos.y);
+        setSize(sf::Vector2f(window.getView().getSize().x*pos1.x,window.getView().getSize().y*pos1.y));
     }
     virtual void Akcje() {
 
@@ -105,14 +107,6 @@ public:
 
     }
 };
-
-
-
-//Przycisk<bool,u_short>(window,event,okienko,TABLICE)
-
-
-
-
 
 
 template <typename Base, typename Change>
@@ -190,18 +184,13 @@ public:
 
     }
 
-    //~Przycisk(){Kolory.clear();}
 
-    // To klasa do wypisywania
 
 private:
     Base& Zmienna;
-    //std::shared_ptr<Change*> ZmianyZmiennej[6];
     Change* ZmianyZmiennej[6];
     Change  WartosciZmiennej[6];
     bool Zastap;
-
-    //std::string Zawartosc_tekstu = "";
 
     void ZmienStan(const u_short &to){
         if(Zastap) Zmienna=(*ZmianyZmiennej[to]);

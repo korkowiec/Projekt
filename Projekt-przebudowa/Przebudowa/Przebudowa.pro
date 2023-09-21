@@ -37,7 +37,6 @@ SOURCES += \
     \
     Szachy/Klasy_pomocnice/suwak.cpp \
     Szachy/Klasy_pomocnice/tekst.cpp \
-    Szachy/Klasy_pomocnice/przycisk.cpp \
     Szachy/Klasy_pomocnice/animacja.cpp \
     Szachy/Klasy_pomocnice/animacja_plynna.cpp \
     \

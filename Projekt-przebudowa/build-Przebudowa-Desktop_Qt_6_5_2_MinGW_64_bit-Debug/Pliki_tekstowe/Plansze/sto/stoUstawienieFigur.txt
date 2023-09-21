@@ -1,0 +1,5 @@
+,SkoczekBialy,5,1,0,0,
+,KrolowaCzarna,5,2,0,0,
+,SkoczekBialy,5,4,0,0,
+,SkoczekBialy,6,1,0,0,
+,SkoczekBialy,6,2,0,0,
