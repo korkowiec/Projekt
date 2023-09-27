@@ -17,58 +17,63 @@ INCLUDEPATH += "C:/SFML-2.5.1/include"
 
 
 SOURCES += \
-    Szachy/Dane_poczatkowe/Funkcje.cpp \
-    Szachy/Dane_poczatkowe/daneliczbowe.cpp \
-    Szachy/Dane_poczatkowe/Zdarzenia.cpp \
-    Szachy/Dane_poczatkowe/Zmienne.cpp \
-    Szachy/Dane_poczatkowe/Struktury_danych.cpp \
+    Szachy/GlobalVariabies/GlobalFunctions.cpp \
+    Szachy/GlobalVariabies/Variables.cpp \
     \
-    Szachy/Okna/Wlasna_plansza/Wlasna_plasza.cpp \
+    Szachy/HelpClass/FrameAnimation.cpp \
+    Szachy/HelpClass/RenderWindow.cpp \
+    Szachy/HelpClass/RotateAnimation.cpp \
+    Szachy/HelpClass/Slider.cpp \
+    Szachy/HelpClass/Text.cpp \
     \
-    Szachy/Okna/Okno_startowe/okno_startowe.cpp \
+    Szachy/SpecialClass/Chessman.cpp \
     \
-    Szachy/Okna/Gra/Plansza.cpp \
-    Szachy/Okna/Gra/figura.cpp \
-    Szachy/Okna/Gra/interfejs.cpp \
     \
-    Szachy/Okna/Piaskownica/piaskownica.cpp \
+    Szachy/Windows/BasicGame/BasicGame.cpp \
+    Szachy/Windows/BasicGame/Console.cpp \
     \
-    Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.cpp \
+    Szachy/Windows/Menu/Menu.cpp \
     \
-    Szachy/Klasy_pomocnice/suwak.cpp \
-    Szachy/Klasy_pomocnice/tekst.cpp \
-    Szachy/Klasy_pomocnice/przycisk.cpp \
-    Szachy/Klasy_pomocnice/animacja.cpp \
-    Szachy/Klasy_pomocnice/animacja_plynna.cpp \
+    Szachy/Windows/PlaySandbox/PlaySandbox.cpp \
     \
-    szachy.cpp \
+    Szachy/Windows/SandboxChessboard/SandboxChessboard.cpp \
+    \
+    Szachy/Windows/SandboxChessman/SandboxChessman.cpp \
+    \
+    Szachy/Chess.cpp \
     main.cpp
 
 
 HEADERS += \
-    Szachy/Dane_poczatkowe/daneliczbowe.h \
-    Szachy/Dane_poczatkowe/Struktury_danych.h \
-    Szachy/Dane_poczatkowe/Zdarzenia.h \
-    Szachy/Dane_poczatkowe/Zmienne.h \
-    Szachy/Dane_poczatkowe/funkcje.h \
+    Szachy/GlobalVariabies/GlobalFunctions.h \
+    Szachy/GlobalVariabies/Variables.h \
     \
-    Szachy/Okna/Wlasna_plansza/Wlasna_plasza.h \
+    Szachy/HelpClass/Button.h \
+    Szachy/HelpClass/FrameAnimation.h \
+    Szachy/HelpClass/RenderWindow.h \
+    Szachy/HelpClass/RotateAnimation.h \
+    Szachy/HelpClass/Slider.h \
+    Szachy/HelpClass/Text.h \
     \
-    Szachy/Okna/Okno_startowe/okno_startowe.h \
+    Szachy/SpecialClass/Chessman.h \
     \
-    Szachy/Okna/Gra/interfejs.h \
-    Szachy/Okna/Gra/figura.h \
-    Szachy/Okna/Gra/Plansza.h \
     \
-    Szachy/Okna/Piaskownica/piaskownica.h \
+    Szachy/Windows/BasicGame/BasicGame.h \
+    Szachy/Windows/BasicGame/Console.h \
     \
-    Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.h \
+    Szachy/Windows/Menu/Menu.h \
     \
-    Szachy/Klasy_pomocnice/przycisk.h \
-    Szachy/Klasy_pomocnice/suwak.h \
-    Szachy/Klasy_pomocnice/tekst.h \
-    Szachy/Klasy_pomocnice/animacja.h \
-    Szachy/Klasy_pomocnice/animacja_plynna.h \
+    Szachy/Windows/PlaySandbox/PlaySandbox.h \
     \
-    stb_image_write.h \
-    szachy.h
+    Szachy/Windows/SandboxChessboard/SandboxChessboard.h \
+    \
+    Szachy/Windows/SandboxChessman/SandboxChessman.h \
+    \
+    Szachy/Chess.h \
+
+
+
+
+
+
+

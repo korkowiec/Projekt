@@ -1,0 +1,5 @@
+,GoniecCzarny,0,0,0,0,
+,GoniecCzarny,4,2,0,0,
+,GoniecCzarny,4,4,0,0,
+,GoniecCzarny,5,3,0,0,
+,GoniecCzarny,5,6,0,0,

@@ -45,10 +45,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Funkcje.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\GlobalVariabies\\GlobalFunctions.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Funkcje.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/GlobalVariabies/GlobalFunctions.cpp"
 },
 {
     "arguments": [
@@ -96,10 +96,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\daneliczbowe.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\GlobalVariabies\\Variables.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/daneliczbowe.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/GlobalVariabies/Variables.cpp"
 },
 {
     "arguments": [
@@ -147,10 +147,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Zdarzenia.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\FrameAnimation.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Zdarzenia.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/FrameAnimation.cpp"
 },
 {
     "arguments": [
@@ -198,10 +198,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Zmienne.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\RenderWindow.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Zmienne.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/RenderWindow.cpp"
 },
 {
     "arguments": [
@@ -249,10 +249,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Struktury_danych.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\RotateAnimation.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Struktury_danych.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/RotateAnimation.cpp"
 },
 {
     "arguments": [
@@ -300,10 +300,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Wlasna_plansza\\Wlasna_plasza.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\Slider.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Wlasna_plansza/Wlasna_plasza.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/Slider.cpp"
 },
 {
     "arguments": [
@@ -351,10 +351,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Okno_startowe\\okno_startowe.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\Text.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Okno_startowe/okno_startowe.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/Text.cpp"
 },
 {
     "arguments": [
@@ -402,10 +402,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Gra\\Plansza.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\SpecialClass\\Chessman.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Gra/Plansza.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/SpecialClass/Chessman.cpp"
 },
 {
     "arguments": [
@@ -453,10 +453,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Gra\\figura.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\BasicGame\\BasicGame.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Gra/figura.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/BasicGame/BasicGame.cpp"
 },
 {
     "arguments": [
@@ -504,10 +504,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Gra\\interfejs.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\BasicGame\\Console.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Gra/interfejs.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/BasicGame/Console.cpp"
 },
 {
     "arguments": [
@@ -555,10 +555,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Piaskownica\\piaskownica.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\Menu\\Menu.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Piaskownica/piaskownica.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/Menu/Menu.cpp"
 },
 {
     "arguments": [
@@ -606,10 +606,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Zagraj_wlasna_plansze\\Zagraj_wlasna_plansze.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\PlaySandbox\\PlaySandbox.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/PlaySandbox/PlaySandbox.cpp"
 },
 {
     "arguments": [
@@ -657,10 +657,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\suwak.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\SandboxChessboard\\SandboxChessboard.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/suwak.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/SandboxChessboard/SandboxChessboard.cpp"
 },
 {
     "arguments": [
@@ -708,10 +708,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\tekst.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\SandboxChessman\\SandboxChessman.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/tekst.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/SandboxChessman/SandboxChessman.cpp"
 },
 {
     "arguments": [
@@ -759,163 +759,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\przycisk.cpp"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Chess.cpp"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/przycisk.cpp"
-},
-{
-    "arguments": [
-        "clang",
-        "-Wno-documentation-unknown-command",
-        "-Wno-unknown-warning-option",
-        "-Wno-unknown-pragmas",
-        "-nostdinc",
-        "-nostdinc++",
-        "-g",
-        "-Wall",
-        "-Wextra",
-        "-Wextra",
-        "-fexceptions",
-        "-mthreads",
-        "-fsyntax-only",
-        "-m64",
-        "--target=x86_64-w64-mingw32",
-        "-std=gnu++17",
-        "-DUNICODE",
-        "-D_UNICODE",
-        "-DWIN32",
-        "-DMINGW_HAS_SECURE_API",
-        "-DQT_QML_DEBUG",
-        "-DQ_CREATOR_RUN",
-        "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa",
-        "-IC:\\SFML-2.5.1\\include",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug",
-        "-IC:\\Qt\\6.2.3\\mingw_64\\mkspecs\\win32-g++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\x86_64-w64-mingw32",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\backward",
-        "-isystem",
-        "C:\\Qt\\Tools\\QtCreator\\bin\\clang\\lib\\clang\\14.0.3\\include",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\x86_64-w64-mingw32\\include",
-        "-fmessage-length=0",
-        "-fdiagnostics-show-note-include-stack",
-        "-fretain-comments-from-system-headers",
-        "-fmacro-backtrace-limit=0",
-        "-ferror-limit=1000",
-        "-x",
-        "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\animacja.cpp"
-    ],
-    "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/animacja.cpp"
-},
-{
-    "arguments": [
-        "clang",
-        "-Wno-documentation-unknown-command",
-        "-Wno-unknown-warning-option",
-        "-Wno-unknown-pragmas",
-        "-nostdinc",
-        "-nostdinc++",
-        "-g",
-        "-Wall",
-        "-Wextra",
-        "-Wextra",
-        "-fexceptions",
-        "-mthreads",
-        "-fsyntax-only",
-        "-m64",
-        "--target=x86_64-w64-mingw32",
-        "-std=gnu++17",
-        "-DUNICODE",
-        "-D_UNICODE",
-        "-DWIN32",
-        "-DMINGW_HAS_SECURE_API",
-        "-DQT_QML_DEBUG",
-        "-DQ_CREATOR_RUN",
-        "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa",
-        "-IC:\\SFML-2.5.1\\include",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug",
-        "-IC:\\Qt\\6.2.3\\mingw_64\\mkspecs\\win32-g++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\x86_64-w64-mingw32",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\backward",
-        "-isystem",
-        "C:\\Qt\\Tools\\QtCreator\\bin\\clang\\lib\\clang\\14.0.3\\include",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\x86_64-w64-mingw32\\include",
-        "-fmessage-length=0",
-        "-fdiagnostics-show-note-include-stack",
-        "-fretain-comments-from-system-headers",
-        "-fmacro-backtrace-limit=0",
-        "-ferror-limit=1000",
-        "-x",
-        "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\animacja_plynna.cpp"
-    ],
-    "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.cpp"
-},
-{
-    "arguments": [
-        "clang",
-        "-Wno-documentation-unknown-command",
-        "-Wno-unknown-warning-option",
-        "-Wno-unknown-pragmas",
-        "-nostdinc",
-        "-nostdinc++",
-        "-g",
-        "-Wall",
-        "-Wextra",
-        "-Wextra",
-        "-fexceptions",
-        "-mthreads",
-        "-fsyntax-only",
-        "-m64",
-        "--target=x86_64-w64-mingw32",
-        "-std=gnu++17",
-        "-DUNICODE",
-        "-D_UNICODE",
-        "-DWIN32",
-        "-DMINGW_HAS_SECURE_API",
-        "-DQT_QML_DEBUG",
-        "-DQ_CREATOR_RUN",
-        "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa",
-        "-IC:\\SFML-2.5.1\\include",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug",
-        "-IC:\\Qt\\6.2.3\\mingw_64\\mkspecs\\win32-g++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\x86_64-w64-mingw32",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\backward",
-        "-isystem",
-        "C:\\Qt\\Tools\\QtCreator\\bin\\clang\\lib\\clang\\14.0.3\\include",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\x86_64-w64-mingw32\\include",
-        "-fmessage-length=0",
-        "-fdiagnostics-show-note-include-stack",
-        "-fretain-comments-from-system-headers",
-        "-fmacro-backtrace-limit=0",
-        "-ferror-limit=1000",
-        "-x",
-        "c++",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\szachy.cpp"
-    ],
-    "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/szachy.cpp"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Chess.cpp"
 },
 {
     "arguments": [
@@ -1014,10 +861,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\daneliczbowe.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\GlobalVariabies\\GlobalFunctions.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/daneliczbowe.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/GlobalVariabies/GlobalFunctions.h"
 },
 {
     "arguments": [
@@ -1065,10 +912,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Struktury_danych.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\GlobalVariabies\\Variables.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Struktury_danych.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/GlobalVariabies/Variables.h"
 },
 {
     "arguments": [
@@ -1116,10 +963,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Zdarzenia.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\Button.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Zdarzenia.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/Button.h"
 },
 {
     "arguments": [
@@ -1167,10 +1014,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\Zmienne.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\FrameAnimation.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/Zmienne.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/FrameAnimation.h"
 },
 {
     "arguments": [
@@ -1218,10 +1065,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Dane_poczatkowe\\funkcje.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\RenderWindow.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Dane_poczatkowe/funkcje.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/RenderWindow.h"
 },
 {
     "arguments": [
@@ -1269,10 +1116,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Wlasna_plansza\\Wlasna_plasza.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\RotateAnimation.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Wlasna_plansza/Wlasna_plasza.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/RotateAnimation.h"
 },
 {
     "arguments": [
@@ -1320,10 +1167,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Okno_startowe\\okno_startowe.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\Slider.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Okno_startowe/okno_startowe.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/Slider.h"
 },
 {
     "arguments": [
@@ -1371,10 +1218,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Gra\\interfejs.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\HelpClass\\Text.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Gra/interfejs.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/HelpClass/Text.h"
 },
 {
     "arguments": [
@@ -1422,10 +1269,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Gra\\figura.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\SpecialClass\\Chessman.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Gra/figura.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/SpecialClass/Chessman.h"
 },
 {
     "arguments": [
@@ -1473,10 +1320,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Gra\\Plansza.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\BasicGame\\BasicGame.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Gra/Plansza.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/BasicGame/BasicGame.h"
 },
 {
     "arguments": [
@@ -1524,10 +1371,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Piaskownica\\piaskownica.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\BasicGame\\Console.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Piaskownica/piaskownica.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/BasicGame/Console.h"
 },
 {
     "arguments": [
@@ -1575,10 +1422,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Okna\\Zagraj_wlasna_plansze\\Zagraj_wlasna_plansze.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\Menu\\Menu.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Okna/Zagraj_wlasna_plansze/Zagraj_wlasna_plansze.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/Menu/Menu.h"
 },
 {
     "arguments": [
@@ -1626,10 +1473,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\przycisk.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\PlaySandbox\\PlaySandbox.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/przycisk.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/PlaySandbox/PlaySandbox.h"
 },
 {
     "arguments": [
@@ -1677,10 +1524,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\suwak.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\SandboxChessboard\\SandboxChessboard.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/suwak.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/SandboxChessboard/SandboxChessboard.h"
 },
 {
     "arguments": [
@@ -1728,10 +1575,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\tekst.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Windows\\SandboxChessman\\SandboxChessman.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/tekst.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Windows/SandboxChessman/SandboxChessman.h"
 },
 {
     "arguments": [
@@ -1779,162 +1626,9 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\animacja.h"
+        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Chess.h"
     ],
     "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/animacja.h"
-},
-{
-    "arguments": [
-        "clang",
-        "-Wno-documentation-unknown-command",
-        "-Wno-unknown-warning-option",
-        "-Wno-unknown-pragmas",
-        "-nostdinc",
-        "-nostdinc++",
-        "-g",
-        "-Wall",
-        "-Wextra",
-        "-Wextra",
-        "-fexceptions",
-        "-mthreads",
-        "-fsyntax-only",
-        "-m64",
-        "--target=x86_64-w64-mingw32",
-        "-std=gnu++17",
-        "-DUNICODE",
-        "-D_UNICODE",
-        "-DWIN32",
-        "-DMINGW_HAS_SECURE_API",
-        "-DQT_QML_DEBUG",
-        "-DQ_CREATOR_RUN",
-        "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa",
-        "-IC:\\SFML-2.5.1\\include",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug",
-        "-IC:\\Qt\\6.2.3\\mingw_64\\mkspecs\\win32-g++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\x86_64-w64-mingw32",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\backward",
-        "-isystem",
-        "C:\\Qt\\Tools\\QtCreator\\bin\\clang\\lib\\clang\\14.0.3\\include",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\x86_64-w64-mingw32\\include",
-        "-fmessage-length=0",
-        "-fdiagnostics-show-note-include-stack",
-        "-fretain-comments-from-system-headers",
-        "-fmacro-backtrace-limit=0",
-        "-ferror-limit=1000",
-        "-x",
-        "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\Szachy\\Klasy_pomocnice\\animacja_plynna.h"
-    ],
-    "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Klasy_pomocnice/animacja_plynna.h"
-},
-{
-    "arguments": [
-        "clang",
-        "-Wno-documentation-unknown-command",
-        "-Wno-unknown-warning-option",
-        "-Wno-unknown-pragmas",
-        "-nostdinc",
-        "-nostdinc++",
-        "-g",
-        "-Wall",
-        "-Wextra",
-        "-Wextra",
-        "-fexceptions",
-        "-mthreads",
-        "-fsyntax-only",
-        "-m64",
-        "--target=x86_64-w64-mingw32",
-        "-std=gnu++17",
-        "-DUNICODE",
-        "-D_UNICODE",
-        "-DWIN32",
-        "-DMINGW_HAS_SECURE_API",
-        "-DQT_QML_DEBUG",
-        "-DQ_CREATOR_RUN",
-        "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa",
-        "-IC:\\SFML-2.5.1\\include",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug",
-        "-IC:\\Qt\\6.2.3\\mingw_64\\mkspecs\\win32-g++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\x86_64-w64-mingw32",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\backward",
-        "-isystem",
-        "C:\\Qt\\Tools\\QtCreator\\bin\\clang\\lib\\clang\\14.0.3\\include",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\x86_64-w64-mingw32\\include",
-        "-fmessage-length=0",
-        "-fdiagnostics-show-note-include-stack",
-        "-fretain-comments-from-system-headers",
-        "-fmacro-backtrace-limit=0",
-        "-ferror-limit=1000",
-        "-x",
-        "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\stb_image_write.h"
-    ],
-    "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/stb_image_write.h"
-},
-{
-    "arguments": [
-        "clang",
-        "-Wno-documentation-unknown-command",
-        "-Wno-unknown-warning-option",
-        "-Wno-unknown-pragmas",
-        "-nostdinc",
-        "-nostdinc++",
-        "-g",
-        "-Wall",
-        "-Wextra",
-        "-Wextra",
-        "-fexceptions",
-        "-mthreads",
-        "-fsyntax-only",
-        "-m64",
-        "--target=x86_64-w64-mingw32",
-        "-std=gnu++17",
-        "-DUNICODE",
-        "-D_UNICODE",
-        "-DWIN32",
-        "-DMINGW_HAS_SECURE_API",
-        "-DQT_QML_DEBUG",
-        "-DQ_CREATOR_RUN",
-        "-IC:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedMingwHeaders",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa",
-        "-IC:\\SFML-2.5.1\\include",
-        "-IC:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug",
-        "-IC:\\Qt\\6.2.3\\mingw_64\\mkspecs\\win32-g++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\x86_64-w64-mingw32",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\lib\\gcc\\x86_64-w64-mingw32\\11.2.0\\include\\c++\\backward",
-        "-isystem",
-        "C:\\Qt\\Tools\\QtCreator\\bin\\clang\\lib\\clang\\14.0.3\\include",
-        "-isystem",
-        "C:\\Qt\\Tools\\mingw1120_64\\x86_64-w64-mingw32\\include",
-        "-fmessage-length=0",
-        "-fdiagnostics-show-note-include-stack",
-        "-fretain-comments-from-system-headers",
-        "-fmacro-backtrace-limit=0",
-        "-ferror-limit=1000",
-        "-x",
-        "c++-header",
-        "C:\\Users\\Jakub\\Documents\\GitHub\\Projekt\\Projekt-przebudowa\\Przebudowa\\szachy.h"
-    ],
-    "directory": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/build-Przebudowa-Desktop_Qt_6_2_3_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/szachy.h"
+    "file": "C:/Users/Jakub/Documents/GitHub/Projekt/Projekt-przebudowa/Przebudowa/Szachy/Chess.h"
 }
 ]
