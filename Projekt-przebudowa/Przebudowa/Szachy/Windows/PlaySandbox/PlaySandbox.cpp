@@ -48,15 +48,15 @@ void PlaySandbox::Czytaj()
 
 void PlaySandbox::Dzialanie()
 {
-    while(okienko==5)
+    while(::window==5)
     {
         window->clear();
 
         while(window->pollEvent(*event))
         {
             mouse_position = window->mapPixelToCoords(sf::Mouse::getPosition(*window));
-            if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)||sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {okienko=0;window->close();}
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)) okienko=1;
+            if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)||sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {::window=0;window->close();}
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)) ::window=1;
 
         }
 
@@ -64,11 +64,11 @@ void PlaySandbox::Dzialanie()
         if(aktualny)
         {
             Wybór=Nazwy[aktualny-1];
-            okienko=2;
+            ::window=2;
         }
         window->display();
     }
-    while(okienko==2)
+    while(::window==2)
     {
         BasicGame BasicGame(*window,*event,Wybór);
         BasicGame.Gra();
@@ -85,12 +85,16 @@ void PlaySandbox::Twórz()
     int C=1,D=3;
 
     while(C*D<Nazwy.size()+1)if((D+C)%2)D++;else C++;
-    std::shared_ptr<u_short>jeden=std::make_shared<u_short>(1);
-    u_short *Tablica1[6]={&okienko,&okienko,&okienko,&(*jeden),&(*jeden),&(*jeden)};
+    uint8_t jeden=1;
+    uint8_t *Tablica1[6]={&::window,&::window,&::window,&jeden,&jeden,&jeden};
     sf::Color C2[6]={sf::Color::Green,sf::Color::Green,sf::Color::Red,sf::Color::Red,sf::Color::Red,sf::Color::Red};
     pos=sf::Vector2f(0.00,0.00);
     roz=sf::Vector2f(0.00+0.99/C,0.00+0.99/D);
+<<<<<<< HEAD
     Plansze.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,okienko,
+=======
+    Plansze.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,::window,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     Tablica1,1,pos,roz,"MENU"));
 
     for(int c=0;c<C;c++)for(int d=0;d<D&&c*D+d<Nazwy.size()+1;d++)

@@ -17,7 +17,7 @@ SandboxChessboard::SandboxChessboard(RenderWindow &W,sf::Event &E):window(&W),ev
 
 void SandboxChessboard::Dzialanie()
 {
-    while(okienko==4)
+    while(::window==4)
     {
         window->clear();
 
@@ -139,8 +139,8 @@ void SandboxChessboard::Rysowanie_interfejs()
         sf::Vector2f(pos1);
         sf::Vector2f(roz1);
 
-        pos=sf::Vector2f(0.61,0.01);
-        roz=sf::Vector2f(0.8,0.2);
+        pos=sf::Vector2f(0.11,0.11);
+        roz=sf::Vector2f(0.2,0.2);
         pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
         roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
@@ -251,66 +251,86 @@ void SandboxChessboard::Tworzenie_obiektów()
     {
         //MENU
         {
-         u_short Stan1[6]={0,0,0,1,1,1};
-            u_short *Stan[6]={&okienko,&okienko,&okienko,&Stan1[3],&Stan1[4],&Stan1[5]};
+         uint8_t one=1;
+            uint8_t *Stan[6]={&::window,&::window,&::window,&one,&one,&one};
             pos=sf::Vector2f(0.91,0.01);
             roz=sf::Vector2f(1,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+<<<<<<< HEAD
             Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,okienko,
+=======
+            Przyciski.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,::window,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     Stan,1,pos1,roz1,std::string("MENU")));
         }
 
 
         //X+
         {
-            short stanik[6]={0,0,1,0,0,1};
-            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            uint8_t zero=0, one=1;
+            uint8_t *stanik1[6]={&zero,&zero,&one,&zero,&zero,&one};
             pos=sf::Vector2f(0.01,0.01);
             roz=sf::Vector2f(0.1,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+<<<<<<< HEAD
             Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_x1,
+=======
+            Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,Plansza.Rozmiar_x1,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("X+")));
 
         }
         //X-
         {
-            short stanik[6]={0,0,-1,0,0,-1};
-            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            int8_t zero=0, _one=-1;
+            int8_t *stanik1[6]={&zero,&zero,&_one,&zero,&zero,&_one};
             pos=sf::Vector2f(0.21,0.01);
             roz=sf::Vector2f(0.3,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+<<<<<<< HEAD
             Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_x1,
+=======
+            Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,Plansza.Rozmiar_x1,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("X-")));
         }
         //Y+
         {
-            short stanik[6]={0,0,1,0,0,1};
-            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            uint8_t zero=0, one=1;
+            uint8_t *stanik1[6]={&zero,&zero,&one,&zero,&zero,&one};
             pos=sf::Vector2f(0.01,0.11);
             roz=sf::Vector2f(0.1,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+<<<<<<< HEAD
             Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_y1,
+=======
+            Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,Plansza.Rozmiar_y1,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("Y+")));
         }
         //Y-
         {
-            short stanik[6]={0,0,-1,0,0,-1};
-            short *stanik1[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            int8_t zero=0, _one=-1;
+            int8_t *stanik1[6]={&zero,&zero,&_one,&zero,&zero,&_one};
             pos=sf::Vector2f(0.21,0.11);
             roz=sf::Vector2f(0.3,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
+<<<<<<< HEAD
             Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_y1,
+=======
+            Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,Plansza.Rozmiar_y1,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("Y-")));
         }
         //Drużyna
         {
-            bool stanik[6]={0,0,0,1,1,1};
-            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,&one,&one,&one};
             pos=sf::Vector2f(0.31,0.11);
             roz=sf::Vector2f(0.5,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -320,8 +340,8 @@ void SandboxChessboard::Tworzenie_obiektów()
         }
         //Załaduj teksture
         {
-            bool stanik[6]={0,0,0,1,1,1};
-            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,&one,&one,&one};
             pos=sf::Vector2f(0.31,0.01);
             roz=sf::Vector2f(0.60,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -333,8 +353,8 @@ void SandboxChessboard::Tworzenie_obiektów()
         }
         //ZAPISZ
         {
-            bool stanik[6]={0,0,0,1,1,1};
-            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,&one,&one,&one};
             pos=sf::Vector2f(0.91,0.11);
             roz=sf::Vector2f(1,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -347,8 +367,8 @@ void SandboxChessboard::Tworzenie_obiektów()
 
         //WAŻNA
         {
-            bool stanik[6]={0,0,0,1,1,1};
-            bool *Stan[6]={&stanik[0],&stanik[1],&stanik[2],&stanik[3],&stanik[4],&stanik[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,&one,&one,&one};
             pos=sf::Vector2f(0.84,0.01);
             roz=sf::Vector2f(0.9,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -600,9 +620,9 @@ void SandboxChessboard::Akcje()
     while(window->pollEvent(*event))
     {
         mouse_position = window->mapPixelToCoords(sf::Mouse::getPosition(*window));
-        if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)||sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {okienko=0;window->close();}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) okienko=2;
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)) okienko=1;
+        if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)||sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {::window=0;window->close();}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) ::window=2;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)) ::window=1;
 
     }
 }

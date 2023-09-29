@@ -19,7 +19,11 @@ void Console::Koniec_gry()
 //    tekst.setOutlineColor(sf::Color::Black);
 //    tekst.setOutlineThickness(0);
     Rysunki.emplace_back(std::make_unique<Text>(sf::String::fromUtf8(S.begin(),S.end()),Dane_tekstu));
+<<<<<<< HEAD
     for(u_short c=0;c<Rysunki.size();c++)
+=======
+    for(uint8_t c=0;c<Rysunki.size();c++)
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
         {
 
             Text *przycisk=dynamic_cast<Text *>(Rysunki[c].get());
@@ -63,7 +67,7 @@ void Console::Ustal_Pole()
         }
         sf::Vector2f(pos);
         sf::Vector2f(roz);
-        for(u_short c=0;c<Rysunki.size();c++)
+        for(uint8_t c=0;c<Rysunki.size();c++)
         {
             ButtonActions *przycisk=dynamic_cast<ButtonActions *>(Rysunki[c].get());
             if(przycisk != nullptr)
@@ -159,20 +163,38 @@ void Console::Rysuj_bok()
 }
 void Console::Przyciski()
 {
+<<<<<<< HEAD
     std::shared_ptr<u_short> jeden=std::make_shared<u_short>(1);
     std::shared_ptr<u_short> zero=std::make_shared<u_short>(0);
     u_short *Stan[6]={&okienko,&okienko,&okienko,&(*jeden),&(*jeden),&(*jeden)};
     Rysunki.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,
                                                       okienko,Stan,1,
+=======
+;
+    uint8_t jeden=1;
+    uint8_t zero=0;
+
+    uint8_t *Stan[6]={&::window,&::window,&::window,&jeden,&jeden,&jeden};
+    Rysunki.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,
+                                                      ::window,Stan,1,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Menu")));
 
+<<<<<<< HEAD
     Stan[3]=&(*zero);
     Stan[4]=&(*zero);
     Stan[5]=&(*zero);
     Rysunki.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,
                                                                       okienko,Stan,1,
+=======
+    Stan[3]=&zero;
+    Stan[4]=&zero;
+    Stan[5]=&zero;
+    Rysunki.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,
+                                                                      ::window,Stan,1,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                                       sf::Vector2f(0,0),
                                                       sf::Vector2f(0,0),
                                                       std::string("Wyjście")));
@@ -188,7 +210,7 @@ void Console::Przyciski()
 }
 void Console::Akcje_i_rysowanie()
 {
-    if(Rodzaj!=0)for(u_short c=0;c<Rysunki.size();c++)
+    if(Rodzaj!=0)for(uint8_t c=0;c<Rysunki.size();c++)
     {
 
         ButtonActions *przycisk=dynamic_cast<ButtonActions *>(Rysunki[c].get());

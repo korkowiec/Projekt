@@ -197,8 +197,15 @@ private:
     Change* ZmianyZmiennej[6];
     Change  WartosciZmiennej[6];
     bool Zastap;
+<<<<<<< HEAD
 
     void ZmienStan(const uint8_t &to){
+=======
+    uint8_t previous=255;
+    void ZmienStan(const uint8_t &to){
+        if(previous==to)return;
+        previous=to;
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
         if(Zastap) Zmienna=(*ZmianyZmiennej[to]);
         else Zmienna+=(*ZmianyZmiennej[to]);
 

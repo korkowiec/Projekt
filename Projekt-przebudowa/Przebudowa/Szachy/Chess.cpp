@@ -8,7 +8,11 @@
 #include <Szachy/Windows/SandboxChessboard/SandboxChessboard.h>
 #include <Szachy/Windows/PlaySandbox/PlaySandbox.h>
 #include <Szachy/Windows/SandboxChessman/SandboxChessman.h>
+<<<<<<< HEAD
 
+=======
+uint8_t window=1;
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
 RenderWindow Window;
 sf::Event Event;
 Chess::Chess() : Window(::Window),Event(::Event)
@@ -21,7 +25,11 @@ Chess::Chess() : Window(::Window),Event(::Event)
     while(Window.isOpen())
     {
 
+<<<<<<< HEAD
         switch (okienko)
+=======
+        switch (::window)
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
         {
         case 1: //Menu
         {

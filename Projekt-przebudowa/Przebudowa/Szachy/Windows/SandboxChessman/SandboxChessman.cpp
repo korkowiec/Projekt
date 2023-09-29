@@ -20,7 +20,7 @@ void SandboxChessman::Dzialanie()
 
     Utwórz_przyciski_i_tekst();
     //Działanie w pętli
-    while(okienko==3)
+    while(::window==3)
     {
         window->clear();
 
@@ -29,9 +29,9 @@ void SandboxChessman::Dzialanie()
         while(window->pollEvent(*event))
         {
             mouse_position = window->mapPixelToCoords(sf::Mouse::getPosition(*window));
-            if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)||sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {okienko=0;window->close();}
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) okienko=2;
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)) okienko=1;
+            if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)||sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {::window=0;window->close();}
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) ::window=2;
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)) ::window=1;
 
 
 
@@ -329,23 +329,27 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //MENU
     {
-            u_short Stan1[6]={0,0,0,1,1,1};
-    u_short *Stan[6]={&okienko,&okienko,&okienko,&Stan1[3],&Stan1[4],&Stan1[5]};
+            uint8_t one=1;
+    uint8_t *Stan[6]={&::window,&::window,&::window,&one,&one,&one};
 
     pos=sf::Vector2f(0.81,0.01);
     roz=sf::Vector2f(1,0.1);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
+<<<<<<< HEAD
     Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,okienko,
+=======
+    Przyciski.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,::window,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     Stan,1,pos1,roz2,std::string("MENU")));
     }
 
     //ZAPISZ
     {
-    bool stanik1[6]={0,0,1,0,0,1};
-    bool *stanik[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                        &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&one,
+                               &zero,&zero,&one};
 
     pos=sf::Vector2f(0.81,0.11);
     roz=sf::Vector2f(1,0.2);
@@ -353,23 +357,31 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
     Przyciski.emplace_back(std::make_unique<Button<bool,bool>>(*window,*event,Zapisz_figure,
+<<<<<<< HEAD
                                     stanik,1,pos1,roz2,std::string("ZAPISZ")));
+=======
+                                    Stan,1,pos1,roz2,std::string("ZAPISZ")));
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
     }
 
     //Załaduj teksture
     {
         //bool *Stan[6]={&bool_0,&bool_0,&bool_1,&bool_0,&bool_0,&bool_1};
 
-    bool stanik1[6]={0,0,1,0,0,1};
-    bool *stanik[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                        &stanik1[3],&stanik1[4],&stanik1[5]};
-    pos=sf::Vector2f(0.31,0.06);
-    roz=sf::Vector2f(0.80,0.1);
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&one,
+                               &zero,&zero,&one};
+            pos=sf::Vector2f(0.31,0.15);
+    roz=sf::Vector2f(0.80,0.11);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
     Przyciski.emplace_back(std::make_unique<Button<bool,bool>>(*window,*event,CzytajPlik,
+<<<<<<< HEAD
                                     stanik,1,pos1,roz2,std::string("Wczytaj teksturę")));
+=======
+                                    Stan,1,pos1,roz2,std::string("Wczytaj teksturę")));
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
     }
 
     //Załaduj nazwę tekstury
@@ -386,23 +398,30 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //+R
     {
-    u_short stanik1[6]={0,0,1,0,0,1};
-    u_short *stanik[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                       &stanik1[3],&stanik1[4],&stanik1[5]};
+
+    uint8_t zero=0;
+    uint8_t one=1;
+    uint8_t *stanik[6]={&zero,&zero,&one,
+                       &zero,&zero,&one};
     pos=sf::Vector2f(0.31,0.01);
     roz=sf::Vector2f(0.4,0.05);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
+<<<<<<< HEAD
     Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,aktualny_rozmiar,
+=======
+    Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,aktualny_rozmiar,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("R+")));
     }
 
     //-R
     {
-    short stanik1[6]={0,0,-1,0,0,-1};
-    short *stanik[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                          &stanik1[3],&stanik1[4],&stanik1[5]};
+    int8_t zero=0;
+    int8_t _one=-1;
+    int8_t *stanik[6]={&zero,&zero,&_one,
+                       &zero,&zero,&_one};
     pos=sf::Vector2f(0.71,0.01);
     roz=sf::Vector2f(0.8,0.05);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -410,14 +429,18 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
 
 
+<<<<<<< HEAD
     Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,aktualny_rozmiar,
+=======
+    Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,aktualny_rozmiar,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("R-")));
     }
     //US
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                       &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.41);
     roz=sf::Vector2f(0.9,0.5);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -429,9 +452,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //UW
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.31);
     roz=sf::Vector2f(0.9,0.4);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -443,9 +466,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //Z
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.21);
     roz=sf::Vector2f(0.9,0.3);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -457,9 +480,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //ZE
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.91);
     roz=sf::Vector2f(0.9,1);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -471,9 +494,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //S
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.51);
     roz=sf::Vector2f(0.9,0.6);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -485,9 +508,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //SE
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.81);
     roz=sf::Vector2f(0.9,0.9);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -499,9 +522,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //M
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.71);
     roz=sf::Vector2f(0.9,0.8);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -513,9 +536,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //T
     {
-    bool stanik1[6]={0,0,0,1,1,1};
-    bool *Stan[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                     &stanik1[3],&stanik1[4],&stanik1[5]};
+            bool zero=0, one=1;
+            bool *Stan[6]={&zero,&zero,&zero,
+                               &one,&one,&one};
     pos=sf::Vector2f(0.01,0.61);
     roz=sf::Vector2f(0.9,0.7);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -527,24 +550,28 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
     //+EL
     {
-    u_short stanik1[6]={0,0,1,0,0,1};
-    u_short *stanik[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                          &stanik1[3],&stanik1[4],&stanik1[5]};
+    uint8_t zero=0, one=1;
+    uint8_t *stanik[6]={&zero,&zero,&one,
+                          &zero,&zero,&one};
 
     pos=sf::Vector2f(0.01,0.01);
     roz=sf::Vector2f(0.1,0.1);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
+<<<<<<< HEAD
     Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,Aktualne_dane_ruchu.EL,
+=======
+    Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,Aktualne_dane_ruchu.EL,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("+")));
     }
 
     //-EL
     {
-    short stanik1[6]={0,0,-1,0,0,-1};
-    short *stanik[6]={&stanik1[0],&stanik1[1],&stanik1[2],
-                          &stanik1[3],&stanik1[4],&stanik1[5]};
+    int8_t zero=0, _one=-1;
+    int8_t *stanik[6]={&zero,&zero,&_one,
+                          &zero,&zero,&_one};
     pos=sf::Vector2f(0.21,0.01);
     roz=sf::Vector2f(0.3,0.1);
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
@@ -552,7 +579,11 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
 
 
+<<<<<<< HEAD
     Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Aktualne_dane_ruchu.EL,
+=======
+    Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,Aktualne_dane_ruchu.EL,
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("-")));
     }
     }

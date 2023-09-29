@@ -8,7 +8,11 @@
 #include <Szachy/HelpClass/RenderWindow.h>
 #include <SFML/Window/Event.hpp>
 
+<<<<<<< HEAD
 extern u_short okienko; // Numer aktualnie wyświetlanego okna w switch-case
+=======
+extern uint8_t window; // Numer aktualnie wyświetlanego okna w switch-case
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
 extern u_short Team;    // Liczba drużyn
 extern u_short Teraz;   // Czyj ruch
 extern float czas;      // Wykorzystywany do renderowania okna co sekundę, zamiast co pętle

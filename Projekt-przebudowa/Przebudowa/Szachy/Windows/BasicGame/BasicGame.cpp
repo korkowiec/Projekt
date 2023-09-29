@@ -63,7 +63,7 @@ if(Ustawienie.is_open())
             y=(short)stoi(Pozycja);//pozycja z y (podany numer pola)
             std::getline(Ustawienie, Pozycja,',');
 
-            t=(u_short)stoi(Pozycja); //Drużyna, do której należy
+            t=(uint8_t)stoi(Pozycja); //Drużyna, do której należy
             std::getline(Ustawienie, Pozycja,',');
             if(Pozycja=="\n"||Pozycja=="")
             figury.emplace_back(*this,nazwa,x,y,t);
@@ -257,9 +257,9 @@ void BasicGame ::Rysowanie_Plansza()
 void BasicGame ::Zdarzenia_Podstawowe()
 {
 
-        if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {window->close(); okienko=0;}
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) okienko=2;
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) okienko=1;
+        if(event->type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {window->close(); ::window=0;}
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::G)) ::window=2;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) ::window=1;
 
 }
 void BasicGame ::Gra()
@@ -267,7 +267,7 @@ void BasicGame ::Gra()
     //bool b=std::any_of(window->pollEvent(*event),window->pollEvent(*event),event->type==sf::Event::MouseButtonPressed&&event->mouseButton.button == sf::Mouse::Left);
     Zmiana_okna.x++;
     sf::Clock clock;
-    while(okienko==2)
+    while(::window==2)
     {
 
         //std::cout<<Stan()<<std::endl;
@@ -390,7 +390,7 @@ void BasicGame ::Tworzenie_calosci()
                 file.close();
             }
 
-                okienko=1;
+                ::window=1;
                 return;
         }
 

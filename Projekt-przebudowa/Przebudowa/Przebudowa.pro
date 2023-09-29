@@ -19,6 +19,10 @@ INCLUDEPATH += "C:/SFML-2.5.1/include"
 SOURCES += \
     Szachy/GlobalVariabies/GlobalFunctions.cpp \
     Szachy/GlobalVariabies/Variables.cpp \
+<<<<<<< HEAD
+=======
+    Szachy/SpecialClass/ChessmanMove.cpp \
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
     \
     Szachy/HelpClass/FrameAnimation.cpp \
     Szachy/HelpClass/RenderWindow.cpp \
@@ -47,6 +51,11 @@ SOURCES += \
 HEADERS += \
     Szachy/GlobalVariabies/GlobalFunctions.h \
     Szachy/GlobalVariabies/Variables.h \
+<<<<<<< HEAD
+=======
+    Szachy/SpecialClass/ChessmanMove.h \
+    Szachy/SpecialClass/ChessmanMoveStruct.h \
+>>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
     \
     Szachy/HelpClass/Button.h \
     Szachy/HelpClass/FrameAnimation.h \

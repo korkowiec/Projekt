@@ -3,3 +3,4 @@ Szachy
 loads
 convertedWstr
 main
+bici
