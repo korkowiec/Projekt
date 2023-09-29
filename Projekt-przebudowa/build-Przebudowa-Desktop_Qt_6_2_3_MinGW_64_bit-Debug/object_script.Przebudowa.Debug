@@ -1,5 +1,6 @@
 debug/GlobalFunctions.o
 debug/Variables.o
+debug/ChessmanMove.o
 debug/FrameAnimation.o
 debug/RenderWindow.o
 debug/RotateAnimation.o

@@ -13,6 +13,6 @@ void akcja_gra_start(void Zdarzenia_window(sf::RenderWindow &W, sf::Event &E));
 
 void Popraw_tekst(sf::Vector2f pos1, sf::Vector2f pos2, sf::Text &text, RenderWindow &window);
 
-
+extern char boolToChar(bool number);
 
 #endif // GLOBALFUNCTIONS_H

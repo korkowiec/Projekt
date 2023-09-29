@@ -1,5 +1,6 @@
 release/GlobalFunctions.o
 release/Variables.o
+release/ChessmanMove.o
 release/FrameAnimation.o
 release/RenderWindow.o
 release/RotateAnimation.o

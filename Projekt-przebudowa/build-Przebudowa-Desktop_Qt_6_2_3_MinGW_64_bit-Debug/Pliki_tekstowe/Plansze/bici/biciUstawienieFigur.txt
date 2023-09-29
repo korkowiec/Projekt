@@ -1,0 +1,6 @@
+,FTHa5LswqG8mQQctQRSrxbq7OeFpveDs.png,3,4,0,0,
+,GoniecBialy,4,3,0,1,
+,KrolBialy,5,0,1,0,
+,KrolBialy,6,0,1,1,
+,GoniecBialy,6,3,0,1,
+,KrolBialy,7,0,0,1,

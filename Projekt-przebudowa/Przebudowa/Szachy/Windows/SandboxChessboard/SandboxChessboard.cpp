@@ -139,8 +139,8 @@ void SandboxChessboard::Rysowanie_interfejs()
         sf::Vector2f(pos1);
         sf::Vector2f(roz1);
 
-        pos=sf::Vector2f(0.61,0.01);
-        roz=sf::Vector2f(0.8,0.2);
+        pos=sf::Vector2f(0.11,0.11);
+        roz=sf::Vector2f(0.2,0.2);
         pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
         roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 

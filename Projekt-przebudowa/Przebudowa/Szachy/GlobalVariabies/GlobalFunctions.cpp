@@ -62,3 +62,6 @@ void SetDisplay(sf::RenderWindow &window,sf::Vector2i (a) ,sf::Vector2u(c)) //po
     window.setSize(c);
     window.setPosition(a);
 }
+
+char boolToChar(bool number){
+    if(number)return'1'; return '0';}
