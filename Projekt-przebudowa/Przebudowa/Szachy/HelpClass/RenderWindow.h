@@ -16,7 +16,7 @@ public:
     RenderWindow(sf::WindowHandle handle, const sf::ContextSettings &settings = sf::ContextSettings())
         : sf::RenderWindow(handle, settings) {}
 
-    void Rysowanie(const ButtonActions &P);
+    void Rysowanie(ButtonActions &P);
     void Rysowanie(FrameAnimation &A);
     void Rysowanie(RotateAnimation &A);
     void Rysowanie(const sf::VertexBuffer &vertexBuffer, std::size_t firstVertex, std::size_t vertexCount, const sf::RenderStates &states = sf::RenderStates::Default);

@@ -6,7 +6,7 @@
 #include <SFML/Window/Event.hpp>
 #include <Szachy/Windows/BasicGame/BasicGame.h>
 #include <memory>
-
+#include <Szachy/Windows/BasicGame/Game.h>
 PlaySandbox::PlaySandbox(RenderWindow &W,sf::Event &E):window(&W),event(&E)
 {
     Czytaj();
@@ -70,8 +70,7 @@ void PlaySandbox::Dzialanie()
     }
     while(::window==2)
     {
-        BasicGame BasicGame(*window,*event,Wybór);
-        BasicGame.Gra();
+        Game Game(Wybór);
     }
 }
 
@@ -82,7 +81,7 @@ void PlaySandbox::Twórz()
 
     pos=sf::Vector2f(0.01,0.01);
     roz=sf::Vector2f(0.99,0.99);
-    int C=1,D=3;
+    uint8_t C=1,D=3;
 
     while(C*D<Nazwy.size()+1)if((D+C)%2)D++;else C++;
     uint8_t jeden=1;
@@ -90,14 +89,10 @@ void PlaySandbox::Twórz()
     sf::Color C2[6]={sf::Color::Green,sf::Color::Green,sf::Color::Red,sf::Color::Red,sf::Color::Red,sf::Color::Red};
     pos=sf::Vector2f(0.00,0.00);
     roz=sf::Vector2f(0.00+0.99/C,0.00+0.99/D);
-<<<<<<< HEAD
-    Plansze.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,okienko,
-=======
     Plansze.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,::window,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     Tablica1,1,pos,roz,"MENU"));
 
-    for(int c=0;c<C;c++)for(int d=0;d<D&&c*D+d<Nazwy.size()+1;d++)
+    for(uint8_t c=0;c<C;c++)for(uint8_t d=0;d<D&&c*D+d<Nazwy.size()+1;d++)
 
     {
         if(c==0&&d==0)continue;

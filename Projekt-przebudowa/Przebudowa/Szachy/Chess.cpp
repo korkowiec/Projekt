@@ -8,11 +8,9 @@
 #include <Szachy/Windows/SandboxChessboard/SandboxChessboard.h>
 #include <Szachy/Windows/PlaySandbox/PlaySandbox.h>
 #include <Szachy/Windows/SandboxChessman/SandboxChessman.h>
-<<<<<<< HEAD
+#include <Szachy/Windows/BasicGame/Game.h>
 
-=======
 uint8_t window=1;
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
 RenderWindow Window;
 sf::Event Event;
 Chess::Chess() : Window(::Window),Event(::Event)
@@ -25,11 +23,7 @@ Chess::Chess() : Window(::Window),Event(::Event)
     while(Window.isOpen())
     {
 
-<<<<<<< HEAD
-        switch (okienko)
-=======
         switch (::window)
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
         {
         case 1: //Menu
         {
@@ -38,8 +32,8 @@ Chess::Chess() : Window(::Window),Event(::Event)
         break;
         case 2://BasicGame
         {
-            BasicGame BasicGame(Window,Event,"Szachy");
-            BasicGame.Gra();
+            ::SetDisplay(::Window,sf::Vector2i(-8,-31),sf::Vector2u(sf::VideoMode::getDesktopMode().width-100,sf::VideoMode::getDesktopMode().height-100));
+            Game Game("Szachy");
         }
         break;
         case 3://SandboxChessman

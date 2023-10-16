@@ -35,7 +35,7 @@ public:
                   sf::Vector2f roz = sf::Vector2f(0, 0),
                   std::string S = "",
                   sf::Color C = sf::Color::Green)
-        :window(W),event(E){Zmiana(pos,roz),setFillColor(C);tekst_przycisku.Dane_poczatek(window,*this,S);}
+        :window(W),event(E){tekst_przycisku.Dane_poczatek(window,*this,S);Zmiana(pos,roz),setFillColor(C);tekst_przycisku.Dane_poczatek(window,*this,S);}
     void Zmiana(sf::Vector2f pos, sf::Vector2f pos1){
         if(pos.x>pos1.x)
         {
@@ -53,6 +53,7 @@ public:
         else pos1.y-=pos.y;
         setPosition(window.getView().getSize().x*pos.x,window.getView().getSize().y*pos.y);
         setSize(sf::Vector2f(window.getView().getSize().x*pos1.x,window.getView().getSize().y*pos1.y));
+        tekst_przycisku.Kalibrowanie();
     }
     virtual void Akcje() {
 
@@ -197,15 +198,10 @@ private:
     Change* ZmianyZmiennej[6];
     Change  WartosciZmiennej[6];
     bool Zastap;
-<<<<<<< HEAD
-
-    void ZmienStan(const uint8_t &to){
-=======
     uint8_t previous=255;
     void ZmienStan(const uint8_t &to){
         if(previous==to)return;
         previous=to;
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
         if(Zastap) Zmienna=(*ZmianyZmiennej[to]);
         else Zmienna+=(*ZmianyZmiennej[to]);
 

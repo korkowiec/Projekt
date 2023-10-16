@@ -1,12 +1,14 @@
 release/GlobalFunctions.o
 release/Variables.o
+release/Animation.o
+release/ChessmanMove.o
+release/Game.o
 release/FrameAnimation.o
 release/RenderWindow.o
 release/RotateAnimation.o
 release/Slider.o
 release/Text.o
 release/Chessman.o
-release/BasicGame.o
 release/Console.o
 release/Menu.o
 release/PlaySandbox.o

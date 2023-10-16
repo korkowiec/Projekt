@@ -337,11 +337,7 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-<<<<<<< HEAD
-    Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,okienko,
-=======
     Przyciski.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,::window,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     Stan,1,pos1,roz2,std::string("MENU")));
     }
 
@@ -357,11 +353,7 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
     Przyciski.emplace_back(std::make_unique<Button<bool,bool>>(*window,*event,Zapisz_figure,
-<<<<<<< HEAD
-                                    stanik,1,pos1,roz2,std::string("ZAPISZ")));
-=======
                                     Stan,1,pos1,roz2,std::string("ZAPISZ")));
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
     }
 
     //Załaduj teksture
@@ -377,11 +369,8 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
     Przyciski.emplace_back(std::make_unique<Button<bool,bool>>(*window,*event,CzytajPlik,
-<<<<<<< HEAD
-                                    stanik,1,pos1,roz2,std::string("Wczytaj teksturę")));
-=======
                                     Stan,1,pos1,roz2,std::string("Wczytaj teksturę")));
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
+
     }
 
     //Załaduj nazwę tekstury
@@ -408,11 +397,8 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-<<<<<<< HEAD
-    Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,aktualny_rozmiar,
-=======
+
     Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,aktualny_rozmiar,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("R+")));
     }
 
@@ -429,11 +415,9 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
 
 
 
-<<<<<<< HEAD
-    Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,aktualny_rozmiar,
-=======
+
+
     Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,aktualny_rozmiar,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("R-")));
     }
     //US
@@ -559,11 +543,7 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-<<<<<<< HEAD
-    Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,Aktualne_dane_ruchu.EL,
-=======
     Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,Aktualne_dane_ruchu.EL,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("+")));
     }
 
@@ -577,13 +557,7 @@ void SandboxChessman::Utwórz_przyciski_i_tekst()
     pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
     roz2=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
 
-
-
-<<<<<<< HEAD
-    Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Aktualne_dane_ruchu.EL,
-=======
     Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,Aktualne_dane_ruchu.EL,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     stanik,0,pos1,roz2,std::string("-")));
     }
     }
@@ -952,7 +926,9 @@ void SandboxChessman::Zdarzenia_plansza()
     float wx=window->getView().getSize().x,wy=window->getView().getSize().y;
 
 
-    if(window->getSize().y<window->getSize().x) wx=wx*window->getSize().y/window->getSize().x; else wy=wy*window->getSize().x/window->getSize().y;
+    if(window->getSize().y<window->getSize().x)
+        wx=wx*window->getSize().y/window->getSize().x;
+    else wy=wy*window->getSize().x/window->getSize().y;
 
 
     wx/=Plansza->Rozmiar;

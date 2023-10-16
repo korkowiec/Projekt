@@ -257,11 +257,7 @@ void SandboxChessboard::Tworzenie_obiektów()
             roz=sf::Vector2f(1,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-<<<<<<< HEAD
-            Przyciski.emplace_back(std::make_unique<Button<u_short,u_short>>(*window,*event,okienko,
-=======
             Przyciski.emplace_back(std::make_unique<Button<uint8_t,uint8_t>>(*window,*event,::window,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                     Stan,1,pos1,roz1,std::string("MENU")));
         }
 
@@ -274,11 +270,8 @@ void SandboxChessboard::Tworzenie_obiektów()
             roz=sf::Vector2f(0.1,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-<<<<<<< HEAD
-            Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_x1,
-=======
+
             Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,Plansza.Rozmiar_x1,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("X+")));
 
         }
@@ -290,11 +283,7 @@ void SandboxChessboard::Tworzenie_obiektów()
             roz=sf::Vector2f(0.3,0.1);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-<<<<<<< HEAD
-            Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_x1,
-=======
             Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,Plansza.Rozmiar_x1,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("X-")));
         }
         //Y+
@@ -305,11 +294,8 @@ void SandboxChessboard::Tworzenie_obiektów()
             roz=sf::Vector2f(0.1,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-<<<<<<< HEAD
-            Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_y1,
-=======
+
             Przyciski.emplace_back(std::make_unique<Button<u_short,uint8_t>>(*window,*event,Plansza.Rozmiar_y1,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("Y+")));
         }
         //Y-
@@ -320,11 +306,8 @@ void SandboxChessboard::Tworzenie_obiektów()
             roz=sf::Vector2f(0.3,0.2);
             pos1=sf::Vector2f(((pos.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),pos.y);
             roz1=sf::Vector2f(((roz.x*(window->getSize().x-window->getSize().y)+window->getSize().y)/window->getSize().x),roz.y);
-<<<<<<< HEAD
-            Przyciski.emplace_back(std::make_unique<Button<u_short,short>>(*window,*event,Plansza.Rozmiar_y1,
-=======
+
             Przyciski.emplace_back(std::make_unique<Button<u_short,int8_t>>(*window,*event,Plansza.Rozmiar_y1,
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
                                             stanik1,0,pos1,roz1,std::string("Y-")));
         }
         //Drużyna

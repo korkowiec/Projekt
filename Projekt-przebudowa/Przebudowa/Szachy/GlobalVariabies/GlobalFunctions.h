@@ -3,6 +3,7 @@
 
 #include <Szachy/HelpClass/RenderWindow.h>
 #include <SFML/Graphics/Text.hpp>
+#include <fstream>
 
 void SetDisplay(sf::RenderWindow &window, sf::Vector2i a = sf::Vector2i(0, 0),
                 sf::Vector2u c = sf::Vector2u(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height));
@@ -13,10 +14,9 @@ void akcja_gra_start(void Zdarzenia_window(sf::RenderWindow &W, sf::Event &E));
 
 void Popraw_tekst(sf::Vector2f pos1, sf::Vector2f pos2, sf::Text &text, RenderWindow &window);
 
-<<<<<<< HEAD
-
-=======
+void globalActions();
 extern char boolToChar(bool number);
->>>>>>> d38428a08613b6cd75bbff3990ee966472ba2f9b
+
+extern std::fstream loadFileToRead(const std::wstring &string);
 
 #endif // GLOBALFUNCTIONS_H

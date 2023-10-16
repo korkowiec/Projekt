@@ -1,12 +1,14 @@
 debug/GlobalFunctions.o
 debug/Variables.o
+debug/Animation.o
+debug/ChessmanMove.o
+debug/Game.o
 debug/FrameAnimation.o
 debug/RenderWindow.o
 debug/RotateAnimation.o
 debug/Slider.o
 debug/Text.o
 debug/Chessman.o
-debug/BasicGame.o
 debug/Console.o
 debug/Menu.o
 debug/PlaySandbox.o

@@ -3,27 +3,33 @@
 
 #include <Szachy/HelpClass/RenderWindow.h>
 #include <wtypes.h>
-
+#include <Szachy/HelpClass/Button.h>
+#include <SFML/Graphics/Sprite.hpp>
 class Console
 {
 public:
-    Console(RenderWindow &W, sf::Event &E) : window(&W), event(&E) { Przyciski(); }
+    Console();
     void Rysowanie();
     void Ustal_Pole();
     void Akcje_i_rysowanie();
     void Koniec_gry();
+    void actionsEvents();
+    void actions();
+    void draw();
+    void scale();
 
 private:
+    void setDown();
+    void setRight();
+    void makeElements();
     void Rysuj_dol();
     void Rysuj_bok();
     void Przyciski();
 
-    RenderWindow *window;
-    sf::Vector2f(Rozmiar);
-    sf::Event *event;
     std::vector<std::unique_ptr<sf::Drawable>> Rysunki;
-
-    u_short Rodzaj = 0; // 0-nic, 1-bok, 2-dol
+    std::vector<std::unique_ptr<ButtonActions>> buttons;
+    std::vector<std::unique_ptr<sf::Sprite>> animations;
+    uint8_t type = 0; // 0-nic, 1-bok, 2-dol
 };
 
 #endif // CONSOLE_H

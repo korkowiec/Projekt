@@ -1,37 +1,48 @@
 #ifndef CHESSMAN_H
 #define CHESSMAN_H
 
+#include <Szachy/SpecialClass/PosibleMove.h>
 #include <Szachy/HelpClass/RenderWindow.h>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <wtypes.h>
 #include <SFML/Graphics/Sprite.hpp>
-
-class BasicGame;
+#include <Szachy/GlobalVariabies/Variables.h>
+#include <Szachy/SpecialClass/TypeChessman.h>
+#include <memory>
+class Game;
 
 class Chessman : public sf::Sprite
 {
 private:
-    BasicGame *plansza;
-    RenderWindow *window;
-
+    Game &Board;
 public:
-    void Ruch();
-    void Posible_move();
-    void DrawPozycja(const sf::Color &C, const short &X1, const short &Y1);
-    void Skalowanie(sf::RenderWindow &window, const short &x, const short &y);
-    void Ustaw(sf::RenderWindow &window, const short &x, const short &y, short &X1, short &Y1);
-    void Parametry(sf::RenderWindow &window, sf::RectangleShape &rec, const short &x, const short &y);
-    void Rysowanie_Plansza(sf::RenderWindow &window, const sf::Color &Pole1, const sf::Color &Pole2, sf::RectangleShape &Pole, const short &x, const short &y);
-    void SetDisplay(sf::RenderWindow &window, sf::Vector2i (a) = sf::Vector2i(0, 0), sf::Vector2u(c) = sf::Vector2u(0, 0), bool D = 0);
+    Chessman(Game &game,const TypeChessman &Name, const uint8_t &X, const uint8_t &Y,const uint8_t &Team,const std::bitset<4> &Bools);
 
-    Chessman(BasicGame &P, const std::string &N, const short &x1, const short &y1, const u_short &t);
-    Chessman(BasicGame &P, const std::string &N, const short &x1, const short &y1, const u_short &t, const bool &K);
+    void move();
+    void posibleMove();
+    void drawActions(const sf::Color &C, const short &X1, const short &Y1);
+    void scale();
+    void emplace();
+    void emplace(     uint8_t X,uint8_t Y);
+    bool select();
+    void drawSquare(sf::Color color,uint8_t X, uint8_t Y);
+    void drawSquare(uint8_t Type,uint8_t X, uint8_t Y);
+    static std::vector<std::shared_ptr<Chessman>> makeVectorShared_ptrChessman(Game &P,const sf::String &name);
+    std::vector<std::shared_ptr<PosibleMove>> posible_move();
 
-    u_short team;                 // do jakiej drużyny należy
-    short X, Y;                   // pozycja XY względem planszy
-    short textureX, textureY;     // rozmiary tekstury
-    bool King = 0, CanDestroy = 1, NotWasMoved = 1, IsSelect = 0;
-    std::string NazwaTekstury;   // na podstawie nazwy będzie wiadomo, jaka to jest figura i względem tej figury będzie czytane vector<struct> z możliwymi ruchami
+
+
+    uint8_t x, y;                   // pozycja XY względem planszy
+    const uint8_t team;                 // do jakiej drużyny należy
+    const TypeChessman &Texture; // na podstawie nazwy będzie wiadomo, jaka to jest figura i względem tej figury będzie czytane vector<struct> z możliwymi ruchami
+    //bool king = 0, canDestroy = 1, notWasMoved = 1, isSelect = 0;
+    std::bitset<4> bools=std::bitset<4>("1100");
+    sf::Color Colors[3]={sf::Color::Blue,sf::Color::Green,sf::Color::Red};
+    //bools[3] - canDestroy 1 unused
+    //bools[2] - notWasMoved 1
+    //bools[1] - isSelect 0
+    //bools[0] - king 0
+
 };
 
 #endif // CHESSMAN_H

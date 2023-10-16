@@ -2,7 +2,10 @@
 #include <Szachy/HelpClass/RotateAnimation.h>
 #include <Szachy/HelpClass/FrameAnimation.h>
 #include <Szachy/HelpClass/Button.h>
-void RenderWindow::Rysowanie(const ButtonActions &P){draw(P);draw(P.tekst_przycisku);}
+void RenderWindow::Rysowanie(ButtonActions &P){
+    P.Akcje();
+    draw(P);
+    draw(P.tekst_przycisku);}
 void RenderWindow::Rysowanie( FrameAnimation &A)
 {
     A.Zmien();
