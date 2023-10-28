@@ -1,6 +1,20 @@
 #include <Szachy/Windows/BasicGame/Game.h>
 
 void Game::game(){
+    for(uint8_t i=0;i<::Team;i++){
+        if(std::none_of(chessman.begin(),chessman.end(),
+                        [i](const std::shared_ptr<Chessman> &figure){
+                            if(figure->team==i)
+                                return (bool)figure->bools[0];
+                            return false;
+
+                        })){
+            ::window=1;
+            break;
+        }
+
+        }
+    Console.scale();
     while(::window==2){
         ::mouse_position = ::Window.mapPixelToCoords(sf::Mouse::getPosition(::Window));
         while(::Window.pollEvent(::Event)){
@@ -83,7 +97,19 @@ void Game::gameActions(){
                 boardChessman[X][Y].second.lock()->emplace();
                 select=Select();
                 posibleMoves.clear();
+                for(uint8_t i=0;i<::Team;i++){
+                    if(std::none_of(chessman.begin(),chessman.end(),
+                                    [i](const std::shared_ptr<Chessman> &figure){
+                            if(figure->team==i)
+                                return (bool)figure->bools[0];
+                            return false;
 
+                        })){
+                        Console.losePlayer(i);
+                        break;
+                    }
+
+                }
             }
         }
         else{

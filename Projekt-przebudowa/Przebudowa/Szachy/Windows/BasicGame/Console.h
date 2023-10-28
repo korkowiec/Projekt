@@ -9,10 +9,7 @@ class Console
 {
 public:
     Console();
-    void Rysowanie();
-    void Ustal_Pole();
-    void Akcje_i_rysowanie();
-    void Koniec_gry();
+    void losePlayer(uint8_t team);
     void actionsEvents();
     void actions();
     void draw();
@@ -22,10 +19,6 @@ private:
     void setDown();
     void setRight();
     void makeElements();
-    void Rysuj_dol();
-    void Rysuj_bok();
-    void Przyciski();
-
     std::vector<std::unique_ptr<sf::Drawable>> Rysunki;
     std::vector<std::unique_ptr<ButtonActions>> buttons;
     std::vector<std::unique_ptr<sf::Sprite>> animations;

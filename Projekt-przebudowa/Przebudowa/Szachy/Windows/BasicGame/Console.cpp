@@ -35,30 +35,17 @@ void Console::makeElements(){
     }
 }
 
-void Console::Koniec_gry()
+void Console::losePlayer(uint8_t team)
 {
 
-    std::string S="Przegrał gracz "+std::to_string(Teraz+1);
+    sf::String nameText="Przegrał gracz "+(std::string)std::to_string(team+1);
                                         //    Texttekst(sf::String::fromUtf8(S.begin(),S.end()),Dane_tekstu);
                                         //    tekst.setColor(sf::Color::Red);
                                         //    tekst.setStyle(sf::Text::Regular);
                                         //    tekst.setOutlineColor(sf::Color::Black);
                                         //    tekst.setOutlineThickness(0);
-                                        Rysunki.emplace_back(std::make_unique<Text>(sf::String::fromUtf8(S.begin(),S.end()),Dane_tekstu));
-
-    for(uint8_t c=0;c<Rysunki.size();c++)
-
-    {
-
-        Text *przycisk=dynamic_cast<Text *>(Rysunki[c].get());
-        if(przycisk != nullptr)
-        {
-            przycisk->setColor(sf::Color::Red);
-            przycisk->setStyle(sf::Text::Regular);
-            przycisk->setOutlineColor(sf::Color::Black);
-            przycisk->setOutlineThickness(0);
-
-        }
+    Text text(nameText);
+    while (1){
 
     }
 }
@@ -88,8 +75,8 @@ void Console::setDown(){
         pos.y=0.95;
         roz.x=0.95;
         roz.y=0.55;
-        button->Zmiana(sf::Vector2f(((pos.x*(scale)+::Window.getSize().y)/::Window.getSize().x),pos.y),
-                       sf::Vector2f(((roz.x*(scale)+::Window.getSize().y)/::Window.getSize().x),roz.y));
+        button->Zmiana(sf::Vector2f(pos.x,((pos.y*(scale)+::Window.getSize().x)/::Window.getSize().y)),
+                       sf::Vector2f(roz.x,((roz.y*(scale)+::Window.getSize().x)/::Window.getSize().y)));
 
     }
     if(button->tekst_przycisku.getString()==L"Menu"){
@@ -97,8 +84,8 @@ void Console::setDown(){
         pos.y=0.55;
         roz.x=0.4;
         roz.y=0.95;
-        button->Zmiana(sf::Vector2f(((pos.x*(scale)+::Window.getSize().y)/::Window.getSize().x),pos.y),
-                       sf::Vector2f(((roz.x*(scale)+::Window.getSize().y)/::Window.getSize().x),roz.y));
+        button->Zmiana(sf::Vector2f(pos.x,((pos.y*(scale)+::Window.getSize().x)/::Window.getSize().y)),
+                       sf::Vector2f(roz.x,((roz.y*(scale)+::Window.getSize().x)/::Window.getSize().y)));
     }
 }
 for(std::unique_ptr<sf::Sprite> &animation:animations){
@@ -108,8 +95,8 @@ for(std::unique_ptr<sf::Sprite> &animation:animations){
         pos.y=0.35;
         roz.x=0.3;
         roz.y=0.50;
-        A->Kalibrowanie(sf::Vector2f(((pos.x*(scale)+::Window.getSize().y)/::Window.getSize().x),pos.y),
-                        sf::Vector2f(((roz.x*(scale)+::Window.getSize().y)/::Window.getSize().x),roz.y));
+        A->Kalibrowanie(sf::Vector2f(pos.x,((pos.y*(scale)+::Window.getSize().x)/::Window.getSize().y)),
+                        sf::Vector2f(roz.x,((roz.y*(scale)+::Window.getSize().x)/::Window.getSize().y)));
     }
 }
 }

@@ -32,6 +32,7 @@ std::vector<std::shared_ptr<Chessman>> Chessman::makeVectorShared_ptrChessman(Ga
         {
             if(step==""||step=="\n")continue;
             std::bitset<4> bools=std::bitset<4>("1100");
+            while(step.find('"')!=std::string::npos)step.replace(step.find('"'),1,",");
             nameChessman=step; //Nazwa figury
             std::getline(File, step,',');
 

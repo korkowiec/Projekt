@@ -28,16 +28,15 @@ private:
 
 
     void drawBoard();
-    void makeBoard(){
-
-    }
+    bool checkKings(uint8_t team);
     void game();
     void squartScale();
     void gameActions();
     void drawAll();
 
 public:
-    Game(sf::String boardName = "Szachy"): GameBoard(boardName),
+    Game(sf::String boardName = "Szachy"):
+        GameBoard(boardName),
         boardChessman(GameBoard.boardX,std::vector<std::pair<std::weak_ptr<PosibleMove>,std::weak_ptr<Chessman>>>(GameBoard.boardY,std::pair<std::weak_ptr<PosibleMove>,std::weak_ptr<Chessman>>())),
         typeChessman(TypeChessman::makeVectorTypeChessman(GameBoard.name)),
         chessman(Chessman::makeVectorShared_ptrChessman(*this,GameBoard.name)){
@@ -49,7 +48,9 @@ public:
     std::vector<std::vector<std::pair<std::weak_ptr<PosibleMove>,std::weak_ptr<Chessman>>>> boardChessman;
     std::vector<TypeChessman> typeChessman; //Przechowywanie figur, które są w czasie gry
     std::vector<std::shared_ptr<Chessman>> chessman;
-
+    ~Game(){
+        ::Teraz=0;
+    }
     sf::RectangleShape squart;
     Select select;
     std::vector<std::shared_ptr<PosibleMove>> posibleMoves;
