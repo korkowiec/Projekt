@@ -17,7 +17,7 @@ Chess::Chess() : Window(::Window),Event(::Event)
 {
     srand(time(NULL));
     Window.create(sf::VideoMode(1,1), "Szachy");
-    SetDisplay(Window,sf::Vector2i(-8,-31),sf::Vector2u(sf::VideoMode::getDesktopMode().width,sf::VideoMode::getDesktopMode().height));
+    SetDisplay(Window,sf::Vector2i(-8+100,-31+100),sf::Vector2u(sf::VideoMode::getDesktopMode().width-200,sf::VideoMode::getDesktopMode().height-200));
     if (!Dane_tekstu.loadFromFile("Czcionka/PolskaGurom.ttf")) Window.close();
 
     while(Window.isOpen())

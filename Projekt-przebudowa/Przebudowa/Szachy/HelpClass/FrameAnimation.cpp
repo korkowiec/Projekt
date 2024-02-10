@@ -16,7 +16,7 @@ FrameAnimation::FrameAnimation(const std::string &S,float C)
     this->texture.loadFromImage(I2);
     this->setTexture(texture);
 
-    Czytaj(S);
+    readTextFile(S);
     setTextureRect(Pozycje[0]);
 }
 FrameAnimation::FrameAnimation(const std::string &S,RenderWindow &W,float C)
@@ -34,7 +34,7 @@ FrameAnimation::FrameAnimation(const std::string &S,RenderWindow &W,float C)
     this->texture.loadFromImage(I2);
     this->setTexture(texture);
 
-    Czytaj(S);
+    readTextFile(S);
     setTextureRect(Pozycje[0]);
 }
 
@@ -48,7 +48,7 @@ void FrameAnimation::Zmien()
     }
 }
 
-void FrameAnimation::Czytaj(const std::string &S)
+void FrameAnimation::readTextFile(const std::string &S)
 {
     std::fstream Plan("Pliki_tekstowe/Animacje/"+S+".txt", std::fstream::in);
     if(Plan.is_open())

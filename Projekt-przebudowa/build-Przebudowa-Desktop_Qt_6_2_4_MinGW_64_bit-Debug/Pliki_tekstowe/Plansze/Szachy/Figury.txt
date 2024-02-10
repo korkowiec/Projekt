@@ -1,0 +1,12 @@
+PionekBialy
+PionekCzarny
+GoniecBialy
+GoniecCzarny
+SkoczekBialy
+SkoczekCzarny
+WiezaBiala
+WiezaCzarna
+KrolBialy
+KrolowaBiala
+KrolCzarny
+KrolowaCzarna

@@ -5,6 +5,8 @@
 #include <Szachy/GlobalVariabies/GlobalFunctions.h>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
+#include <Szachy/HelpClass/BasicLoadFileClass.h>
 void SandboxChessman::Dzialanie()
 {
 
@@ -260,27 +262,24 @@ void SandboxChessman::Czytaj_plik()
         //std::wcout<<"CO SI POPSUO"<<std::endl;
         std::wstring filePath = Lokalizacja_pliku;
 
-        std::wifstream file(filePath.data(), std::ios::binary);
+        std::fstream file(loadFileToRead(filePath));
         if (file)
         {
-            // Określenie rozmiaru pliku
-            file.seekg(0, std::ios::end);
-            std::streampos fileSize = file.tellg();
-            file.seekg(0, std::ios::beg);
 
-            // Przygotowanie bufora na dane pliku
-            std::vector<wchar_t> fileData(fileSize);
-            file.read(&fileData[0], fileSize);
-              std::vector<char> fileData1(fileSize);
-              for (unsigned int c=0;c<fileSize;c++)
-                  {
-                      fileData1[c]=fileData[c];
-                  }
-            // Załadowanie danych tekstury z pamięci
+                  // get length of file:
+            file.seekg (0, std::ios::end);
+                  int length = file.tellg();
+            file.seekg (0, std::ios::beg);
 
-            if (Tekstura_figury.loadFromMemory(&fileData1[0], fileSize))
+                  // allocate memory:
+                  char * buffer = new char [length];
+            std::cout<<"HELLO THERE";
+                  // read data as a block:
+                  file.read (buffer,length);
+            BasicLoadFileClass to(filePath);
+                  if (Tekstura_figury.loadFromStream(to))
             {
-
+//C:\Users\Pick&Kick\Downloads\ŁĄŚĄĆZX.jpg
                 Figura.setTexture(Tekstura_figury,1);
                 sf::String::Iterator It[2];
                 for(sf::String::Iterator first=Lokalizacja_pliku.end();first!=Lokalizacja_pliku.begin();first--)
@@ -304,6 +303,7 @@ void SandboxChessman::Czytaj_plik()
             {
                 //std::cout<<"Co kurwa?"<<std::endl;
             }
+            delete[] buffer;
             file.close();
         }
         else ;//std::cout<<"PSP JEBAC PSA"<<std::endl;

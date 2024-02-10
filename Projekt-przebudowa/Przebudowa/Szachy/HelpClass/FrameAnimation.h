@@ -16,7 +16,7 @@ private:
     uint8_t aktualny = 1;
     sf::Clock clock;
 
-    void Czytaj(const std::string &S);
+    void readTextFile(const std::string &S);
 
 public:
     float okres = 1;
